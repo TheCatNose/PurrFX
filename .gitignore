@@ -4,3 +4,6 @@ data/in/*
 !data/in/readme.txt
 data/out/*
 !data/out/readme.txt
+
+Nsf2Wav.vcxproj.user
+.vs
