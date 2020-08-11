@@ -39,6 +39,7 @@
     #undef debug_printf
     #define debug_printf (1) ? (void) 0 : blargg_dprintf_
 #endif
+#define debug_printf(x) // PurrFX
 
 /* If enabled, evaluate expr and if false, make debug log entry with source file
  * and line. Meant for finding situations that should be examined further, but that

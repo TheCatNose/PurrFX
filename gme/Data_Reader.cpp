@@ -352,7 +352,10 @@ blargg_err_t Std_File_Reader::open( const char* path )
 	RETURN_ERR( get_gzip_eof( path, &size_ ) );
 	file_ = gzopen( path, "rb" );
 #else
-	file_ = fopen( path, "rb" );
+	// <PurrFX>
+	//file_ = fopen( path, "rb" );
+	fopen_s((FILE**)&file_, path, "rb");
+	// </PurrFX>
 #endif
 
 	if ( !file_ )

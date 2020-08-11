@@ -22,6 +22,7 @@
 	gme_vgm_type,\
 	gme_vgz_type
 */
+#define GME_TYPE_LIST gme_nsf_type // PurrFX
 
 // Uncomment to enable platform-specific optimizations
 //#define BLARGG_NONPORTABLE 1

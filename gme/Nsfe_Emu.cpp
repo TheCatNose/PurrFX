@@ -78,7 +78,11 @@ static blargg_err_t read_strs( Data_Reader& in, long size, blargg_vector<char>& 
 static void copy_str( const char* in, char* out, int out_max )
 {
 	out [out_max - 1] = 0;
-	strncpy( out, in, out_max - 1 );
+	// <PurrFX>
+	//strncpy( out, in, out_max - 1 );
+	int len = std::strlen(in);
+	strncpy_s( out, len, in, out_max - 1 );
+	// </PurrFX>
 }
 
 struct nsfe_info_t
