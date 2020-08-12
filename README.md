@@ -1,7 +1,7 @@
 # PurrFX
 Emulation based NES audio framework. Works on top of Game Music Emu library.
 
-Feel free to use it in personal or commercial projects. Just don't forget to mention me if you want.
+Feel free to use it in personal or commercial projects, so long as PurrFX developer(s) are credited.
 
 # Links
 * Twitter: https://twitter.com/thecatnose 
