@@ -166,6 +166,8 @@
     <ClCompile Include="gme\Nes_Vrc6_Apu.cpp" />
     <ClCompile Include="gme\Nsfe_Emu.cpp" />
     <ClCompile Include="gme\Nsf_Emu.cpp" />
+    <ClCompile Include="lib\CNes.cpp" />
+    <ClCompile Include="lib\CNesGme.cpp" />
     <ClCompile Include="Nsf2Wav.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -194,6 +196,8 @@
     <ClInclude Include="gme\Nes_Vrc6_Apu.h" />
     <ClInclude Include="gme\Nsfe_Emu.h" />
     <ClInclude Include="gme\Nsf_Emu.h" />
+    <ClInclude Include="lib\CNes.h" />
+    <ClInclude Include="lib\CNesGme.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

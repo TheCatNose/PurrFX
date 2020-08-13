@@ -16,6 +16,9 @@
     <Filter Include="gme">
       <UniqueIdentifier>{f5396773-a2f4-4d84-b878-7d142fd8fee7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="purrfx">
+      <UniqueIdentifier>{65fb3ca8-9e2f-447f-b3dd-d577a7c80614}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Nsf2Wav.cpp">
@@ -77,6 +80,12 @@
     </ClCompile>
     <ClCompile Include="gme\Nsfe_Emu.cpp">
       <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\CNes.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\CNesGme.cpp">
+      <Filter>purrfx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +163,12 @@
     </ClInclude>
     <ClInclude Include="gme\Nsfe_Emu.h">
       <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\CNes.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\CNesGme.h">
+      <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
