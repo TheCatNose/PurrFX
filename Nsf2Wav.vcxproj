@@ -198,6 +198,7 @@
     <ClInclude Include="gme\Nsf_Emu.h" />
     <ClInclude Include="lib\CNes.h" />
     <ClInclude Include="lib\CNesGme.h" />
+    <ClInclude Include="lib\DClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

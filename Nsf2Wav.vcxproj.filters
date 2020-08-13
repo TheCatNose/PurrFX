@@ -170,5 +170,8 @@
     <ClInclude Include="lib\CNesGme.h">
       <Filter>purrfx</Filter>
     </ClInclude>
+    <ClInclude Include="lib\DClass.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
