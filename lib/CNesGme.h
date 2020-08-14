@@ -20,7 +20,8 @@ namespace PurrFX
 		virtual bool setTrack(int i_nTrack);
 		virtual bool render(char* o_pData, size_t i_nDataSize);
 
-		CLASS_MAKE_NON_COPYABLE(CNesGme);
+		CLASS_MAKE_NON_COPYABLE(CNesGme)
+		CLASS_USE_DEFAULT_CONSTRUCTOR(CNesGme)
 	private:
 		// CGmeLogDataConsumer implementation
 		virtual void onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArg1, uint8_t i_nArg2);
