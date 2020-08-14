@@ -182,8 +182,8 @@ loop:
 	#endif
 
 	// <PurrFX>
-	// Gotcha! Seems like perfect place to put logging code.
-	// TODO: logging code
+	if (events_receiver != nullptr)
+		events_receiver->onGmeEventCpuInstruction(pc - 1, opcode, instr[0], instr[1]);
 	// </PurrFX>
 	
 	static uint8_t const clock_table [256] =

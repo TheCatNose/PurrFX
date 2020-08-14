@@ -5,6 +5,9 @@
 #define NES_CPU_H
 
 #include "blargg_common.h"
+// <PurrFX>
+#include "PurrFX_Stuff.h"
+// </PurrFX>
 
 typedef blargg_long nes_time_t; // clock cycle count
 typedef unsigned nes_addr_t; // 16-bit address
@@ -61,6 +64,9 @@ public:
 	// CPU invokes bad opcode handler if it encounters this
 	enum { bad_opcode = 0xF2 };
 	
+	// <PurrFX>
+	CGmeEventsReceiver* events_receiver = nullptr;
+	// </PurrFX>
 public:
 	Nes_Cpu() { state = &state_; }
 	enum { page_bits = 11 };
