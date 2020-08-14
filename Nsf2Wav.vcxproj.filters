@@ -90,6 +90,9 @@
     <ClCompile Include="CDataPath.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gme\PurrFX_Stuff.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -178,6 +181,9 @@
     </ClInclude>
     <ClInclude Include="CDataPath.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\PurrFX_Stuff.h">
+      <Filter>gme</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

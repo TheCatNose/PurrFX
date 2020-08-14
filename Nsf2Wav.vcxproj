@@ -167,6 +167,7 @@
     <ClCompile Include="gme\Nes_Vrc6_Apu.cpp" />
     <ClCompile Include="gme\Nsfe_Emu.cpp" />
     <ClCompile Include="gme\Nsf_Emu.cpp" />
+    <ClCompile Include="gme\PurrFX_Stuff.cpp" />
     <ClCompile Include="lib\CNes.cpp" />
     <ClCompile Include="lib\CNesGme.cpp" />
     <ClCompile Include="Nsf2Wav.cpp" />
@@ -198,6 +199,7 @@
     <ClInclude Include="gme\Nes_Vrc6_Apu.h" />
     <ClInclude Include="gme\Nsfe_Emu.h" />
     <ClInclude Include="gme\Nsf_Emu.h" />
+    <ClInclude Include="gme\PurrFX_Stuff.h" />
     <ClInclude Include="lib\CNes.h" />
     <ClInclude Include="lib\CNesGme.h" />
     <ClInclude Include="lib\DClass.h" />
