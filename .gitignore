@@ -7,3 +7,5 @@ data/out/*
 
 Nsf2Wav.vcxproj.user
 .vs
+
+NsfLog.vcxproj.user

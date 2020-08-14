@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="gme">
+      <UniqueIdentifier>{aa524743-6cac-4eff-946f-6187e99eee67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="purrfx">
+      <UniqueIdentifier>{eced63b7-0f98-4a7a-b5c4-5b605589d544}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="NsfLog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDataPath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nes_Oscs.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nes_Vrc6_Apu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nsf_Emu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nsfe_Emu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Blip_Buffer.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Classic_Emu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Data_Reader.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Dual_Resampler.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Effects_Buffer.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Fir_Resampler.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\gme.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Gme_File.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\M3u_Playlist.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Multi_Buffer.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Music_Emu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nes_Apu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nes_Cpu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nes_Fme7_Apu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nes_Namco_Apu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\CNes.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\CNesGme.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CDataPath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nes_Oscs.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nes_Vrc6_Apu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nsf_Emu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nsfe_Emu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\blargg_common.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\blargg_config.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\blargg_endian.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\blargg_source.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Blip_Buffer.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Classic_Emu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Data_Reader.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Dual_Resampler.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Effects_Buffer.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Fir_Resampler.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\gme.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Gme_File.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\gme_types.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\M3u_Playlist.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Multi_Buffer.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Music_Emu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nes_Apu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nes_Cpu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\nes_cpu_io.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nes_Fme7_Apu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nes_Namco_Apu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\CNes.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\CNesGme.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\DClass.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
