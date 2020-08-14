@@ -93,6 +93,12 @@
     <ClCompile Include="gme\PurrFX_Stuff.cpp">
       <Filter>gme</Filter>
     </ClCompile>
+    <ClCompile Include="lib\CNesLogDataConsumer.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\CNesLogItem.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -184,6 +190,12 @@
     </ClInclude>
     <ClInclude Include="gme\PurrFX_Stuff.h">
       <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\CNesLogItem.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\CNesLogDataConsumer.h">
+      <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

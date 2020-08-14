@@ -170,6 +170,8 @@
     <ClCompile Include="gme\PurrFX_Stuff.cpp" />
     <ClCompile Include="lib\CNes.cpp" />
     <ClCompile Include="lib\CNesGme.cpp" />
+    <ClCompile Include="lib\CNesLogDataConsumer.cpp" />
+    <ClCompile Include="lib\CNesLogItem.cpp" />
     <ClCompile Include="NsfLog.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +204,8 @@
     <ClInclude Include="gme\PurrFX_Stuff.h" />
     <ClInclude Include="lib\CNes.h" />
     <ClInclude Include="lib\CNesGme.h" />
+    <ClInclude Include="lib\CNesLogDataConsumer.h" />
+    <ClInclude Include="lib\CNesLogItem.h" />
     <ClInclude Include="lib\DClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
