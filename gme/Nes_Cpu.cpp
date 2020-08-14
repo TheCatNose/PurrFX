@@ -180,6 +180,11 @@ loop:
 		opcode = *instr++;
 		pc++;
 	#endif
+
+	// <PurrFX>
+	// Gotcha! Seems like perfect place to put logging code.
+	// TODO: logging code
+	// </PurrFX>
 	
 	static uint8_t const clock_table [256] =
 	{// 0 1 2 3 4 5 6 7 8 9 A B C D E F
