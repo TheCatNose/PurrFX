@@ -52,6 +52,9 @@ public:
 	Nsf_Emu();
 	~Nsf_Emu();
 	Nes_Apu* apu_() { return &apu; }
+	// <PurrFX>
+	Nes_Cpu* cpu_() { return static_cast<Nes_Cpu*>(this); }
+	// </PurrFX>
 protected:
 	blargg_err_t track_info_( track_info_t*, int track ) const;
 	blargg_err_t load_( Data_Reader& );
