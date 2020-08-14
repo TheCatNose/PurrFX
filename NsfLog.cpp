@@ -1,5 +1,6 @@
 #include <iostream>
 #include "lib/CNesGme.h"
+#include "lib/CNesLogFileWriter.h"
 #include "CDataPath.h"
 
 void showErrorMessage(const char* i_sMessage)
@@ -24,8 +25,12 @@ int main()
 	// Setup emulation //
 	/////////////////////
 
+	std::string sOutputPath = CDataPath::outputFile(sOutputFile);
+	
 	PurrFX::CNesGme oNes;
-	// TODO: Setup logging
+	PurrFX::CNesLogFileWriter oLogWriter( sOutputPath.data() );
+	oNes.setLogDataConsumer(&oLogWriter);
+
 	if (!oNes.setSoundOptions(nSampleRate))
 	{
 		showErrorMessage("Can't set sound options");
