@@ -1,6 +1,11 @@
 #pragma once
 
 // Base class for all NES emulation code wrappers
+//
+// Notes:
+// * It won't own CNesLogDataConsumer instance.
+
+#include "CNesLogDataConsumer.h"
 
 namespace PurrFX
 {
@@ -17,8 +22,15 @@ namespace PurrFX
 		bool setSoundOptions(int i_nSampleRate);
 		int  soundSampleRate();
 
+		void setLogDataConsumer(CNesLogDataConsumer* i_pConsumer);
+
+	protected:
+		CNesLogDataConsumer* logDataConsumer() const;
+
 	private:
 		int m_nSoundSampleRate = 44100;
+
+		CNesLogDataConsumer* m_pLogDataConsumer = nullptr;
 	};
 
 }

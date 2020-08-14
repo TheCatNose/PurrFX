@@ -22,3 +22,13 @@ int PurrFX::CNes::soundSampleRate()
 {
 	return m_nSoundSampleRate;
 }
+
+void PurrFX::CNes::setLogDataConsumer(CNesLogDataConsumer* i_pConsumer)
+{
+	m_pLogDataConsumer = i_pConsumer;
+}
+
+PurrFX::CNesLogDataConsumer* PurrFX::CNes::logDataConsumer() const
+{
+	return m_pLogDataConsumer;
+}
