@@ -87,6 +87,9 @@
     <ClCompile Include="lib\CNesGme.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="CDataPath.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -172,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="lib\DClass.h">
       <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="CDataPath.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

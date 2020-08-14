@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CDataPath.cpp" />
     <ClCompile Include="gme\Blip_Buffer.cpp" />
     <ClCompile Include="gme\Classic_Emu.cpp" />
     <ClCompile Include="gme\Data_Reader.cpp" />
@@ -171,6 +172,7 @@
     <ClCompile Include="Nsf2Wav.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CDataPath.h" />
     <ClInclude Include="gme\blargg_common.h" />
     <ClInclude Include="gme\blargg_config.h" />
     <ClInclude Include="gme\blargg_endian.h" />

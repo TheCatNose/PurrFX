@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include "lib/CNesGme.h"
+#include "CDataPath.h"
 
 void showErrorMessage(const char* i_sMessage)
 {
@@ -13,7 +14,8 @@ int main()
 	// Settings //
 	//////////////
 
-	const char* sFileName   = "data/in/Gimmick!.nsf";
+	const char* sInputFile  = "Gimmick!.nsf";
+	const char* sOutputFile = "out.wav";
 	const int   nTrack      = 6;     // track index
 	const int   nTime       = 60;    // time in seconds
 	const int   nSampleRate = 44100; // sound quality
@@ -28,7 +30,8 @@ int main()
 		showErrorMessage("Can't set sound options");
 		return 1;
 	}
-	if (!oNes.open(sFileName))
+	std::string sInputPath = CDataPath::inputFile(sInputFile);
+	if (!oNes.open( sInputPath.data() ))
 	{
 		showErrorMessage("Can't open file");
 		return 1;
@@ -43,8 +46,10 @@ int main()
 	// WAV output //
 	////////////////
 
+	std::string sOutputPath = CDataPath::outputFile(sOutputFile);
+
 	FILE* pFile = nullptr;
-	fopen_s(&pFile, "data/out/out.wav", "wb");
+	fopen_s(&pFile, sOutputPath.data(), "wb");
 	if (pFile == nullptr)
 	{
 		showErrorMessage("Can't create output file");
