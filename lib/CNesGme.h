@@ -5,12 +5,12 @@
 #include <cstddef>
 #include "CNes.h"
 #include "DClass.h"
-#include "../gme/Music_Emu.h"
+#include "../gme/Nsf_Emu.h"
 
 namespace PurrFX
 {
 
-	class CNesGme : public CNes
+	class CNesGme : public CNes, private CGmeEventsReceiver
 	{
 	public:
 		~CNesGme();
@@ -22,6 +22,9 @@ namespace PurrFX
 
 		MAKE_NON_COPYABLE(CNesGme);
 	private:
+		// CGmeLogDataConsumer implementation
+		virtual void onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArg1, uint8_t i_nArg2);
+
 		Music_Emu* m_pEmu = nullptr;
 	};
 

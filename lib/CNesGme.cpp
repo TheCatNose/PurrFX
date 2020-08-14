@@ -34,6 +34,10 @@ namespace PurrFX
 		if (sError != NO_ERROR)
 			return false;
 
+		// Setup logging
+		Nes_Cpu* pNesCpu = static_cast<Nsf_Emu*>(m_pEmu)->cpu_();
+		pNesCpu->events_receiver = this;
+
 		// Load music file
 		sError = m_pEmu->load_file(i_sFileName);
 		return (sError == NO_ERROR);
@@ -61,6 +65,11 @@ namespace PurrFX
 
 		gme_err_t sError = m_pEmu->play(nSize, pData);
 		return (sError == NO_ERROR);
+	}
+
+	void CNesGme::onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArg1, uint8_t i_nArg2)
+	{
+		// TODO: Print or store somewhere
 	}
 
 }
