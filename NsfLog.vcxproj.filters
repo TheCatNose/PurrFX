@@ -99,6 +99,12 @@
     <ClCompile Include="lib\CNesLogItem.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="lib\CNesLogFileWriter.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="lib\CNesLogItemCpuInstruction.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDataPath.h">
@@ -195,6 +201,12 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="lib\CNesLogItem.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\CNesLogItemCpuInstruction.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\CNesLogFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
