@@ -168,6 +168,7 @@
     <ClCompile Include="gme\Nsfe_Emu.cpp" />
     <ClCompile Include="gme\Nsf_Emu.cpp" />
     <ClCompile Include="gme\PurrFX_Stuff.cpp" />
+    <ClCompile Include="lib\CBufferedFileWriter.cpp" />
     <ClCompile Include="lib\CNes.cpp" />
     <ClCompile Include="lib\CNesCpuInstructionInfo.cpp" />
     <ClCompile Include="lib\CNesGme.cpp" />
@@ -205,6 +206,7 @@
     <ClInclude Include="gme\Nsfe_Emu.h" />
     <ClInclude Include="gme\Nsf_Emu.h" />
     <ClInclude Include="gme\PurrFX_Stuff.h" />
+    <ClInclude Include="lib\CBufferedFileWriter.h" />
     <ClInclude Include="lib\CNes.h" />
     <ClInclude Include="lib\CNesCpuInstructionInfo.h" />
     <ClInclude Include="lib\CNesGme.h" />

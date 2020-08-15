@@ -108,6 +108,9 @@
     <ClCompile Include="lib\CNesCpuInstructionInfo.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="lib\CBufferedFileWriter.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDataPath.h">
@@ -216,6 +219,9 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="lib\CNesCpuInstructionInfo.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\CBufferedFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
