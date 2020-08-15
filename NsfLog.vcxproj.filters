@@ -209,5 +209,8 @@
     <ClInclude Include="lib\CNesLogFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
+    <ClInclude Include="lib\ENesLogItemType.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
