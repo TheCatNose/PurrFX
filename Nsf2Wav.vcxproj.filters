@@ -105,6 +105,9 @@
     <ClCompile Include="lib\CNesLogFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="lib\CNesCpuInstructionInfo.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -210,6 +213,9 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="lib\ENesLogItemType.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="lib\CNesCpuInstructionInfo.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
