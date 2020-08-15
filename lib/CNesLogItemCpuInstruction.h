@@ -17,6 +17,9 @@ namespace PurrFX
 		uint8_t  arg1() const;
 		uint8_t  arg2() const;
 
+		// CNesLogItem implementation
+		virtual ENesLogItemType type() const;
+
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNesLogItemCpuInstruction);
 	private:
 		uint16_t m_nAddress;

@@ -14,4 +14,9 @@ namespace PurrFX
 	uint8_t  CNesLogItemCpuInstruction::opcode()  const { return m_nOpcode; }
 	uint8_t  CNesLogItemCpuInstruction::arg1()    const { return m_nArg1; }
 	uint8_t  CNesLogItemCpuInstruction::arg2()    const { return m_nArg2; }
+
+	ENesLogItemType CNesLogItemCpuInstruction::type() const
+	{
+		return ENesLogItemType::CpuInstruction;
+	}
 }
