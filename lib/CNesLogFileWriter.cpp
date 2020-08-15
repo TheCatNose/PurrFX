@@ -18,19 +18,22 @@ namespace PurrFX
 		if (m_pFile == nullptr)
 			return;
 
-		auto* pItemCpuInstruction = dynamic_cast<const CNesLogItemCpuInstruction*>(i_pLogItem);
-
-		if (pItemCpuInstruction != nullptr)
-		{
-			fprintf(m_pFile,
-				"$%04X: %02X%02X%02X\n",
-				pItemCpuInstruction->address(),
-				pItemCpuInstruction->opcode(),
-				pItemCpuInstruction->arg1(),
-				pItemCpuInstruction->arg2()
-			);
-		}
-		else
+		switch(i_pLogItem->type())
+ 		{
+		case ENesLogItemType::CpuInstruction:
+			{
+				auto* pLogItem = dynamic_cast<const CNesLogItemCpuInstruction*>(i_pLogItem);
+				fprintf(m_pFile,
+					"$%04X: %02X%02X%02X\n",
+					pLogItem->address(),
+					pLogItem->opcode(),
+					pLogItem->arg1(),
+					pLogItem->arg2()
+				);
+			}
+			break;
+		default:
 			assert(false && "Unknown log item type");
+		}
 	}
 }
