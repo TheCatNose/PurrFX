@@ -3,9 +3,11 @@
 
 #include <cstdio>
 #include <cassert>
+#include <string>
 #include "DClass.h"
 #include "CNesLogDataConsumer.h"
 #include "CNesLogItemCpuInstruction.h"
+#include "CNesCpuInstructionInfo.h"
 
 namespace PurrFX
 {
