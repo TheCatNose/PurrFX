@@ -8,6 +8,7 @@
 #include "CNesLogDataConsumer.h"
 #include "CNesLogItemCpuInstruction.h"
 #include "CNesCpuInstructionInfo.h"
+#include "CBufferedFileWriter.h"
 
 namespace PurrFX
 {
@@ -15,13 +16,12 @@ namespace PurrFX
 	{
 	public:
 		CNesLogFileWriter(const char* i_sFileName);
-		~CNesLogFileWriter();
 
 		virtual void onNewItem(const CNesLogItem* i_pLogItem);
 
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNesLogFileWriter)
 		CLASS_MAKE_NON_COPYABLE(CNesLogFileWriter)
 	private:
-		FILE* m_pFile = nullptr;
+		CBufferedFileWriter m_oFile;
 	};
 }
