@@ -171,7 +171,9 @@
     <ClCompile Include="lib\CNes.cpp" />
     <ClCompile Include="lib\CNesGme.cpp" />
     <ClCompile Include="lib\CNesLogDataConsumer.cpp" />
+    <ClCompile Include="lib\CNesLogFileWriter.cpp" />
     <ClCompile Include="lib\CNesLogItem.cpp" />
+    <ClCompile Include="lib\CNesLogItemCpuInstruction.cpp" />
     <ClCompile Include="Nsf2Wav.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -205,7 +207,9 @@
     <ClInclude Include="lib\CNes.h" />
     <ClInclude Include="lib\CNesGme.h" />
     <ClInclude Include="lib\CNesLogDataConsumer.h" />
+    <ClInclude Include="lib\CNesLogFileWriter.h" />
     <ClInclude Include="lib\CNesLogItem.h" />
+    <ClInclude Include="lib\CNesLogItemCpuInstruction.h" />
     <ClInclude Include="lib\DClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
