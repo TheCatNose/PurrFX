@@ -10,12 +10,12 @@ namespace PurrFX
 	class CNesLogItemCpuInstruction: public CNesLogItem
 	{
 	public:
-		CNesLogItemCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArg1, uint8_t i_nArg2);
+		CNesLogItemCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2);
 
 		uint16_t address() const;
 		uint8_t  opcode() const;
-		uint8_t  arg1() const;
-		uint8_t  arg2() const;
+		uint8_t  argByte1() const;
+		uint8_t  argByte2() const;
 
 		// CNesLogItem implementation
 		virtual ENesLogItemType type() const;
@@ -24,7 +24,7 @@ namespace PurrFX
 	private:
 		uint16_t m_nAddress;
 		uint8_t  m_nOpcode;
-		uint8_t  m_nArg1;
-		uint8_t  m_nArg2;
+		uint8_t  m_nArgByte1;
+		uint8_t  m_nArgByte2;
 	};
 }

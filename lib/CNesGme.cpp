@@ -67,13 +67,13 @@ namespace PurrFX
 		return (sError == NO_ERROR);
 	}
 
-	void CNesGme::onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArg1, uint8_t i_nArg2)
+	void CNesGme::onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2)
 	{
 		auto* pConsumer = logDataConsumer();
 		if (pConsumer == nullptr)
 			return;
 
-		CNesLogItemCpuInstruction oLogItem(i_nAddress, i_nOpcode, i_nArg1, i_nArg2);
+		CNesLogItemCpuInstruction oLogItem(i_nAddress, i_nOpcode, i_nArgByte1, i_nArgByte2);
 		pConsumer->onNewItem(&oLogItem);
 	}
 

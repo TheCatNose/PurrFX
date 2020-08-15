@@ -25,7 +25,7 @@ namespace PurrFX
 		CLASS_USE_DEFAULT_CONSTRUCTOR(CNesGme)
 	private:
 		// CGmeLogDataConsumer implementation
-		virtual void onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArg1, uint8_t i_nArg2);
+		virtual void onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2);
 
 		Music_Emu* m_pEmu = nullptr;
 	};
