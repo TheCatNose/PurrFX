@@ -43,12 +43,12 @@ namespace PurrFX
 				assert(nArgBytes >= 0 && nArgBytes <= 2);
 				if (nArgBytes >= 1)
 				{
-					sprintf_s<32>(sBuffer, " %02X", pLogItem->arg1());
+					sprintf_s<32>(sBuffer, " %02X", pLogItem->argByte1());
 					sLine += sBuffer;
 				}
 				if (nArgBytes == 2)
 				{
-					sprintf_s<32>(sBuffer, " %02X", pLogItem->arg2());
+					sprintf_s<32>(sBuffer, " %02X", pLogItem->argByte2());
 					sLine += sBuffer;
 				}
 
