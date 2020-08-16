@@ -72,6 +72,16 @@ namespace PurrFX
 				m_oFile.write("\n", 1);
 			}
 			break;
+		case ENesLogItemType::FrameEnd:
+			{
+				auto* pLogItem = dynamic_cast<const CNesLogItemFrameEnd*>(i_pLogItem);
+				
+				char sBuffer[32];
+				int nChars = sprintf_s<32>(sBuffer, "frame %d\n", pLogItem->newFrame());
+				if (nChars > 0)
+					m_oFile.write(sBuffer, nChars);
+			}
+			break;
 		default:
 			assert(false && "Unknown log item type");
 		}

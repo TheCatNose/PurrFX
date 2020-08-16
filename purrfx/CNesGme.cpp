@@ -99,4 +99,14 @@ namespace PurrFX
 		pConsumer->onNewItem(&oLogItem);
 	}
 
+	void CNesGme::onGmeEventFrameEnd(int i_nNewFrame)
+	{
+		auto* pConsumer = logDataConsumer();
+		if (pConsumer == nullptr)
+			return;
+
+		CNesLogItemFrameEnd oLogItem(i_nNewFrame);
+		pConsumer->onNewItem(&oLogItem);
+	}
+
 }
