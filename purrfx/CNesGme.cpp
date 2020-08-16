@@ -77,4 +77,26 @@ namespace PurrFX
 		pConsumer->onNewItem(&oLogItem);
 	}
 
+	void CNesGme::onGmeEventCodeLabel(char i_cLabelName)
+	{
+		auto* pConsumer = logDataConsumer();
+		if (pConsumer == nullptr)
+			return;
+
+		ENesCodeLabelType eType = ENesCodeLabelType::Undefined;
+		switch (i_cLabelName)
+		{
+		case 'i':
+			eType = ENesCodeLabelType::InitAddress;
+			break;
+		case 'p':
+			eType = ENesCodeLabelType::PlayAddress;
+			break;
+		}
+		assert(eType != ENesCodeLabelType::Undefined);
+
+		CNesLogItemCodeLabel oLogItem(eType);
+		pConsumer->onNewItem(&oLogItem);
+	}
+
 }
