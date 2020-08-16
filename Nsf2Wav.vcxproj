@@ -175,6 +175,7 @@
     <ClCompile Include="purrfx\CNesLogDataConsumer.cpp" />
     <ClCompile Include="purrfx\CNesLogFileWriter.cpp" />
     <ClCompile Include="purrfx\CNesLogItem.cpp" />
+    <ClCompile Include="purrfx\CNesLogItemCodeLabel.cpp" />
     <ClCompile Include="purrfx\CNesLogItemCpuInstruction.cpp" />
     <ClCompile Include="Nsf2Wav.cpp" />
   </ItemGroup>
@@ -213,8 +214,10 @@
     <ClInclude Include="purrfx\CNesLogDataConsumer.h" />
     <ClInclude Include="purrfx\CNesLogFileWriter.h" />
     <ClInclude Include="purrfx\CNesLogItem.h" />
+    <ClInclude Include="purrfx\CNesLogItemCodeLabel.h" />
     <ClInclude Include="purrfx\CNesLogItemCpuInstruction.h" />
     <ClInclude Include="purrfx\DClass.h" />
+    <ClInclude Include="purrfx\ENesCodeLabelType.h" />
     <ClInclude Include="purrfx\ENesLogItemType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

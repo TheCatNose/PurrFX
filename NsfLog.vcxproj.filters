@@ -111,6 +111,9 @@
     <ClCompile Include="purrfx\CBufferedFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CNesLogItemCodeLabel.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDataPath.h">
@@ -200,9 +203,6 @@
     <ClInclude Include="purrfx\DClass.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\PurrFX_Stuff.h">
-      <Filter>gme</Filter>
-    </ClInclude>
     <ClInclude Include="purrfx\CNesLogDataConsumer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
@@ -222,6 +222,15 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CBufferedFileWriter.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\PurrFX_Stuff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CNesLogItemCodeLabel.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\ENesCodeLabelType.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
