@@ -6,5 +6,6 @@ namespace PurrFX
 	{
 		CpuInstruction,
 		CodeLabel,
+		FrameEnd,
 	};
 }
