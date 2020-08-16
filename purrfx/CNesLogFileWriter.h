@@ -7,6 +7,7 @@
 #include "DClass.h"
 #include "CNesLogDataConsumer.h"
 #include "CNesLogItemCpuInstruction.h"
+#include "CNesLogItemCodeLabel.h"
 #include "CNesCpuInstructionInfo.h"
 #include "CBufferedFileWriter.h"
 

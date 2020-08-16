@@ -52,6 +52,26 @@ namespace PurrFX
 				m_oFile.write("\n", 1);
 			}
 			break;
+		case ENesLogItemType::CodeLabel:
+			{
+				auto* pLogItem = dynamic_cast<const CNesLogItemCodeLabel*>(i_pLogItem);
+
+				std::string sName;
+				switch (pLogItem->labelType())
+				{
+				case ENesCodeLabelType::InitAddress:
+					sName = "init:";
+					break;
+				case ENesCodeLabelType::PlayAddress:
+					sName = "play:";
+					break;
+				}
+				assert(sName != std::string());
+
+				m_oFile.write(sName.data(), sName.size());
+				m_oFile.write("\n", 1);
+			}
+			break;
 		default:
 			assert(false && "Unknown log item type");
 		}
