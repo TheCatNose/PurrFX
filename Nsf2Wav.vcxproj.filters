@@ -114,6 +114,9 @@
     <ClCompile Include="purrfx\CNesLogItemCodeLabel.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CNesLogItemFrameEnd.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -231,6 +234,9 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\ENesCodeLabelType.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CNesLogItemFrameEnd.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>

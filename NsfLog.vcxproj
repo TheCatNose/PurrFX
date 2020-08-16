@@ -178,6 +178,7 @@
     <ClCompile Include="purrfx\CNesLogItemCodeLabel.cpp" />
     <ClCompile Include="purrfx\CNesLogItemCpuInstruction.cpp" />
     <ClCompile Include="NsfLog.cpp" />
+    <ClCompile Include="purrfx\CNesLogItemFrameEnd.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDataPath.h" />
@@ -216,6 +217,7 @@
     <ClInclude Include="purrfx\CNesLogItem.h" />
     <ClInclude Include="purrfx\CNesLogItemCodeLabel.h" />
     <ClInclude Include="purrfx\CNesLogItemCpuInstruction.h" />
+    <ClInclude Include="purrfx\CNesLogItemFrameEnd.h" />
     <ClInclude Include="purrfx\DClass.h" />
     <ClInclude Include="purrfx\ENesCodeLabelType.h" />
     <ClInclude Include="purrfx\ENesLogItemType.h" />
