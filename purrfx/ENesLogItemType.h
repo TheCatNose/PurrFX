@@ -5,5 +5,6 @@ namespace PurrFX
 	enum class ENesLogItemType
 	{
 		CpuInstruction,
+		CodeLabel,
 	};
 }
