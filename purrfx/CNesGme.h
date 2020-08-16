@@ -6,7 +6,7 @@
 #include "CNes.h"
 #include "DClass.h"
 #include "../gme/Nsf_Emu.h"
-#include "../lib/CNesLogItemCpuInstruction.h"
+#include "CNesLogItemCpuInstruction.h"
 
 namespace PurrFX
 {

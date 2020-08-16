@@ -168,14 +168,14 @@
     <ClCompile Include="gme\Nsfe_Emu.cpp" />
     <ClCompile Include="gme\Nsf_Emu.cpp" />
     <ClCompile Include="gme\PurrFX_Stuff.cpp" />
-    <ClCompile Include="lib\CBufferedFileWriter.cpp" />
-    <ClCompile Include="lib\CNes.cpp" />
-    <ClCompile Include="lib\CNesCpuInstructionInfo.cpp" />
-    <ClCompile Include="lib\CNesGme.cpp" />
-    <ClCompile Include="lib\CNesLogDataConsumer.cpp" />
-    <ClCompile Include="lib\CNesLogFileWriter.cpp" />
-    <ClCompile Include="lib\CNesLogItem.cpp" />
-    <ClCompile Include="lib\CNesLogItemCpuInstruction.cpp" />
+    <ClCompile Include="purrfx\CBufferedFileWriter.cpp" />
+    <ClCompile Include="purrfx\CNes.cpp" />
+    <ClCompile Include="purrfx\CNesCpuInstructionInfo.cpp" />
+    <ClCompile Include="purrfx\CNesGme.cpp" />
+    <ClCompile Include="purrfx\CNesLogDataConsumer.cpp" />
+    <ClCompile Include="purrfx\CNesLogFileWriter.cpp" />
+    <ClCompile Include="purrfx\CNesLogItem.cpp" />
+    <ClCompile Include="purrfx\CNesLogItemCpuInstruction.cpp" />
     <ClCompile Include="NsfLog.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -206,16 +206,16 @@
     <ClInclude Include="gme\Nsfe_Emu.h" />
     <ClInclude Include="gme\Nsf_Emu.h" />
     <ClInclude Include="gme\PurrFX_Stuff.h" />
-    <ClInclude Include="lib\CBufferedFileWriter.h" />
-    <ClInclude Include="lib\CNes.h" />
-    <ClInclude Include="lib\CNesCpuInstructionInfo.h" />
-    <ClInclude Include="lib\CNesGme.h" />
-    <ClInclude Include="lib\CNesLogDataConsumer.h" />
-    <ClInclude Include="lib\CNesLogFileWriter.h" />
-    <ClInclude Include="lib\CNesLogItem.h" />
-    <ClInclude Include="lib\CNesLogItemCpuInstruction.h" />
-    <ClInclude Include="lib\DClass.h" />
-    <ClInclude Include="lib\ENesLogItemType.h" />
+    <ClInclude Include="purrfx\CBufferedFileWriter.h" />
+    <ClInclude Include="purrfx\CNes.h" />
+    <ClInclude Include="purrfx\CNesCpuInstructionInfo.h" />
+    <ClInclude Include="purrfx\CNesGme.h" />
+    <ClInclude Include="purrfx\CNesLogDataConsumer.h" />
+    <ClInclude Include="purrfx\CNesLogFileWriter.h" />
+    <ClInclude Include="purrfx\CNesLogItem.h" />
+    <ClInclude Include="purrfx\CNesLogItemCpuInstruction.h" />
+    <ClInclude Include="purrfx\DClass.h" />
+    <ClInclude Include="purrfx\ENesLogItemType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,6 @@
 #include <iostream>
-#include "lib/CNesGme.h"
-#include "lib/CNesLogFileWriter.h"
+#include "purrfx/CNesGme.h"
+#include "purrfx/CNesLogFileWriter.h"
 #include "CDataPath.h"
 
 void showErrorMessage(const char* i_sMessage)

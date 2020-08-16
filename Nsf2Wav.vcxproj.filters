@@ -81,10 +81,10 @@
     <ClCompile Include="gme\Nsfe_Emu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="lib\CNes.cpp">
+    <ClCompile Include="purrfx\CNes.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="lib\CNesGme.cpp">
+    <ClCompile Include="purrfx\CNesGme.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
     <ClCompile Include="CDataPath.cpp">
@@ -93,22 +93,22 @@
     <ClCompile Include="gme\PurrFX_Stuff.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="lib\CNesLogDataConsumer.cpp">
+    <ClCompile Include="purrfx\CNesLogDataConsumer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="lib\CNesLogItem.cpp">
+    <ClCompile Include="purrfx\CNesLogItem.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="lib\CNesLogItemCpuInstruction.cpp">
+    <ClCompile Include="purrfx\CNesLogItemCpuInstruction.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="lib\CNesLogFileWriter.cpp">
+    <ClCompile Include="purrfx\CNesLogFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="lib\CNesCpuInstructionInfo.cpp">
+    <ClCompile Include="purrfx\CNesCpuInstructionInfo.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="lib\CBufferedFileWriter.cpp">
+    <ClCompile Include="purrfx\CBufferedFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
   </ItemGroup>
@@ -188,13 +188,13 @@
     <ClInclude Include="gme\Nsfe_Emu.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="lib\CNes.h">
+    <ClInclude Include="purrfx\CNes.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="lib\CNesGme.h">
+    <ClInclude Include="purrfx\CNesGme.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="lib\DClass.h">
+    <ClInclude Include="purrfx\DClass.h">
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="CDataPath.h">
@@ -203,25 +203,25 @@
     <ClInclude Include="gme\PurrFX_Stuff.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="lib\CNesLogItem.h">
+    <ClInclude Include="purrfx\CNesLogItem.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="lib\CNesLogDataConsumer.h">
+    <ClInclude Include="purrfx\CNesLogDataConsumer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="lib\CNesLogItemCpuInstruction.h">
+    <ClInclude Include="purrfx\CNesLogItemCpuInstruction.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="lib\CNesLogFileWriter.h">
+    <ClInclude Include="purrfx\CNesLogFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="lib\ENesLogItemType.h">
+    <ClInclude Include="purrfx\ENesLogItemType.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="lib\CNesCpuInstructionInfo.h">
+    <ClInclude Include="purrfx\CNesCpuInstructionInfo.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="lib\CBufferedFileWriter.h">
+    <ClInclude Include="purrfx\CBufferedFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>

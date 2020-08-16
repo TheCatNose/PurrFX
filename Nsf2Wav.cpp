@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "lib/CNesGme.h"
+#include "purrfx/CNesGme.h"
 #include "CDataPath.h"
 
 void showErrorMessage(const char* i_sMessage)
