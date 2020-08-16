@@ -188,9 +188,18 @@ loop:
 		bool at_init = (addr == init_addr);
 		bool at_play = (addr == play_addr);
 
-		if (at_init) events_receiver->onGmeEventCodeLabel('i');
-		if (at_play) events_receiver->onGmeEventCodeLabel('p');
+		if (at_init)
+		{
+			events_receiver->onGmeEventCodeLabel('i');
+			frame = -1;
+		}
+		if (at_play)
+			events_receiver->onGmeEventCodeLabel('p');
+
 		events_receiver->onGmeEventCpuInstruction(addr, opcode, instr[0], instr[1]);
+
+		if (opcode == 0xF2)
+			events_receiver->onGmeEventFrameEnd(++frame);
 	}
 	// </PurrFX>
 	

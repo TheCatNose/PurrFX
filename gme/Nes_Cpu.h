@@ -68,6 +68,8 @@ public:
 	CGmeEventsReceiver* events_receiver = nullptr;
 	uint16_t init_addr;
 	uint16_t play_addr;
+private:
+	int frame = -1;
 	// </PurrFX>
 public:
 	Nes_Cpu() { state = &state_; }
