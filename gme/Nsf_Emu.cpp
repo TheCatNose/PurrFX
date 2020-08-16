@@ -302,6 +302,10 @@ blargg_err_t Nsf_Emu::load_( Data_Reader& in )
 			w = "Corrupt file (invalid load/init/play address)";
 		return w;
 	}
+	// <PurrFX>
+	cpu::init_addr = init_addr;
+	cpu::play_addr = play_addr;
+	// </PurrFX>
 	
 	rom.set_addr( load_addr % bank_size );
 	int total_banks = rom.size() / bank_size;

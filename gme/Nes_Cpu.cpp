@@ -183,7 +183,15 @@ loop:
 
 	// <PurrFX>
 	if (events_receiver != nullptr)
-		events_receiver->onGmeEventCpuInstruction(pc - 1, opcode, instr[0], instr[1]);
+	{
+		uint16_t addr = pc - 1;
+		bool at_init = (addr == init_addr);
+		bool at_play = (addr == play_addr);
+
+		if (at_init) events_receiver->onGmeEventCodeLabel('i');
+		if (at_play) events_receiver->onGmeEventCodeLabel('p');
+		events_receiver->onGmeEventCpuInstruction(addr, opcode, instr[0], instr[1]);
+	}
 	// </PurrFX>
 	
 	static uint8_t const clock_table [256] =
