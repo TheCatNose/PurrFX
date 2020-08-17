@@ -5,6 +5,8 @@
 // Notes:
 // * It won't own CNesLogDataConsumer instance.
 
+#include <bitset>
+#include <cassert>
 #include "CNesLogDataConsumer.h"
 
 namespace PurrFX
@@ -23,14 +25,18 @@ namespace PurrFX
 		int  soundSampleRate();
 
 		void setLogDataConsumer(CNesLogDataConsumer* i_pConsumer);
+		void setLogItemTypeEnabled(ENesLogItemType i_eType);
+		void setLogItemTypeDisabled(ENesLogItemType i_eType);
 
 	protected:
-		CNesLogDataConsumer* logDataConsumer() const;
+		bool logEnabled() const;
+		void logAddItem(const CNesLogItem& i_rItem);
 
 	private:
 		int m_nSoundSampleRate = 44100;
 
 		CNesLogDataConsumer* m_pLogDataConsumer = nullptr;
+		std::bitset<32> m_aLogItemTypesDisabled;
 	};
 
 }
