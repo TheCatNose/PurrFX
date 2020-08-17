@@ -28,8 +28,8 @@ int main()
 	std::string sOutputPath = CDataPath::outputFile(sOutputFile);
 	
 	PurrFX::CNesGme oNes;
-	oNes.setLogItemTypeDisabled(PurrFX::ENesLogItemType::CpuInstruction);
-	oNes.setLogItemTypeDisabled(PurrFX::ENesLogItemType::CodeLabel);
+	oNes.logItemTypeDisable(PurrFX::ENesLogItemType::CpuInstruction);
+	oNes.logItemTypeDisable(PurrFX::ENesLogItemType::CodeLabel);
 	PurrFX::CNesLogFileWriter oLogWriter( sOutputPath.data() );
 	oNes.setLogDataConsumer(&oLogWriter);
 
