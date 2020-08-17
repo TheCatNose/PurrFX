@@ -1,5 +1,5 @@
 #pragma once
-// NES log item for frame end
+// NES log item for frame start
 
 #include <cassert>
 #include "DClass.h"
