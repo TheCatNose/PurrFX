@@ -38,8 +38,8 @@ namespace PurrFX
 
 	public:
 		void setLogDataConsumer(CNesLogDataConsumer* i_pConsumer);
-		void setLogItemTypeEnabled(ENesLogItemType i_eType);
-		void setLogItemTypeDisabled(ENesLogItemType i_eType);
+		void logItemTypeEnable(ENesLogItemType i_eType);
+		void logItemTypeDisable(ENesLogItemType i_eType);
 
 	protected:
 		bool logEnabled() const;

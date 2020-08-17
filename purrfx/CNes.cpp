@@ -28,14 +28,14 @@ void PurrFX::CNes::setLogDataConsumer(CNesLogDataConsumer* i_pConsumer)
 	m_pLogDataConsumer = i_pConsumer;
 }
 
-void PurrFX::CNes::setLogItemTypeEnabled(ENesLogItemType i_eType)
+void PurrFX::CNes::logItemTypeEnable(ENesLogItemType i_eType)
 {
 	size_t nBit = size_t(i_eType);
 	assert(nBit < m_aLogItemTypesDisabled.size());
 	m_aLogItemTypesDisabled.reset(nBit);
 }
 
-void PurrFX::CNes::setLogItemTypeDisabled(ENesLogItemType i_eType)
+void PurrFX::CNes::logItemTypeDisable(ENesLogItemType i_eType)
 {
 	size_t nBit = size_t(i_eType);
 	assert(nBit < m_aLogItemTypesDisabled.size());
