@@ -194,12 +194,12 @@ loop:
 			frame = -1;
 		}
 		if (at_play)
+		{
+			events_receiver->onGmeEventFrameStart(++frame);
 			events_receiver->onGmeEventCodeLabel('p');
+		}
 
 		events_receiver->onGmeEventCpuInstruction(addr, opcode, instr[0], instr[1]);
-
-		if (opcode == 0xF2)
-			events_receiver->onGmeEventFrameEnd(++frame);
 	}
 	// </PurrFX>
 	
