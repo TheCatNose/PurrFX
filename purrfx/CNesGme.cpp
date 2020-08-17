@@ -69,18 +69,16 @@ namespace PurrFX
 
 	void CNesGme::onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2)
 	{
-		auto* pConsumer = logDataConsumer();
-		if (pConsumer == nullptr)
+		if (!logEnabled())
 			return;
 
 		CNesLogItemCpuInstruction oLogItem(i_nAddress, i_nOpcode, i_nArgByte1, i_nArgByte2);
-		pConsumer->onNewItem(&oLogItem);
+		logAddItem(oLogItem);
 	}
 
 	void CNesGme::onGmeEventCodeLabel(char i_cLabelName)
 	{
-		auto* pConsumer = logDataConsumer();
-		if (pConsumer == nullptr)
+		if (!logEnabled())
 			return;
 
 		ENesCodeLabelType eType = ENesCodeLabelType::Undefined;
@@ -96,17 +94,16 @@ namespace PurrFX
 		assert(eType != ENesCodeLabelType::Undefined);
 
 		CNesLogItemCodeLabel oLogItem(eType);
-		pConsumer->onNewItem(&oLogItem);
+		logAddItem(oLogItem);
 	}
 
 	void CNesGme::onGmeEventFrameEnd(int i_nNewFrame)
 	{
-		auto* pConsumer = logDataConsumer();
-		if (pConsumer == nullptr)
+		if (!logEnabled())
 			return;
 
 		CNesLogItemFrameEnd oLogItem(i_nNewFrame);
-		pConsumer->onNewItem(&oLogItem);
+		logAddItem(oLogItem);
 	}
 
 }
