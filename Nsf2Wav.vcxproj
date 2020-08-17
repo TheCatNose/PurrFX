@@ -175,6 +175,7 @@
     <ClCompile Include="purrfx\CNesLogDataConsumer.cpp" />
     <ClCompile Include="purrfx\CNesLogFileWriter.cpp" />
     <ClCompile Include="purrfx\CNesLogItem.cpp" />
+    <ClCompile Include="purrfx\CNesLogItemApuRegisterWrite.cpp" />
     <ClCompile Include="purrfx\CNesLogItemCodeLabel.cpp" />
     <ClCompile Include="purrfx\CNesLogItemCpuInstruction.cpp" />
     <ClCompile Include="Nsf2Wav.cpp" />
@@ -215,6 +216,7 @@
     <ClInclude Include="purrfx\CNesLogDataConsumer.h" />
     <ClInclude Include="purrfx\CNesLogFileWriter.h" />
     <ClInclude Include="purrfx\CNesLogItem.h" />
+    <ClInclude Include="purrfx\CNesLogItemApuRegisterWrite.h" />
     <ClInclude Include="purrfx\CNesLogItemCodeLabel.h" />
     <ClInclude Include="purrfx\CNesLogItemCpuInstruction.h" />
     <ClInclude Include="purrfx\CNesLogItemFrameStart.h" />
