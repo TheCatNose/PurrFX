@@ -21,9 +21,22 @@ namespace PurrFX
 		virtual bool setTrack(int i_nTrack) = 0;
 		virtual bool render(char* o_pData, size_t i_nDataSize) = 0;
 
+		///////////////////
+		// Sound options //
+		///////////////////
+
+	public:
 		bool setSoundOptions(int i_nSampleRate);
 		int  soundSampleRate();
 
+	private:
+		int m_nSoundSampleRate = 44100;
+
+		/////////////
+		// Logging //
+		/////////////
+
+	public:
 		void setLogDataConsumer(CNesLogDataConsumer* i_pConsumer);
 		void setLogItemTypeEnabled(ENesLogItemType i_eType);
 		void setLogItemTypeDisabled(ENesLogItemType i_eType);
@@ -33,8 +46,6 @@ namespace PurrFX
 		void logAddItem(const CNesLogItem& i_rItem);
 
 	private:
-		int m_nSoundSampleRate = 44100;
-
 		CNesLogDataConsumer* m_pLogDataConsumer = nullptr;
 		std::bitset<32> m_aLogItemTypesDisabled;
 	};
