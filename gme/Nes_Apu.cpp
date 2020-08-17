@@ -288,6 +288,10 @@ void Nes_Apu::write_register( nes_time_t time, nes_addr_t addr, int data )
 	// Ignore addresses outside range
 	if ( unsigned (addr - start_addr) > end_addr - start_addr )
 		return;
+
+	// <PurrFX>
+	// Here we can catch APU register writes
+	// </PurrFX>
 	
 	run_until_( time );
 	
