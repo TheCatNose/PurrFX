@@ -35,8 +35,11 @@ namespace PurrFX
 			return false;
 
 		// Setup logging
-		Nes_Cpu* pNesCpu = static_cast<Nsf_Emu*>(m_pEmu)->cpu_();
+		Nsf_Emu* pNsfEmu = static_cast<Nsf_Emu*>(m_pEmu);
+		Nes_Cpu* pNesCpu = pNsfEmu->cpu_();
 		pNesCpu->events_receiver = this;
+		pNsfEmu->apu_()->events_receiver = this;
+		
 
 		// Load music file
 		sError = m_pEmu->load_file(i_sFileName);
@@ -103,6 +106,15 @@ namespace PurrFX
 			return;
 
 		CNesLogItemFrameStart oLogItem(i_nFrame);
+		logAddItem(oLogItem);
+	}
+
+	void CNesGme::onGmeEventApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue)
+	{
+		if (!logEnabled())
+			return;
+
+		CNesLogItemApuRegisterWrite oLogItem(i_nRegister, i_nValue);
 		logAddItem(oLogItem);
 	}
 
