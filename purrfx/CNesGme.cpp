@@ -97,12 +97,12 @@ namespace PurrFX
 		logAddItem(oLogItem);
 	}
 
-	void CNesGme::onGmeEventFrameEnd(int i_nNewFrame)
+	void CNesGme::onGmeEventFrameStart(int i_nFrame)
 	{
 		if (!logEnabled())
 			return;
 
-		CNesLogItemFrameEnd oLogItem(i_nNewFrame);
+		CNesLogItemFrameStart oLogItem(i_nFrame);
 		logAddItem(oLogItem);
 	}
 

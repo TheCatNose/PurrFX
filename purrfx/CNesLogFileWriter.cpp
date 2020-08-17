@@ -72,9 +72,9 @@ namespace PurrFX
 				m_oFile.write("\n", 1);
 			}
 			break;
-		case ENesLogItemType::FrameEnd:
+		case ENesLogItemType::FrameStart:
 			{
-				auto* pLogItem = dynamic_cast<const CNesLogItemFrameEnd*>(i_pLogItem);
+				auto* pLogItem = dynamic_cast<const CNesLogItemFrameStart*>(i_pLogItem);
 				
 				char sBuffer[32];
 				int nChars = sprintf_s<32>(sBuffer, "frame %d\n", pLogItem->newFrame());

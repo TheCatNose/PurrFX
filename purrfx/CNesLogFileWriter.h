@@ -8,7 +8,7 @@
 #include "CNesLogDataConsumer.h"
 #include "CNesLogItemCpuInstruction.h"
 #include "CNesLogItemCodeLabel.h"
-#include "CNesLogItemFrameEnd.h"
+#include "CNesLogItemFrameStart.h"
 #include "CNesCpuInstructionInfo.h"
 #include "CBufferedFileWriter.h"
 

@@ -8,7 +8,7 @@
 #include "../gme/Nsf_Emu.h"
 #include "CNesLogItemCpuInstruction.h"
 #include "CNesLogItemCodeLabel.h"
-#include "CNesLogItemFrameEnd.h"
+#include "CNesLogItemFrameStart.h"
 
 namespace PurrFX
 {
@@ -29,7 +29,7 @@ namespace PurrFX
 		// CGmeLogDataConsumer implementation
 		virtual void onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2);
 		virtual void onGmeEventCodeLabel(char i_cLabelName);
-		virtual void onGmeEventFrameEnd(int i_nNewFrame);
+		virtual void onGmeEventFrameStart(int i_nFrame);
 
 		Music_Emu* m_pEmu = nullptr;
 	};

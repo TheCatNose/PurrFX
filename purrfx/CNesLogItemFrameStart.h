@@ -7,17 +7,17 @@
 
 namespace PurrFX
 {
-	class CNesLogItemFrameEnd: public CNesLogItem
+	class CNesLogItemFrameStart: public CNesLogItem
 	{
 	public:
-		CNesLogItemFrameEnd(int i_nNewFrame);
+		CNesLogItemFrameStart(int i_nFrame);
 
 		int newFrame() const;
 
 		// CNesLogItem implementation
 		virtual ENesLogItemType type() const;
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNesLogItemFrameEnd);
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNesLogItemFrameStart);
 	private:
 		int m_nFrame;
 	};
