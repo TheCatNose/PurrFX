@@ -10,6 +10,9 @@ typedef blargg_long nes_time_t; // CPU clock cycle count
 typedef unsigned nes_addr_t; // 16-bit memory address
 
 #include "Nes_Oscs.h"
+// <PurrFX>
+#include "PurrFX_Stuff.h"
+// </PurrFX>
 
 struct apu_state_t;
 class Nes_Buffer;
@@ -94,6 +97,9 @@ public:
 	// accounted for (i.e. inserting CPU wait states).
 	void run_until( nes_time_t );
 	
+	// <PurrFX>
+	CGmeEventsReceiver* events_receiver = nullptr;
+	// </PurrFX>
 public:
 	Nes_Apu();
 	BLARGG_DISABLE_NOTHROW
