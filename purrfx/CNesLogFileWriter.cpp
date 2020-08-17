@@ -82,6 +82,18 @@ namespace PurrFX
 					m_oFile.write(sBuffer, nChars);
 			}
 			break;
+		case ENesLogItemType::ApuRegisterWrite:
+			{
+				auto* pLogItem = dynamic_cast<const CNesLogItemApuRegisterWrite*>(i_pLogItem);
+				char sBuffer[32];
+				int nChars = sprintf_s<32>(sBuffer, "$%04X <- %02X\n",
+					pLogItem->registerNumber(),
+					pLogItem->registerValue()
+					);
+				if (nChars > 0)
+					m_oFile.write(sBuffer, nChars);
+			}
+			break;
 		default:
 			assert(false && "Unknown log item type");
 		}
