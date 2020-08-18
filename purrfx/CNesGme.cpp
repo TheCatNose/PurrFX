@@ -10,13 +10,13 @@ namespace PurrFX
 			delete m_pEmu;
 	}
 
-	bool CNesGme::open(const char* i_sFileName)
+	bool CNesGme::prepareEmulator()
 	{
 		gme_err_t sError = nullptr;
 
 		// Determine file type
 		gme_type_t pFileType;
-		sError = gme_identify_file(i_sFileName, &pFileType);
+		sError = gme_identify_file("file.nsf", &pFileType);
 		if (sError != NO_ERROR || pFileType == nullptr || pFileType->system != "Nintendo NES")
 			return false;
 
@@ -39,11 +39,38 @@ namespace PurrFX
 		Nes_Cpu* pNesCpu = pNsfEmu->cpu_();
 		pNesCpu->events_receiver = this;
 		pNsfEmu->apu_()->events_receiver = this;
-		
 
-		// Load music file
-		sError = m_pEmu->load_file(i_sFileName);
-		return (sError == NO_ERROR);
+		return true;
+	}
+
+	bool CNesGme::open(const char* i_sFileName)
+	{
+		if (!prepareEmulator())
+			return false;
+
+		gme_err_t sError = m_pEmu->load_file(i_sFileName);
+		bool bSuccess = (sError == NO_ERROR);
+		if (!bSuccess)
+		{
+			delete m_pEmu;
+			m_pEmu = nullptr;
+		}
+		return bSuccess;
+	}
+
+	bool CNesGme::open(const char* i_pData, size_t i_nSize)
+	{
+		if (!prepareEmulator())
+			return false;
+
+		gme_err_t sError = m_pEmu->load_mem(i_pData, i_nSize);
+		bool bSuccess = (sError == NO_ERROR);
+		if (!bSuccess)
+		{
+			delete m_pEmu;
+			m_pEmu = nullptr;
+		}
+		return bSuccess;
 	}
 
 	bool CNesGme::setTrack(int i_nTrack)
