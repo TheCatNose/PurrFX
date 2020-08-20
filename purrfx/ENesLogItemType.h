@@ -7,6 +7,7 @@ namespace PurrFX
 		CpuInstruction,
 		CodeLabel,
 		FrameStart,
+		FrameEnd,
 		ApuRegisterWrite,
 	};
 }
