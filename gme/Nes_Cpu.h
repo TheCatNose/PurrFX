@@ -70,6 +70,7 @@ public:
 	uint16_t play_addr;
 private:
 	int frame = -1;
+	uint8_t prev_opcode = 0;
 	// </PurrFX>
 public:
 	Nes_Cpu() { state = &state_; }

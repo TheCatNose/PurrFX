@@ -200,6 +200,11 @@ loop:
 		}
 
 		events_receiver->onGmeEventCpuInstruction(addr, opcode, instr[0], instr[1]);
+
+		if (opcode == 0xF2 && opcode != prev_opcode)
+			events_receiver->onGmeEventFrameEnd();
+
+		prev_opcode = opcode;
 	}
 	// </PurrFX>
 	
