@@ -120,6 +120,9 @@
     <ClCompile Include="purrfx\CNesLogItemApuRegisterWrite.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CNesLogItemFrameEnd.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CDataPath.h">
@@ -243,6 +246,9 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CNesLogItemApuRegisterWrite.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CNesLogItemFrameEnd.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
