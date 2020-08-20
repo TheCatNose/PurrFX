@@ -30,6 +30,7 @@ int main()
 	PurrFX::CNesGme oNes;
 	oNes.logItemTypeDisable(PurrFX::ENesLogItemType::CpuInstruction);
 	oNes.logItemTypeDisable(PurrFX::ENesLogItemType::CodeLabel);
+	oNes.logItemTypeDisable(PurrFX::ENesLogItemType::FrameEnd);
 	PurrFX::CNesLogFileWriter oLogWriter( sOutputPath.data() );
 	oNes.setLogDataConsumer(&oLogWriter);
 
