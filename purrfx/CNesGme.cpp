@@ -136,6 +136,15 @@ namespace PurrFX
 		logAddItem(oLogItem);
 	}
 
+	void CNesGme::onGmeEventFrameEnd()
+	{
+		if (!logEnabled())
+			return;
+
+		CNesLogItemFrameEnd oLogItem;
+		logAddItem(oLogItem);
+	}
+
 	void CNesGme::onGmeEventApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue)
 	{
 		if (!logEnabled())
