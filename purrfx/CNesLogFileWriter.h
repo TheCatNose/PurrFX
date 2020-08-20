@@ -9,6 +9,7 @@
 #include "CNesLogItemCpuInstruction.h"
 #include "CNesLogItemCodeLabel.h"
 #include "CNesLogItemFrameStart.h"
+#include "CNesLogItemFrameEnd.h"
 #include "CNesLogItemApuRegisterWrite.h"
 #include "CNesCpuInstructionInfo.h"
 #include "CBufferedFileWriter.h"

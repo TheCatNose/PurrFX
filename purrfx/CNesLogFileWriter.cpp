@@ -82,6 +82,12 @@ namespace PurrFX
 					m_oFile.write(sBuffer, nChars);
 			}
 			break;
+		case ENesLogItemType::FrameEnd:
+			{
+				auto* pLogItem = dynamic_cast<const CNesLogItemFrameEnd*>(i_pLogItem);
+				m_oFile.write("frame end\n", 10);
+			}
+			break;
 		case ENesLogItemType::ApuRegisterWrite:
 			{
 				auto* pLogItem = dynamic_cast<const CNesLogItemApuRegisterWrite*>(i_pLogItem);
