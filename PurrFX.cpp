@@ -43,25 +43,27 @@ int main()
 	std::string sOutputPath = outputPath(sOutputFile);
 
 	PurrFX::CNesGme oNes;
+	PurrFX::CNes* pNes = &oNes;
+
 #if defined (DEMO_MODE_LOG)
-	oNes.logItemTypeDisable(PurrFX::ENesLogItemType::CpuInstruction);
-	oNes.logItemTypeDisable(PurrFX::ENesLogItemType::CodeLabel);
-	oNes.logItemTypeDisable(PurrFX::ENesLogItemType::FrameEnd);
+	pNes->logItemTypeDisable(PurrFX::ENesLogItemType::CpuInstruction);
+	pNes->logItemTypeDisable(PurrFX::ENesLogItemType::CodeLabel);
+	pNes->logItemTypeDisable(PurrFX::ENesLogItemType::FrameEnd);
 	PurrFX::CNesLogFileWriter oLogWriter( sOutputPath.data() );
-	oNes.setLogDataConsumer(&oLogWriter);
+	pNes->setLogDataConsumer(&oLogWriter);
 #endif
-	if (!oNes.setSoundOptions(nSampleRate))
+	if (!pNes->setSoundOptions(nSampleRate))
 	{
 		showErrorMessage("Can't set sound options");
 		return 1;
 	}
 	std::string sInputPath = inputPath(sInputFile);
-	if (!oNes.open( sInputPath.data() ))
+	if (!pNes->open( sInputPath.data() ))
 	{
 		showErrorMessage("Can't open file");
 		return 1;
 	}
-	if (!oNes.setTrack(nTrack))
+	if (!pNes->setTrack(nTrack))
 	{
 		showErrorMessage("Can't set track");
 		return 1;
@@ -117,7 +119,7 @@ int main()
 		char           aBuffer[nBufferSize];
 
 		// Fill buffer
-		if (!oNes.render(aBuffer, nBufferSize))
+		if (!pNes->render(aBuffer, nBufferSize))
 		{
 			showErrorMessage("Rendering error");
 			return 1;
