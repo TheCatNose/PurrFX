@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d8050d18-ce0a-401c-80b4-91d58bdf48dd}</ProjectGuid>
-    <RootNamespace>NsfLog</RootNamespace>
+    <ProjectGuid>{09d19de2-6392-44ae-bbd6-e5fb810fa9ac}</ProjectGuid>
+    <RootNamespace>PurrFX</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -147,7 +147,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CDataPath.cpp" />
     <ClCompile Include="gme\Blip_Buffer.cpp" />
     <ClCompile Include="gme\Classic_Emu.cpp" />
     <ClCompile Include="gme\Data_Reader.cpp" />
@@ -178,12 +177,11 @@
     <ClCompile Include="purrfx\CNesLogItemApuRegisterWrite.cpp" />
     <ClCompile Include="purrfx\CNesLogItemCodeLabel.cpp" />
     <ClCompile Include="purrfx\CNesLogItemCpuInstruction.cpp" />
-    <ClCompile Include="NsfLog.cpp" />
+    <ClCompile Include="PurrFX.cpp" />
     <ClCompile Include="purrfx\CNesLogItemFrameEnd.cpp" />
     <ClCompile Include="purrfx\CNesLogItemFrameStart.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CDataPath.h" />
     <ClInclude Include="gme\blargg_common.h" />
     <ClInclude Include="gme\blargg_config.h" />
     <ClInclude Include="gme\blargg_endian.h" />

@@ -14,30 +14,15 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="gme">
-      <UniqueIdentifier>{aa524743-6cac-4eff-946f-6187e99eee67}</UniqueIdentifier>
+      <UniqueIdentifier>{f5396773-a2f4-4d84-b878-7d142fd8fee7}</UniqueIdentifier>
     </Filter>
     <Filter Include="purrfx">
-      <UniqueIdentifier>{eced63b7-0f98-4a7a-b5c4-5b605589d544}</UniqueIdentifier>
+      <UniqueIdentifier>{65fb3ca8-9e2f-447f-b3dd-d577a7c80614}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="NsfLog.cpp">
+    <ClCompile Include="PurrFX.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CDataPath.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gme\Nes_Oscs.cpp">
-      <Filter>gme</Filter>
-    </ClCompile>
-    <ClCompile Include="gme\Nes_Vrc6_Apu.cpp">
-      <Filter>gme</Filter>
-    </ClCompile>
-    <ClCompile Include="gme\Nsf_Emu.cpp">
-      <Filter>gme</Filter>
-    </ClCompile>
-    <ClCompile Include="gme\Nsfe_Emu.cpp">
-      <Filter>gme</Filter>
     </ClCompile>
     <ClCompile Include="gme\Blip_Buffer.cpp">
       <Filter>gme</Filter>
@@ -84,6 +69,18 @@
     <ClCompile Include="gme\Nes_Namco_Apu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
+    <ClCompile Include="gme\Nes_Oscs.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nes_Vrc6_Apu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nsf_Emu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
+    <ClCompile Include="gme\Nsfe_Emu.cpp">
+      <Filter>gme</Filter>
+    </ClCompile>
     <ClCompile Include="purrfx\CNes.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
@@ -99,10 +96,10 @@
     <ClCompile Include="purrfx\CNesLogItem.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesLogFileWriter.cpp">
+    <ClCompile Include="purrfx\CNesLogItemCpuInstruction.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesLogItemCpuInstruction.cpp">
+    <ClCompile Include="purrfx\CNesLogFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
     <ClCompile Include="purrfx\CNesCpuInstructionInfo.cpp">
@@ -125,21 +122,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CDataPath.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gme\Nes_Oscs.h">
-      <Filter>gme</Filter>
-    </ClInclude>
-    <ClInclude Include="gme\Nes_Vrc6_Apu.h">
-      <Filter>gme</Filter>
-    </ClInclude>
-    <ClInclude Include="gme\Nsf_Emu.h">
-      <Filter>gme</Filter>
-    </ClInclude>
-    <ClInclude Include="gme\Nsfe_Emu.h">
-      <Filter>gme</Filter>
-    </ClInclude>
     <ClInclude Include="gme\blargg_common.h">
       <Filter>gme</Filter>
     </ClInclude>
@@ -203,6 +185,18 @@
     <ClInclude Include="gme\Nes_Namco_Apu.h">
       <Filter>gme</Filter>
     </ClInclude>
+    <ClInclude Include="gme\Nes_Oscs.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nes_Vrc6_Apu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nsf_Emu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
+    <ClInclude Include="gme\Nsfe_Emu.h">
+      <Filter>gme</Filter>
+    </ClInclude>
     <ClInclude Include="purrfx\CNes.h">
       <Filter>purrfx</Filter>
     </ClInclude>
@@ -212,10 +206,13 @@
     <ClInclude Include="purrfx\DClass.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesLogDataConsumer.h">
-      <Filter>purrfx</Filter>
+    <ClInclude Include="gme\PurrFX_Stuff.h">
+      <Filter>gme</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CNesLogItem.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CNesLogDataConsumer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CNesLogItemCpuInstruction.h">
@@ -232,9 +229,6 @@
     </ClInclude>
     <ClInclude Include="purrfx\CBufferedFileWriter.h">
       <Filter>purrfx</Filter>
-    </ClInclude>
-    <ClInclude Include="gme\PurrFX_Stuff.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CNesLogItemCodeLabel.h">
       <Filter>purrfx</Filter>

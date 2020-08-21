@@ -5,7 +5,5 @@ data/in/*
 data/out/*
 !data/out/readme.txt
 
-Nsf2Wav.vcxproj.user
+PurrFX.vcxproj.user
 .vs
-
-NsfLog.vcxproj.user
