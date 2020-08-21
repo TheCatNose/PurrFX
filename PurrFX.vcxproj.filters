@@ -120,6 +120,15 @@
     <ClCompile Include="purrfx\CNesLogItemFrameEnd.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CAudioDataConsumer.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="purrfx\CAudioDataConsumerWavWriter.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="purrfx\CAudioDataConsumerDummy.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -243,6 +252,15 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CNesLogItemFrameEnd.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CAudioDataConsumer.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CAudioDataConsumerWavWriter.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CAudioDataConsumerDummy.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>

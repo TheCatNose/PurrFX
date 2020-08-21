@@ -167,6 +167,8 @@
     <ClCompile Include="gme\Nsfe_Emu.cpp" />
     <ClCompile Include="gme\Nsf_Emu.cpp" />
     <ClCompile Include="gme\PurrFX_Stuff.cpp" />
+    <ClCompile Include="purrfx\CAudioDataConsumer.cpp" />
+    <ClCompile Include="purrfx\CAudioDataConsumerDummy.cpp" />
     <ClCompile Include="purrfx\CBufferedFileWriter.cpp" />
     <ClCompile Include="purrfx\CNes.cpp" />
     <ClCompile Include="purrfx\CNesCpuInstructionInfo.cpp" />
@@ -180,6 +182,7 @@
     <ClCompile Include="PurrFX.cpp" />
     <ClCompile Include="purrfx\CNesLogItemFrameEnd.cpp" />
     <ClCompile Include="purrfx\CNesLogItemFrameStart.cpp" />
+    <ClCompile Include="purrfx\CAudioDataConsumerWavWriter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h" />
@@ -208,6 +211,8 @@
     <ClInclude Include="gme\Nsfe_Emu.h" />
     <ClInclude Include="gme\Nsf_Emu.h" />
     <ClInclude Include="gme\PurrFX_Stuff.h" />
+    <ClInclude Include="purrfx\CAudioDataConsumer.h" />
+    <ClInclude Include="purrfx\CAudioDataConsumerDummy.h" />
     <ClInclude Include="purrfx\CBufferedFileWriter.h" />
     <ClInclude Include="purrfx\CNes.h" />
     <ClInclude Include="purrfx\CNesCpuInstructionInfo.h" />
@@ -220,6 +225,7 @@
     <ClInclude Include="purrfx\CNesLogItemCpuInstruction.h" />
     <ClInclude Include="purrfx\CNesLogItemFrameEnd.h" />
     <ClInclude Include="purrfx\CNesLogItemFrameStart.h" />
+    <ClInclude Include="purrfx\CAudioDataConsumerWavWriter.h" />
     <ClInclude Include="purrfx\DClass.h" />
     <ClInclude Include="purrfx\ENesCodeLabelType.h" />
     <ClInclude Include="purrfx\ENesLogItemType.h" />
