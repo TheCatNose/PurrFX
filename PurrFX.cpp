@@ -16,9 +16,11 @@ void showErrorMessage(const char* i_sMessage)
 std::string inputPath (const std::string& i_sFileName) { return std::string("data/in/") + i_sFileName; }
 std::string outputPath(const std::string& i_sFileName) { return std::string("data/out/") + i_sFileName; }
 
+#define	DEMO_MODE_WAV 0
+#define	DEMO_MODE_LOG 1
+
 // Choose demo mode here:
-//#define DEMO_MODE_WAV_OUT
-#define DEMO_MODE_LOG
+#define DEMO_MODE	DEMO_MODE_WAV
 
 int main()
 {
@@ -36,9 +38,9 @@ int main()
 	// Preparations //
 	//////////////////
 
-#if defined (DEMO_MODE_WAV_OUT)
+#if   DEMO_MODE == DEMO_MODE_WAV
 	sOutputFile += ".wav";
-#elif defined (DEMO_MODE_LOG)
+#elif DEMO_MODE == DEMO_MODE_LOG
 	sOutputFile += ".log";
 #endif
 	std::string sOutputPath = outputPath(sOutputFile);
@@ -50,10 +52,10 @@ int main()
 	PurrFX::CNesGme oNes;
 	PurrFX::CNes* pNes = &oNes;
 
-#if defined (DEMO_MODE_WAV_OUT)
+#if   DEMO_MODE == DEMO_MODE_WAV
 	PurrFX::CWavWriter oWavWriter( sOutputPath.data(), nTime );
 	pNes->setAudioDataConsumer(&oWavWriter);
-#elif defined (DEMO_MODE_LOG)
+#elif DEMO_MODE == DEMO_MODE_LOG
 	pNes->logItemTypeDisable(PurrFX::ENesLogItemType::CpuInstruction);
 	pNes->logItemTypeDisable(PurrFX::ENesLogItemType::CodeLabel);
 	pNes->logItemTypeDisable(PurrFX::ENesLogItemType::FrameEnd);
