@@ -23,6 +23,37 @@ int PurrFX::CNes::soundSampleRate()
 	return m_nSoundSampleRate;
 }
 
+bool PurrFX::CNes::render()
+{
+	const uint32_t nBufferSize = 1024;
+	char           aBuffer[nBufferSize];
+
+	assert(m_pAudioDataConsumer != nullptr);
+	m_pAudioDataConsumer->start(m_nSoundSampleRate);
+	
+	while(!m_pAudioDataConsumer->finished())
+	{
+		uint32_t nSize = nBufferSize;
+		if (nSize > m_pAudioDataConsumer->bytesToProcess())
+			nSize = m_pAudioDataConsumer->bytesToProcess();
+
+		if (!render(aBuffer, nSize))
+			return false;
+		m_pAudioDataConsumer->processData(aBuffer, nBufferSize);
+	}
+	return true;
+}
+
+void PurrFX::CNes::setAudioDataConsumer(CAudioDataConsumer* i_pConsumer)
+{
+	m_pAudioDataConsumer = i_pConsumer;
+}
+
+bool PurrFX::CNes::usesAudioDataConsumer() const
+{
+	return (m_pAudioDataConsumer != nullptr);
+}
+
 void PurrFX::CNes::setLogDataConsumer(CNesLogDataConsumer* i_pConsumer)
 {
 	m_pLogDataConsumer = i_pConsumer;

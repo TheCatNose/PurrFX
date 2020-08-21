@@ -4,10 +4,12 @@
 //
 // Notes:
 // * It won't own CNesLogDataConsumer instance.
+// * It won't own CAudioDataConsumer instance.
 
 #include <bitset>
 #include <cassert>
 #include "CNesLogDataConsumer.h"
+#include "CAudioDataConsumer.h"
 
 namespace PurrFX
 {
@@ -32,6 +34,18 @@ namespace PurrFX
 
 	private:
 		int m_nSoundSampleRate = 44100;
+
+		//////////////////////////
+		// Audio data consuming //
+		//////////////////////////
+
+	public:
+		bool render();
+		void setAudioDataConsumer(CAudioDataConsumer* i_pConsumer);
+		bool usesAudioDataConsumer() const;
+
+	private:
+		CAudioDataConsumer* m_pAudioDataConsumer = nullptr;
 
 		/////////////
 		// Logging //
