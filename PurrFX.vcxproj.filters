@@ -129,6 +129,9 @@
     <ClCompile Include="purrfx\CAudioDataConsumerDummy.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CAudioFormat.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -264,6 +267,9 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\PurrFX.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CAudioFormat.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
