@@ -6,7 +6,7 @@
 #include "purrfx/CNesGme.h"
 #include "purrfx/CAudioDataConsumerWavWriter.h"
 #include "purrfx/CAudioDataConsumerDummy.h"
-#include "purrfx/CNesLogFileWriter.h"
+#include "purrfx/CLogFileWriter.h"
 
 void showErrorMessage(const char* i_sMessage)
 {
@@ -56,10 +56,10 @@ int main()
 	PurrFX::CWavWriter oWavWriter( sOutputPath.data(), nTime );
 	pNes->setAudioDataConsumer(&oWavWriter);
 #elif DEMO_MODE == DEMO_MODE_LOG
-	pNes->logItemTypeDisable(PurrFX::ENesLogItemType::CpuInstruction);
-	pNes->logItemTypeDisable(PurrFX::ENesLogItemType::CodeLabel);
-	pNes->logItemTypeDisable(PurrFX::ENesLogItemType::FrameEnd);
-	PurrFX::CNesLogFileWriter oLogWriter( sOutputPath.data() );
+	pNes->logItemTypeDisable(PurrFX::ELogItemType::CpuInstruction);
+	pNes->logItemTypeDisable(PurrFX::ELogItemType::CodeLabel);
+	pNes->logItemTypeDisable(PurrFX::ELogItemType::FrameEnd);
+	PurrFX::CLogFileWriter oLogWriter( sOutputPath.data() );
 	pNes->setLogDataConsumer(&oLogWriter);
 #endif
 	if (!pNes->setSoundOptions(nSampleRate))

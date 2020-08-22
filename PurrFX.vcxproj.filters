@@ -90,34 +90,34 @@
     <ClCompile Include="gme\PurrFX_Stuff.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesLogDataConsumer.cpp">
+    <ClCompile Include="purrfx\CLogDataConsumer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesLogItem.cpp">
+    <ClCompile Include="purrfx\CLogItem.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesLogItemCpuInstruction.cpp">
+    <ClCompile Include="purrfx\CLogItemCpuInstruction.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesLogFileWriter.cpp">
+    <ClCompile Include="purrfx\CLogFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesCpuInstructionInfo.cpp">
+    <ClCompile Include="purrfx\CCpuInstructionInfo.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
     <ClCompile Include="purrfx\CBufferedFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesLogItemCodeLabel.cpp">
+    <ClCompile Include="purrfx\CLogItemCodeLabel.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesLogItemFrameStart.cpp">
+    <ClCompile Include="purrfx\CLogItemFrameStart.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesLogItemApuRegisterWrite.cpp">
+    <ClCompile Include="purrfx\CLogItemApuRegisterWrite.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesLogItemFrameEnd.cpp">
+    <ClCompile Include="purrfx\CLogItemFrameEnd.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
     <ClCompile Include="purrfx\CAudioDataConsumer.cpp">
@@ -218,40 +218,40 @@
     <ClInclude Include="gme\PurrFX_Stuff.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesLogItem.h">
+    <ClInclude Include="purrfx\CLogItem.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesLogDataConsumer.h">
+    <ClInclude Include="purrfx\CLogDataConsumer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesLogItemCpuInstruction.h">
+    <ClInclude Include="purrfx\CLogItemCpuInstruction.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesLogFileWriter.h">
+    <ClInclude Include="purrfx\CLogFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\ENesLogItemType.h">
+    <ClInclude Include="purrfx\ELogItemType.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesCpuInstructionInfo.h">
+    <ClInclude Include="purrfx\CCpuInstructionInfo.h">
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CBufferedFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesLogItemCodeLabel.h">
+    <ClInclude Include="purrfx\CLogItemCodeLabel.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\ENesCodeLabelType.h">
+    <ClInclude Include="purrfx\ECodeLabelType.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesLogItemFrameStart.h">
+    <ClInclude Include="purrfx\CLogItemFrameStart.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesLogItemApuRegisterWrite.h">
+    <ClInclude Include="purrfx\CLogItemApuRegisterWrite.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesLogItemFrameEnd.h">
+    <ClInclude Include="purrfx\CLogItemFrameEnd.h">
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CAudioDataConsumer.h">
