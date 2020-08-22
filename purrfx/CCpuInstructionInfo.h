@@ -6,15 +6,15 @@
 
 namespace PurrFX
 {
-	class CNesCpuInstructionInfo
+	class CCpuInstructionInfo
 	{
 	public:
-		CNesCpuInstructionInfo(uint8_t i_nOpcode);
+		CCpuInstructionInfo(uint8_t i_nOpcode);
 
 		const char* name() const;
 		int argBytes() const;
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNesCpuInstructionInfo)
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CCpuInstructionInfo)
 	private:
 		uint8_t m_nOpcode;
 	};

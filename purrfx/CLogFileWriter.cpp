@@ -1,23 +1,23 @@
-#include "CNesLogFileWriter.h"
+#include "CLogFileWriter.h"
 
 namespace PurrFX
 {
-	CNesLogFileWriter::CNesLogFileWriter(const char* i_sFileName):
+	CLogFileWriter::CLogFileWriter(const char* i_sFileName):
 		m_oFile(i_sFileName, CBufferedFileWriter::MAX_BUFFER_SIZE)
 	{
 	}
 
-	void CNesLogFileWriter::onNewItem(const CNesLogItem* i_pLogItem)
+	void CLogFileWriter::onNewItem(const CLogItem* i_pLogItem)
 	{
 		if (!m_oFile.isOpened())
 			return;
 
 		switch(i_pLogItem->type())
  		{
-		case ENesLogItemType::CpuInstruction:
+		case ELogItemType::CpuInstruction:
 			{
-				auto* pLogItem = dynamic_cast<const CNesLogItemCpuInstruction*>(i_pLogItem);
-				CNesCpuInstructionInfo oInfo(pLogItem->opcode());
+				auto* pLogItem = dynamic_cast<const CLogItemCpuInstruction*>(i_pLogItem);
+				CCpuInstructionInfo oInfo(pLogItem->opcode());
 
 				char sBuffer[32];
 				int nChars;
@@ -52,17 +52,17 @@ namespace PurrFX
 				m_oFile.write("\n", 1);
 			}
 			break;
-		case ENesLogItemType::CodeLabel:
+		case ELogItemType::CodeLabel:
 			{
-				auto* pLogItem = dynamic_cast<const CNesLogItemCodeLabel*>(i_pLogItem);
+				auto* pLogItem = dynamic_cast<const CLogItemCodeLabel*>(i_pLogItem);
 
 				std::string sName;
 				switch (pLogItem->labelType())
 				{
-				case ENesCodeLabelType::InitAddress:
+				case ECodeLabelType::InitAddress:
 					sName = "init:";
 					break;
-				case ENesCodeLabelType::PlayAddress:
+				case ECodeLabelType::PlayAddress:
 					sName = "play:";
 					break;
 				}
@@ -72,9 +72,9 @@ namespace PurrFX
 				m_oFile.write("\n", 1);
 			}
 			break;
-		case ENesLogItemType::FrameStart:
+		case ELogItemType::FrameStart:
 			{
-				auto* pLogItem = dynamic_cast<const CNesLogItemFrameStart*>(i_pLogItem);
+				auto* pLogItem = dynamic_cast<const CLogItemFrameStart*>(i_pLogItem);
 				
 				char sBuffer[32];
 				int nChars = sprintf_s<32>(sBuffer, "frame %d\n", pLogItem->newFrame());
@@ -82,15 +82,15 @@ namespace PurrFX
 					m_oFile.write(sBuffer, nChars);
 			}
 			break;
-		case ENesLogItemType::FrameEnd:
+		case ELogItemType::FrameEnd:
 			{
-				auto* pLogItem = dynamic_cast<const CNesLogItemFrameEnd*>(i_pLogItem);
+				auto* pLogItem = dynamic_cast<const CLogItemFrameEnd*>(i_pLogItem);
 				m_oFile.write("frame end\n", 10);
 			}
 			break;
-		case ENesLogItemType::ApuRegisterWrite:
+		case ELogItemType::ApuRegisterWrite:
 			{
-				auto* pLogItem = dynamic_cast<const CNesLogItemApuRegisterWrite*>(i_pLogItem);
+				auto* pLogItem = dynamic_cast<const CLogItemApuRegisterWrite*>(i_pLogItem);
 				char sBuffer[32];
 				int nChars = sprintf_s<32>(sBuffer, "$%04X <- %02X\n",
 					pLogItem->registerNumber(),

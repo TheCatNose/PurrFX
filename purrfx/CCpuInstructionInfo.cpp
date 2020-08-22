@@ -1,11 +1,11 @@
-#include "CNesCpuInstructionInfo.h"
+#include "CCpuInstructionInfo.h"
 
-PurrFX::CNesCpuInstructionInfo::CNesCpuInstructionInfo(uint8_t i_nOpcode):
+PurrFX::CCpuInstructionInfo::CCpuInstructionInfo(uint8_t i_nOpcode):
 	m_nOpcode(i_nOpcode)
 {
 }
 
-const char* PurrFX::CNesCpuInstructionInfo::name() const
+const char* PurrFX::CCpuInstructionInfo::name() const
 {
 	switch (m_nOpcode)
 	{
@@ -200,7 +200,7 @@ const char* PurrFX::CNesCpuInstructionInfo::name() const
 	}
 }
 
-int PurrFX::CNesCpuInstructionInfo::argBytes() const
+int PurrFX::CCpuInstructionInfo::argBytes() const
 {
 	switch (m_nOpcode)
 	{

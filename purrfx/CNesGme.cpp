@@ -102,7 +102,7 @@ namespace PurrFX
 		if (!logEnabled())
 			return;
 
-		CNesLogItemCpuInstruction oLogItem(i_nAddress, i_nOpcode, i_nArgByte1, i_nArgByte2);
+		CLogItemCpuInstruction oLogItem(i_nAddress, i_nOpcode, i_nArgByte1, i_nArgByte2);
 		logAddItem(oLogItem);
 	}
 
@@ -111,19 +111,19 @@ namespace PurrFX
 		if (!logEnabled())
 			return;
 
-		ENesCodeLabelType eType = ENesCodeLabelType::Undefined;
+		ECodeLabelType eType = ECodeLabelType::Undefined;
 		switch (i_cLabelName)
 		{
 		case 'i':
-			eType = ENesCodeLabelType::InitAddress;
+			eType = ECodeLabelType::InitAddress;
 			break;
 		case 'p':
-			eType = ENesCodeLabelType::PlayAddress;
+			eType = ECodeLabelType::PlayAddress;
 			break;
 		}
-		assert(eType != ENesCodeLabelType::Undefined);
+		assert(eType != ECodeLabelType::Undefined);
 
-		CNesLogItemCodeLabel oLogItem(eType);
+		CLogItemCodeLabel oLogItem(eType);
 		logAddItem(oLogItem);
 	}
 
@@ -132,7 +132,7 @@ namespace PurrFX
 		if (!logEnabled())
 			return;
 
-		CNesLogItemFrameStart oLogItem(i_nFrame);
+		CLogItemFrameStart oLogItem(i_nFrame);
 		logAddItem(oLogItem);
 	}
 
@@ -141,7 +141,7 @@ namespace PurrFX
 		if (!logEnabled())
 			return;
 
-		CNesLogItemFrameEnd oLogItem;
+		CLogItemFrameEnd oLogItem;
 		logAddItem(oLogItem);
 	}
 
@@ -150,7 +150,7 @@ namespace PurrFX
 		if (!logEnabled())
 			return;
 
-		CNesLogItemApuRegisterWrite oLogItem(i_nRegister, i_nValue);
+		CLogItemApuRegisterWrite oLogItem(i_nRegister, i_nValue);
 		logAddItem(oLogItem);
 	}
 

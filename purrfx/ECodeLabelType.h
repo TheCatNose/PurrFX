@@ -2,7 +2,7 @@
 
 namespace PurrFX
 {
-	enum class ENesCodeLabelType
+	enum class ECodeLabelType
 	{
 		Undefined,
 		InitAddress,

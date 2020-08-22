@@ -3,12 +3,12 @@
 // Base class for all NES emulation code wrappers
 //
 // Notes:
-// * It won't own CNesLogDataConsumer instance.
+// * It won't own CLogDataConsumer instance.
 // * It won't own CAudioDataConsumer instance.
 
 #include <bitset>
 #include <cassert>
-#include "CNesLogDataConsumer.h"
+#include "CLogDataConsumer.h"
 #include "CAudioDataConsumer.h"
 
 namespace PurrFX
@@ -52,16 +52,16 @@ namespace PurrFX
 		/////////////
 
 	public:
-		void setLogDataConsumer(CNesLogDataConsumer* i_pConsumer);
-		void logItemTypeEnable(ENesLogItemType i_eType);
-		void logItemTypeDisable(ENesLogItemType i_eType);
+		void setLogDataConsumer(CLogDataConsumer* i_pConsumer);
+		void logItemTypeEnable(ELogItemType i_eType);
+		void logItemTypeDisable(ELogItemType i_eType);
 
 	protected:
 		bool logEnabled() const;
-		void logAddItem(const CNesLogItem& i_rItem);
+		void logAddItem(const CLogItem& i_rItem);
 
 	private:
-		CNesLogDataConsumer* m_pLogDataConsumer = nullptr;
+		CLogDataConsumer* m_pLogDataConsumer = nullptr;
 		std::bitset<32> m_aLogItemTypesDisabled;
 	};
 

@@ -6,11 +6,11 @@
 #include "CNes.h"
 #include "DClass.h"
 #include "../gme/Nsf_Emu.h"
-#include "CNesLogItemCpuInstruction.h"
-#include "CNesLogItemCodeLabel.h"
-#include "CNesLogItemFrameStart.h"
-#include "CNesLogItemFrameEnd.h"
-#include "CNesLogItemApuRegisterWrite.h"
+#include "CLogItemCpuInstruction.h"
+#include "CLogItemCodeLabel.h"
+#include "CLogItemFrameStart.h"
+#include "CLogItemFrameEnd.h"
+#include "CLogItemApuRegisterWrite.h"
 
 namespace PurrFX
 {

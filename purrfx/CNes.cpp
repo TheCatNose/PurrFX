@@ -54,19 +54,19 @@ bool PurrFX::CNes::usesAudioDataConsumer() const
 	return (m_pAudioDataConsumer != nullptr);
 }
 
-void PurrFX::CNes::setLogDataConsumer(CNesLogDataConsumer* i_pConsumer)
+void PurrFX::CNes::setLogDataConsumer(CLogDataConsumer* i_pConsumer)
 {
 	m_pLogDataConsumer = i_pConsumer;
 }
 
-void PurrFX::CNes::logItemTypeEnable(ENesLogItemType i_eType)
+void PurrFX::CNes::logItemTypeEnable(ELogItemType i_eType)
 {
 	size_t nBit = size_t(i_eType);
 	assert(nBit < m_aLogItemTypesDisabled.size());
 	m_aLogItemTypesDisabled.reset(nBit);
 }
 
-void PurrFX::CNes::logItemTypeDisable(ENesLogItemType i_eType)
+void PurrFX::CNes::logItemTypeDisable(ELogItemType i_eType)
 {
 	size_t nBit = size_t(i_eType);
 	assert(nBit < m_aLogItemTypesDisabled.size());
@@ -78,7 +78,7 @@ bool PurrFX::CNes::logEnabled() const
 	return (m_pLogDataConsumer != nullptr);
 }
 
-void PurrFX::CNes::logAddItem(const CNesLogItem& i_rItem)
+void PurrFX::CNes::logAddItem(const CLogItem& i_rItem)
 {
 	if (m_pLogDataConsumer == nullptr)
 		return;

@@ -2,7 +2,7 @@
 
 namespace PurrFX
 {
-	enum class ENesLogItemType
+	enum class ELogItemType
 	{
 		CpuInstruction,
 		CodeLabel,
