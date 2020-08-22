@@ -28,7 +28,9 @@ int main()
 	std::string    sOutputFile = "out";
 	const int      nTrack      = 6;     // track index
 	const uint32_t nTime       = 60;    // time in seconds
-	const int      nSampleRate = 44100; // sound quality
+
+	// Sound quality
+	PurrFX::CAudioFormat oAudioFormat(44100);
 
 	//////////////////
 	// Preparations //
@@ -58,11 +60,7 @@ int main()
 	PurrFX::CLogFileWriter oLogWriter( sOutputPath.data() );
 	pNes->setLogDataConsumer(&oLogWriter);
 #endif
-	if (!pNes->setSoundOptions(nSampleRate))
-	{
-		showErrorMessage("Can't set sound options");
-		return 1;
-	}
+	pNes->setAudioFormat( oAudioFormat );
 	std::string sInputPath = inputPath(sInputFile);
 	if (!pNes->open( sInputPath.data() ))
 	{
