@@ -4,23 +4,14 @@ PurrFX::CNes::~CNes()
 {
 }
 
-bool PurrFX::CNes::setSoundOptions(int i_nSampleRate)
+void PurrFX::CNes::setAudioFormat(const CAudioFormat& i_rFormat)
 {
-	if (i_nSampleRate !=  8000 &&
-		i_nSampleRate != 11025 &&
-		i_nSampleRate != 22050 &&
-		i_nSampleRate != 32000 &&
-		i_nSampleRate != 44100 &&
-		i_nSampleRate != 48000 )
-		return false;
-
-	m_nSoundSampleRate = i_nSampleRate;
-	return true;
+	m_oAudioFormat = i_rFormat;
 }
 
-int PurrFX::CNes::soundSampleRate()
+const PurrFX::CAudioFormat& PurrFX::CNes::audioFormat()
 {
-	return m_nSoundSampleRate;
+	return m_oAudioFormat;
 }
 
 bool PurrFX::CNes::render()
@@ -29,7 +20,7 @@ bool PurrFX::CNes::render()
 	char           aBuffer[nBufferSize];
 
 	assert(m_pAudioDataConsumer != nullptr);
-	m_pAudioDataConsumer->start(m_nSoundSampleRate);
+	m_pAudioDataConsumer->start( m_oAudioFormat );
 	
 	while(!m_pAudioDataConsumer->finished())
 	{

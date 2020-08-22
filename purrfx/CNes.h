@@ -8,6 +8,7 @@
 
 #include <bitset>
 #include <cassert>
+#include "CAudioFormat.h"
 #include "CLogDataConsumer.h"
 #include "CAudioDataConsumer.h"
 
@@ -25,15 +26,15 @@ namespace PurrFX
 		virtual bool render(char* o_pData, size_t i_nDataSize) = 0;
 
 		///////////////////
-		// Sound options //
+		// Audio options //
 		///////////////////
 
 	public:
-		bool setSoundOptions(int i_nSampleRate);
-		int  soundSampleRate();
+		void                setAudioFormat(const CAudioFormat& i_rFormat);
+		const CAudioFormat&    audioFormat();
 
 	private:
-		int m_nSoundSampleRate = 44100;
+		CAudioFormat m_oAudioFormat;
 
 		//////////////////////////
 		// Audio data consuming //
