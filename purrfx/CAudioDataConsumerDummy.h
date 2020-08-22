@@ -13,7 +13,7 @@ namespace PurrFX
 		CAudioDataConsumerDummy(uint32_t i_nDuration);
 
 		// CAudioDataConsumer implementation
-		virtual void onStart(int i_nSampleRate, uint32_t i_nBytesToProcess);
+		virtual void onStart(const CAudioFormat& i_rAudioFormat, uint32_t i_nBytesToProcess);
 		virtual void onData(const char* i_pData, uint32_t i_nSize);
 
 		CLASS_MAKE_NON_COPYABLE(CAudioDataConsumerDummy)

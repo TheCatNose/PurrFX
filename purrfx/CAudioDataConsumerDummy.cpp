@@ -5,7 +5,7 @@ PurrFX::CAudioDataConsumerDummy::CAudioDataConsumerDummy(uint32_t i_nDuration):
 {
 }
 
-void PurrFX::CAudioDataConsumerDummy::onStart(int i_nSampleRate, uint32_t i_nBytesToProcess)
+void PurrFX::CAudioDataConsumerDummy::onStart(const CAudioFormat& i_rAudioFormat, uint32_t i_nBytesToProcess)
 {
 }
 

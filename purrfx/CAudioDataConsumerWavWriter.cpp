@@ -8,7 +8,7 @@ PurrFX::CAudioDataConsumerWavWriter::CAudioDataConsumerWavWriter(const char* i_s
 		return;
 }
 
-void PurrFX::CAudioDataConsumerWavWriter::onStart(int i_nSampleRate, uint32_t i_nBytesToProcess)
+void PurrFX::CAudioDataConsumerWavWriter::onStart(const CAudioFormat& i_rAudioFormat, uint32_t i_nBytesToProcess)
 {
 	if (!m_oFile.isOpened())
 		return;
@@ -27,12 +27,12 @@ void PurrFX::CAudioDataConsumerWavWriter::onStart(int i_nSampleRate, uint32_t i_
 	m_oFile.write(&nFmtChunkSize, sizeof(nFmtChunkSize));
 	const uint16_t nFormat = 1; // PCM
 	m_oFile.write(&nFormat, sizeof(nFormat));
-	uint16_t nChannels = 2; // Stereo
+	uint16_t nChannels = i_rAudioFormat.channels();
 	m_oFile.write(&nChannels, sizeof(nChannels));
-	uint32_t nSampleRate_ = i_nSampleRate;
-	m_oFile.write(&nSampleRate_, sizeof(nSampleRate_));
-	uint16_t nBitsPerSample = 16;
-	uint32_t nBitRate = (i_nSampleRate * nBitsPerSample * nChannels) / 8;
+	uint32_t nSampleRate = i_rAudioFormat.sampleRate();
+	m_oFile.write(&nSampleRate, sizeof(nSampleRate));
+	uint16_t nBitsPerSample = i_rAudioFormat.bitDepth();
+	uint32_t nBitRate = (nSampleRate * nBitsPerSample * nChannels) / 8;
 	m_oFile.write(&nBitRate, sizeof(nBitRate));
 	uint16_t nBytesPerSample = (nBitsPerSample * nChannels) / 8;
 	m_oFile.write(&nBytesPerSample, sizeof(nBytesPerSample));

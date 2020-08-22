@@ -1,11 +1,10 @@
 #pragma once
 // Base class for every audio data consumer
-//
-// TODO: Support different sound options (8bit, mono)
 
 #include <cassert>
 #include <cstdint>
 #include "DClass.h"
+#include "CAudioFormat.h"
 
 namespace PurrFX
 {
@@ -18,12 +17,12 @@ namespace PurrFX
 		bool finished() const;
 		uint32_t bytesToProcess() const;
 
-		void start(int i_nSampleRate);
+		void start(const CAudioFormat& i_rAudioFormat);
 		void processData(const char* i_pData, uint32_t i_nSize);
 
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CAudioDataConsumer);
 	private:
-		virtual void onStart(int i_nSampleRate, uint32_t i_nBytesToProcess) = 0;
+		virtual void onStart(const CAudioFormat& i_rAudioFormat, uint32_t i_nBytesToProcess) = 0;
 		virtual void onData(const char* i_pData, uint32_t i_nSize) = 0;
 	
 	private:
