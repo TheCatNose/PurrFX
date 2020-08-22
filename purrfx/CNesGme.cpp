@@ -30,7 +30,7 @@ namespace PurrFX
 		m_pEmu = pEmu;
 
 		// Setup emulator audio
-		sError = m_pEmu->set_sample_rate( soundSampleRate() );
+		sError = m_pEmu->set_sample_rate( audioFormat().sampleRate() );
 		if (sError != NO_ERROR)
 			return false;
 
@@ -87,6 +87,10 @@ namespace PurrFX
 
 	bool CNesGme::render(char* o_pData, size_t i_nDataSize)
 	{
+		// TODO: Mono & 8bit support
+		assert(audioFormat().channels() != 1);
+		assert(audioFormat().bitDepth() != 8);
+
 		if (m_pEmu == nullptr)
 			return false;
 
