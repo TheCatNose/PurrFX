@@ -2,11 +2,7 @@
 
 #include <iostream>
 #include <string>
-
-#include "purrfx/CNesGme.h"
-#include "purrfx/CAudioDataConsumerWavWriter.h"
-#include "purrfx/CAudioDataConsumerDummy.h"
-#include "purrfx/CLogFileWriter.h"
+#include "purrfx/PurrFX.h"
 
 void showErrorMessage(const char* i_sMessage)
 {

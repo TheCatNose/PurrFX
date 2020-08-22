@@ -263,5 +263,8 @@
     <ClInclude Include="purrfx\CAudioDataConsumerDummy.h">
       <Filter>purrfx</Filter>
     </ClInclude>
+    <ClInclude Include="purrfx\PurrFX.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

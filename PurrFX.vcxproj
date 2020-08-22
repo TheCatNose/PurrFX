@@ -229,6 +229,7 @@
     <ClInclude Include="purrfx\DClass.h" />
     <ClInclude Include="purrfx\ECodeLabelType.h" />
     <ClInclude Include="purrfx\ELogItemType.h" />
+    <ClInclude Include="purrfx\PurrFX.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
