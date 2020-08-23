@@ -11,6 +11,10 @@
 #include "CLogItemFrameStart.h"
 #include "CLogItemFrameEnd.h"
 #include "CLogItemApuRegisterWrite.h"
+#include "CAudioProxyBuffer.h"
+#include "CAudioProxyBufferDataProvider.h"
+
+class CNesGmeAudioDataProvider;
 
 namespace PurrFX
 {
@@ -18,6 +22,7 @@ namespace PurrFX
 	class CNesGme : public CNes, private CGmeEventsReceiver
 	{
 	public:
+		CNesGme();
 		~CNesGme();
 
 		// CNes implementation
@@ -27,7 +32,6 @@ namespace PurrFX
 		virtual bool render(char* o_pData, size_t i_nDataSize);
 
 		CLASS_MAKE_NON_COPYABLE(CNesGme)
-		CLASS_USE_DEFAULT_CONSTRUCTOR(CNesGme)
 	private:
 		virtual bool prepareEmulator();
 
@@ -39,6 +43,7 @@ namespace PurrFX
 		virtual void onGmeEventApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue);
 
 		Music_Emu* m_pEmu = nullptr;
+		CAudioProxyBuffer m_oAudioConverter;
 	};
 
 }

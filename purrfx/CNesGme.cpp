@@ -1,8 +1,14 @@
 #include "CNesGme.h"
+#include "CNesGmeAudioDataProvider.h"
 
 namespace PurrFX
 {
 	const nullptr_t NO_ERROR = nullptr;
+
+	CNesGme::CNesGme():
+		m_oAudioConverter(16, 2)
+	{
+	}
 
 	CNesGme::~CNesGme()
 	{
@@ -55,6 +61,8 @@ namespace PurrFX
 			delete m_pEmu;
 			m_pEmu = nullptr;
 		}
+		else
+			m_oAudioConverter.reset();
 		return bSuccess;
 	}
 
@@ -82,23 +90,23 @@ namespace PurrFX
 			return false;
 		
 		gme_err_t sError = m_pEmu->start_track(i_nTrack);
-		return (sError == NO_ERROR);
+		bool bSuccess = (sError == NO_ERROR);
+		if (bSuccess)
+			m_oAudioConverter.reset();
+		return bSuccess;
 	}
 
 	bool CNesGme::render(char* o_pData, size_t i_nDataSize)
 	{
-		// TODO: Mono & 8bit support
-		assert(audioFormat().channels() != 1);
-		assert(audioFormat().bitDepth() != 8);
-
 		if (m_pEmu == nullptr)
 			return false;
 
-		auto*  pData = reinterpret_cast<Music_Emu::sample_t*>(o_pData);
-		size_t nSize = i_nDataSize / sizeof(Music_Emu::sample_t);
-
-		gme_err_t sError = m_pEmu->play(nSize, pData);
-		return (sError == NO_ERROR);
+		CNesGmeAudioDataProvider oProvider(m_pEmu);
+		return m_oAudioConverter.getData(
+			o_pData, i_nDataSize,
+			audioFormat().bitDepth(),
+			audioFormat().channels(),
+			&oProvider);
 	}
 
 	void CNesGme::onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2)
