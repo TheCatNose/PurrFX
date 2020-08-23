@@ -132,6 +132,15 @@
     <ClCompile Include="purrfx\CAudioFormat.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CAudioProxyBuffer.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="purrfx\CAudioProxyBufferDataProvider.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="purrfx\CNesGmeAudioDataProvider.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -270,6 +279,15 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CAudioFormat.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CAudioProxyBuffer.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CAudioProxyBufferDataProvider.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CNesGmeAudioDataProvider.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>

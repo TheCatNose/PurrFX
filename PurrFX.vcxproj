@@ -170,6 +170,8 @@
     <ClCompile Include="purrfx\CAudioDataConsumer.cpp" />
     <ClCompile Include="purrfx\CAudioDataConsumerDummy.cpp" />
     <ClCompile Include="purrfx\CAudioFormat.cpp" />
+    <ClCompile Include="purrfx\CAudioProxyBuffer.cpp" />
+    <ClCompile Include="purrfx\CAudioProxyBufferDataProvider.cpp" />
     <ClCompile Include="purrfx\CBufferedFileWriter.cpp" />
     <ClCompile Include="purrfx\CNes.cpp" />
     <ClCompile Include="purrfx\CCpuInstructionInfo.cpp" />
@@ -184,6 +186,7 @@
     <ClCompile Include="purrfx\CLogItemFrameEnd.cpp" />
     <ClCompile Include="purrfx\CLogItemFrameStart.cpp" />
     <ClCompile Include="purrfx\CAudioDataConsumerWavWriter.cpp" />
+    <ClCompile Include="purrfx\CNesGmeAudioDataProvider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h" />
@@ -215,6 +218,8 @@
     <ClInclude Include="purrfx\CAudioDataConsumer.h" />
     <ClInclude Include="purrfx\CAudioDataConsumerDummy.h" />
     <ClInclude Include="purrfx\CAudioFormat.h" />
+    <ClInclude Include="purrfx\CAudioProxyBuffer.h" />
+    <ClInclude Include="purrfx\CAudioProxyBufferDataProvider.h" />
     <ClInclude Include="purrfx\CBufferedFileWriter.h" />
     <ClInclude Include="purrfx\CNes.h" />
     <ClInclude Include="purrfx\CCpuInstructionInfo.h" />
@@ -228,6 +233,7 @@
     <ClInclude Include="purrfx\CLogItemFrameEnd.h" />
     <ClInclude Include="purrfx\CLogItemFrameStart.h" />
     <ClInclude Include="purrfx\CAudioDataConsumerWavWriter.h" />
+    <ClInclude Include="purrfx\CNesGmeAudioDataProvider.h" />
     <ClInclude Include="purrfx\DClass.h" />
     <ClInclude Include="purrfx\ECodeLabelType.h" />
     <ClInclude Include="purrfx\ELogItemType.h" />
