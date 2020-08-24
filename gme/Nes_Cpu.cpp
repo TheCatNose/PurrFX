@@ -190,8 +190,9 @@ loop:
 
 		if (at_init)
 		{
-			events_receiver->onGmeEventCodeLabel('i');
 			frame = -1;
+			events_receiver->onGmeEventFrameStart(++frame);
+			events_receiver->onGmeEventCodeLabel('i');
 		}
 		if (at_play)
 		{
