@@ -51,44 +51,43 @@ int main()
 	// Setup //
 	///////////
 
-	PurrFX::CNesGme oNes;
-	PurrFX::CNes* pNes = &oNes;
+	PurrFX::CNesPtr oNes(PurrFX::ENesType::GameMusicEmu);
 
 #if   DEMO_MODE == DEMO_MODE_WAV
 	PurrFX::CWavWriter oWavWriter( sOutputPath.data(), nTime );
-	pNes->setAudioDataConsumer(&oWavWriter);
+	oNes->setAudioDataConsumer(&oWavWriter);
 #elif DEMO_MODE == DEMO_MODE_LOG
-	pNes->logItemTypeDisable(PurrFX::ELogItemType::CpuInstruction);
-	pNes->logItemTypeDisable(PurrFX::ELogItemType::CodeLabel);
-	pNes->logItemTypeDisable(PurrFX::ELogItemType::FrameEnd);
+	oNes->logItemTypeDisable(PurrFX::ELogItemType::CpuInstruction);
+	oNes->logItemTypeDisable(PurrFX::ELogItemType::CodeLabel);
+	oNes->logItemTypeDisable(PurrFX::ELogItemType::FrameEnd);
 	PurrFX::CLogFileWriter oLogWriter( sOutputPath.data() );
-	pNes->setLogDataConsumer(&oLogWriter);
+	oNes->setLogDataConsumer(&oLogWriter);
 #elif DEMO_MODE == DEMO_MODE_FD_CAPTURE
 	PurrFX::CFrameDataFileWriter oFdWriter( sOutputPath.data() );
-	pNes->setFrameDataConsumer(&oFdWriter);
+	oNes->setFrameDataConsumer(&oFdWriter);
 #endif
-	pNes->setAudioFormat( oAudioFormat );
+	oNes->setAudioFormat( oAudioFormat );
 	std::string sInputPath = inputPath(sInputFile);
-	if (!pNes->open( sInputPath.data() ))
+	if (!oNes->open( sInputPath.data() ))
 	{
 		showErrorMessage("Can't open file");
 		return 1;
 	}
-	if (!pNes->setTrack(nTrack))
+	if (!oNes->setTrack(nTrack))
 	{
 		showErrorMessage("Can't set track");
 		return 1;
 	}
 
 	PurrFX::CAudioDataConsumerDummy oDummy(nTime);
-	if (!pNes->usesAudioDataConsumer())
-		 pNes->setAudioDataConsumer(&oDummy);
+	if (!oNes->usesAudioDataConsumer())
+		 oNes->setAudioDataConsumer(&oDummy);
 
 	////////////
 	// Render //
 	////////////
 
-	if (!pNes->render())
+	if (!oNes->render())
 	{
 		showErrorMessage("Audio rendering failure");
 		return 1;
