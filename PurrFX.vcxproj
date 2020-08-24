@@ -190,6 +190,7 @@
     <ClCompile Include="purrfx\CLogItemFrameStart.cpp" />
     <ClCompile Include="purrfx\CAudioDataConsumerWavWriter.cpp" />
     <ClCompile Include="purrfx\CNesGmeAudioDataProvider.cpp" />
+    <ClCompile Include="purrfx\CNesPtr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h" />
@@ -240,9 +241,11 @@
     <ClInclude Include="purrfx\CLogItemFrameStart.h" />
     <ClInclude Include="purrfx\CAudioDataConsumerWavWriter.h" />
     <ClInclude Include="purrfx\CNesGmeAudioDataProvider.h" />
+    <ClInclude Include="purrfx\CNesPtr.h" />
     <ClInclude Include="purrfx\DClass.h" />
     <ClInclude Include="purrfx\ECodeLabelType.h" />
     <ClInclude Include="purrfx\ELogItemType.h" />
+    <ClInclude Include="purrfx\ENesType.h" />
     <ClInclude Include="purrfx\ERegister.h" />
     <ClInclude Include="purrfx\PurrFX.h" />
   </ItemGroup>
