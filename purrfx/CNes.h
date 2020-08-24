@@ -5,12 +5,14 @@
 // Notes:
 // * It won't own CLogDataConsumer instance.
 // * It won't own CAudioDataConsumer instance.
+// * It won't own CFrameDataConsumer instance.
 
 #include <bitset>
 #include <cassert>
 #include "CAudioFormat.h"
 #include "CLogDataConsumer.h"
 #include "CAudioDataConsumer.h"
+#include "CFrameDataConsumer.h"
 
 namespace PurrFX
 {
@@ -64,6 +66,20 @@ namespace PurrFX
 	private:
 		CLogDataConsumer* m_pLogDataConsumer = nullptr;
 		std::bitset<32> m_aLogItemTypesDisabled;
+
+		/////////////////////////////
+		// Frame data input/output //
+		/////////////////////////////
+
+	public:
+		void setFrameDataConsumer(CFrameDataConsumer* i_pConsumer);
+
+	protected:
+		CFrameDataConsumer*     frameDataConsumer() const;
+		bool                usesFrameDataConsumer() const;
+
+	private:
+		CFrameDataConsumer* m_pFrameDataConsumer = nullptr;
 	};
 
 }

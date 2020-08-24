@@ -81,3 +81,18 @@ void PurrFX::CNes::logAddItem(const CLogItem& i_rItem)
 
 	m_pLogDataConsumer->onNewItem(&i_rItem);
 }
+
+void PurrFX::CNes::setFrameDataConsumer(CFrameDataConsumer* i_pConsumer)
+{
+	m_pFrameDataConsumer = i_pConsumer;
+}
+
+PurrFX::CFrameDataConsumer* PurrFX::CNes::frameDataConsumer() const
+{
+	return m_pFrameDataConsumer;
+}
+
+bool PurrFX::CNes::usesFrameDataConsumer() const
+{
+	return (m_pFrameDataConsumer != nullptr);
+}
