@@ -141,6 +141,15 @@
     <ClCompile Include="purrfx\CNesGmeAudioDataProvider.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CFrameData.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="purrfx\CFrameDataConsumer.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="purrfx\CFrameDataFileWriter.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -288,6 +297,18 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CNesGmeAudioDataProvider.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CFrameData.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CFrameDataConsumer.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\ERegister.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CFrameDataFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
