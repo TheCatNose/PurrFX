@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include "purrfx/PurrFX.h"
+#include "purrfx/CFrameDataFileWriter.h"
 
 void showErrorMessage(const char* i_sMessage)
 {
@@ -12,8 +13,9 @@ void showErrorMessage(const char* i_sMessage)
 std::string inputPath (const std::string& i_sFileName) { return std::string("data/in/") + i_sFileName; }
 std::string outputPath(const std::string& i_sFileName) { return std::string("data/out/") + i_sFileName; }
 
-#define	DEMO_MODE_WAV 0
-#define	DEMO_MODE_LOG 1
+#define	DEMO_MODE_WAV        0
+#define	DEMO_MODE_LOG        1
+#define DEMO_MODE_FD_CAPTURE 2
 
 // Choose demo mode here:
 #define DEMO_MODE	DEMO_MODE_WAV
@@ -40,6 +42,8 @@ int main()
 	sOutputFile += ".wav";
 #elif DEMO_MODE == DEMO_MODE_LOG
 	sOutputFile += ".log";
+#elif DEMO_MODE == DEMO_MODE_FD_CAPTURE
+	sOutputFile += ".fd";
 #endif
 	std::string sOutputPath = outputPath(sOutputFile);
 	
@@ -59,6 +63,9 @@ int main()
 	pNes->logItemTypeDisable(PurrFX::ELogItemType::FrameEnd);
 	PurrFX::CLogFileWriter oLogWriter( sOutputPath.data() );
 	pNes->setLogDataConsumer(&oLogWriter);
+#elif DEMO_MODE == DEMO_MODE_FD_CAPTURE
+	PurrFX::CFrameDataFileWriter oFdWriter( sOutputPath.data() );
+	pNes->setFrameDataConsumer(&oFdWriter);
 #endif
 	pNes->setAudioFormat( oAudioFormat );
 	std::string sInputPath = inputPath(sInputFile);
