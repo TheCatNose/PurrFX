@@ -141,29 +141,79 @@ namespace PurrFX
 
 	void CNesGme::onGmeEventFrameStart(int i_nFrame)
 	{
-		if (!logEnabled())
-			return;
-
-		CLogItemFrameStart oLogItem(i_nFrame);
-		logAddItem(oLogItem);
+		if (logEnabled())
+		{
+			CLogItemFrameStart oLogItem(i_nFrame);
+			logAddItem(oLogItem);
+		}
+		if (usesFrameDataConsumer())
+			frameDataConsumer()->startFrame();
 	}
 
 	void CNesGme::onGmeEventFrameEnd()
 	{
-		if (!logEnabled())
-			return;
-
-		CLogItemFrameEnd oLogItem;
-		logAddItem(oLogItem);
+		if (logEnabled())
+		{
+			CLogItemFrameEnd oLogItem;
+			logAddItem(oLogItem);
+		}
+		if (usesFrameDataConsumer())
+			frameDataConsumer()->endFrame();
 	}
 
 	void CNesGme::onGmeEventApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue)
 	{
-		if (!logEnabled())
-			return;
+		if (logEnabled())
+		{
+			CLogItemApuRegisterWrite oLogItem(i_nRegister, i_nValue);
+			logAddItem(oLogItem);
+		}
+		if (usesFrameDataConsumer())
+		{
+			ERegister eRegister = ERegister::Unknown;
+			switch(i_nRegister)
+			{
+				/////////
+				// APU //
+				/////////
 
-		CLogItemApuRegisterWrite oLogItem(i_nRegister, i_nValue);
-		logAddItem(oLogItem);
+				// Pulse 1
+			case 0x4000: eRegister = ERegister::Apu4000; break;
+			case 0x4001: eRegister = ERegister::Apu4001; break;
+			case 0x4002: eRegister = ERegister::Apu4002; break;
+			case 0x4003: eRegister = ERegister::Apu4003; break;
+				// Pulse 2
+			case 0x4004: eRegister = ERegister::Apu4004; break;
+			case 0x4005: eRegister = ERegister::Apu4005; break;
+			case 0x4006: eRegister = ERegister::Apu4006; break;
+			case 0x4007: eRegister = ERegister::Apu4007; break;
+				// Triangle
+			case 0x4008: eRegister = ERegister::Apu4008; break;
+			case 0x400A: eRegister = ERegister::Apu400A; break;
+			case 0x400B: eRegister = ERegister::Apu400B; break;
+				// Noise
+			case 0x400C: eRegister = ERegister::Apu400C; break;
+			case 0x400E: eRegister = ERegister::Apu400E; break;
+			case 0x400F: eRegister = ERegister::Apu400F; break;
+				// DMC
+			case 0x4010: eRegister = ERegister::Apu4010; break;
+			case 0x4011: eRegister = ERegister::Apu4011; break;
+			case 0x4012: eRegister = ERegister::Apu4012; break;
+			case 0x4013: eRegister = ERegister::Apu4013; break;
+				// Status
+			case 0x4015: eRegister = ERegister::Apu4015; break;
+
+				// Not interesting and wrong cases
+			case 0x4009:
+			case 0x400D:
+			case 0x4017: break;
+
+			default:
+				assert(false && "Unknown register");
+			}
+			if (eRegister != ERegister::Unknown)
+				frameDataConsumer()->setRegister(eRegister, i_nValue);
+		}
 	}
 
 }
