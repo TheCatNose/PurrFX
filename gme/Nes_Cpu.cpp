@@ -188,6 +188,25 @@ loop:
 		bool at_init = (addr == init_addr);
 		bool at_play = (addr == play_addr);
 
+		// Using frame data
+
+		std::vector<uint8_t> frame_code;
+		if (at_play && gme_integrator->gmeGetFrameCode(frame_code))
+		{
+			assert(frame_code.size() >= 1);
+
+			// Write all the code to SRAM (Starts at $6000)
+			for (uint16_t nByte = 0; nByte < frame_code.size(); nByte++)
+				WRITE(0x6000 + nByte, frame_code[nByte]);
+
+			// Go to created frame code;
+			opcode = 0x4C; // JMP to $6000
+			static const uint8_t aFrameCodeAddress[2] = {0x00, 0x60};
+			instr = aFrameCodeAddress;
+		}
+
+		// Events
+
 		if (at_init)
 		{
 			frame = -1;
