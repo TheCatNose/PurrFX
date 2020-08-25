@@ -98,7 +98,7 @@ public:
 	void run_until( nes_time_t );
 	
 	// <PurrFX>
-	CGmeEventsReceiver* events_receiver = nullptr;
+	CGmeIntegrator* gme_integrator = nullptr;
 	// </PurrFX>
 public:
 	Nes_Apu();

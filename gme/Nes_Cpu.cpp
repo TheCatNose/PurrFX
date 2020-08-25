@@ -182,7 +182,7 @@ loop:
 	#endif
 
 	// <PurrFX>
-	if (events_receiver != nullptr)
+	if (gme_integrator != nullptr)
 	{
 		uint16_t addr = pc - 1;
 		bool at_init = (addr == init_addr);
@@ -191,19 +191,19 @@ loop:
 		if (at_init)
 		{
 			frame = -1;
-			events_receiver->onGmeEventFrameStart(++frame);
-			events_receiver->onGmeEventCodeLabel('i');
+			gme_integrator->onGmeEventFrameStart(++frame);
+			gme_integrator->onGmeEventCodeLabel('i');
 		}
 		if (at_play)
 		{
-			events_receiver->onGmeEventFrameStart(++frame);
-			events_receiver->onGmeEventCodeLabel('p');
+			gme_integrator->onGmeEventFrameStart(++frame);
+			gme_integrator->onGmeEventCodeLabel('p');
 		}
 
-		events_receiver->onGmeEventCpuInstruction(addr, opcode, instr[0], instr[1]);
+		gme_integrator->onGmeEventCpuInstruction(addr, opcode, instr[0], instr[1]);
 
 		if (opcode == 0xF2 && opcode != prev_opcode)
-			events_receiver->onGmeEventFrameEnd();
+			gme_integrator->onGmeEventFrameEnd();
 
 		prev_opcode = opcode;
 	}

@@ -65,7 +65,7 @@ public:
 	enum { bad_opcode = 0xF2 };
 	
 	// <PurrFX>
-	CGmeEventsReceiver* events_receiver = nullptr;
+	CGmeIntegrator* gme_integrator = nullptr;
 	uint16_t init_addr;
 	uint16_t play_addr;
 private:

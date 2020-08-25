@@ -290,8 +290,8 @@ void Nes_Apu::write_register( nes_time_t time, nes_addr_t addr, int data )
 		return;
 
 	// <PurrFX>
-	if (events_receiver != nullptr)
-		events_receiver->onGmeEventApuRegisterWrite(addr, uint8_t(data));
+	if (gme_integrator != nullptr)
+		gme_integrator->onGmeEventApuRegisterWrite(addr, uint8_t(data));
 	// </PurrFX>
 	
 	run_until_( time );
