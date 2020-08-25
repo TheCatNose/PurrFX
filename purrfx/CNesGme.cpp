@@ -43,8 +43,8 @@ namespace PurrFX
 		// Setup logging
 		Nsf_Emu* pNsfEmu = static_cast<Nsf_Emu*>(m_pEmu);
 		Nes_Cpu* pNesCpu = pNsfEmu->cpu_();
-		pNesCpu->events_receiver = this;
-		pNsfEmu->apu_()->events_receiver = this;
+		pNesCpu->gme_integrator = this;
+		pNsfEmu->apu_()->gme_integrator = this;
 
 		return true;
 	}

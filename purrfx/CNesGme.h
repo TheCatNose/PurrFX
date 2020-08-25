@@ -19,7 +19,7 @@ class CNesGmeAudioDataProvider;
 namespace PurrFX
 {
 
-	class CNesGme : public CNes, private CGmeEventsReceiver
+	class CNesGme : public CNes, private CGmeIntegrator
 	{
 	public:
 		CNesGme();
@@ -35,7 +35,7 @@ namespace PurrFX
 	private:
 		virtual bool prepareEmulator();
 
-		// CGmeLogDataConsumer implementation
+		// CGmeIntegrator implementation
 		virtual void onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2);
 		virtual void onGmeEventCodeLabel(char i_cLabelName);
 		virtual void onGmeEventFrameStart(int i_nFrame);
