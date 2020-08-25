@@ -13,6 +13,7 @@
 #include "CLogItemApuRegisterWrite.h"
 #include "CAudioProxyBuffer.h"
 #include "CAudioProxyBufferDataProvider.h"
+#include "CFrameDataProcessor.h"
 
 class CNesGmeAudioDataProvider;
 
