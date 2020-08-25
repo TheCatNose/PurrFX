@@ -4,6 +4,7 @@
 #include <string>
 #include "purrfx/PurrFX.h"
 #include "purrfx/CFrameDataFileWriter.h"
+#include "purrfx/CFrameDataFileReader.h"
 
 void showErrorMessage(const char* i_sMessage)
 {
@@ -16,6 +17,7 @@ std::string outputPath(const std::string& i_sFileName) { return std::string("dat
 #define	DEMO_MODE_WAV        0
 #define	DEMO_MODE_LOG        1
 #define DEMO_MODE_FD_CAPTURE 2
+#define DEMO_MODE_FD_PLAY    3
 
 // Choose demo mode here:
 #define DEMO_MODE	DEMO_MODE_WAV
@@ -34,11 +36,16 @@ int main()
 	// Sound quality
 	PurrFX::CAudioFormat oAudioFormat(44100);
 
+	// Additional settings
+#if DEMO_MODE == DEMO_MODE_FD_PLAY
+	std::string sInputFD = "in.fd";
+#endif
+
 	//////////////////
 	// Preparations //
 	//////////////////
 
-#if   DEMO_MODE == DEMO_MODE_WAV
+#if   DEMO_MODE == DEMO_MODE_WAV | DEMO_MODE == DEMO_MODE_FD_PLAY
 	sOutputFile += ".wav";
 #elif DEMO_MODE == DEMO_MODE_LOG
 	sOutputFile += ".log";
@@ -53,18 +60,25 @@ int main()
 
 	PurrFX::CNesPtr oNes(PurrFX::ENesType::GameMusicEmu);
 
-#if   DEMO_MODE == DEMO_MODE_WAV
+#if   DEMO_MODE == DEMO_MODE_WAV | DEMO_MODE == DEMO_MODE_FD_PLAY
 	PurrFX::CWavWriter oWavWriter( sOutputPath.data(), nTime );
 	oNes->setAudioDataConsumer(&oWavWriter);
-#elif DEMO_MODE == DEMO_MODE_LOG
+#endif
+#if DEMO_MODE == DEMO_MODE_LOG
 	oNes->logItemTypeDisable(PurrFX::ELogItemType::CpuInstruction);
 	oNes->logItemTypeDisable(PurrFX::ELogItemType::CodeLabel);
 	oNes->logItemTypeDisable(PurrFX::ELogItemType::FrameEnd);
 	PurrFX::CLogFileWriter oLogWriter( sOutputPath.data() );
 	oNes->setLogDataConsumer(&oLogWriter);
-#elif DEMO_MODE == DEMO_MODE_FD_CAPTURE
+#endif
+#if DEMO_MODE == DEMO_MODE_FD_CAPTURE
 	PurrFX::CFrameDataFileWriter oFdWriter( sOutputPath.data() );
 	oNes->setFrameDataConsumer(&oFdWriter);
+#endif
+#if DEMO_MODE == DEMO_MODE_FD_PLAY
+	std::string sFdPath = inputPath(sInputFD);
+	PurrFX::CFrameDataFileReader oFdReader( sFdPath.data() );
+	oNes->setFrameDataProducer(&oFdReader);
 #endif
 	oNes->setAudioFormat( oAudioFormat );
 	std::string sInputPath = inputPath(sInputFile);
