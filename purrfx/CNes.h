@@ -6,6 +6,7 @@
 // * It won't own CLogDataConsumer instance.
 // * It won't own CAudioDataConsumer instance.
 // * It won't own CFrameDataConsumer instance.
+// * It won't own CFrameDataProducer instance.
 
 #include <bitset>
 #include <cassert>
@@ -13,6 +14,7 @@
 #include "CLogDataConsumer.h"
 #include "CAudioDataConsumer.h"
 #include "CFrameDataConsumer.h"
+#include "CFrameDataProducer.h"
 
 namespace PurrFX
 {
@@ -73,13 +75,17 @@ namespace PurrFX
 
 	public:
 		void setFrameDataConsumer(CFrameDataConsumer* i_pConsumer);
+		void setFrameDataProducer(CFrameDataProducer* i_pProducer);
 
 	protected:
 		CFrameDataConsumer*     frameDataConsumer() const;
 		bool                usesFrameDataConsumer() const;
+		CFrameDataProducer*     frameDataProducer() const;
+		bool                usesFrameDataProducer() const;
 
 	private:
 		CFrameDataConsumer* m_pFrameDataConsumer = nullptr;
+		CFrameDataProducer* m_pFrameDataProducer = nullptr;
 	};
 
 }

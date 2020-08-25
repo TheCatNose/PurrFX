@@ -87,6 +87,11 @@ void PurrFX::CNes::setFrameDataConsumer(CFrameDataConsumer* i_pConsumer)
 	m_pFrameDataConsumer = i_pConsumer;
 }
 
+void PurrFX::CNes::setFrameDataProducer(CFrameDataProducer* i_pProducer)
+{
+	m_pFrameDataProducer = i_pProducer;
+}
+
 PurrFX::CFrameDataConsumer* PurrFX::CNes::frameDataConsumer() const
 {
 	return m_pFrameDataConsumer;
@@ -95,4 +100,14 @@ PurrFX::CFrameDataConsumer* PurrFX::CNes::frameDataConsumer() const
 bool PurrFX::CNes::usesFrameDataConsumer() const
 {
 	return (m_pFrameDataConsumer != nullptr);
+}
+
+PurrFX::CFrameDataProducer* PurrFX::CNes::frameDataProducer() const
+{
+	return m_pFrameDataProducer;
+}
+
+bool PurrFX::CNes::usesFrameDataProducer() const
+{
+	return (m_pFrameDataProducer != nullptr);
 }
