@@ -153,6 +153,12 @@
     <ClCompile Include="purrfx\CNesPtr.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CFrameDataProducer.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="purrfx\CFrameDataFileReader.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -318,6 +324,15 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CNesPtr.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CFrameDataProducer.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CFrameDataFileReader.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CFrameDataProducerRandomAccess.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>

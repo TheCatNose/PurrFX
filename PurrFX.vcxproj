@@ -175,7 +175,9 @@
     <ClCompile Include="purrfx\CBufferedFileWriter.cpp" />
     <ClCompile Include="purrfx\CFrameData.cpp" />
     <ClCompile Include="purrfx\CFrameDataConsumer.cpp" />
+    <ClCompile Include="purrfx\CFrameDataFileReader.cpp" />
     <ClCompile Include="purrfx\CFrameDataFileWriter.cpp" />
+    <ClCompile Include="purrfx\CFrameDataProducer.cpp" />
     <ClCompile Include="purrfx\CNes.cpp" />
     <ClCompile Include="purrfx\CCpuInstructionInfo.cpp" />
     <ClCompile Include="purrfx\CNesGme.cpp" />
@@ -227,7 +229,10 @@
     <ClInclude Include="purrfx\CBufferedFileWriter.h" />
     <ClInclude Include="purrfx\CFrameData.h" />
     <ClInclude Include="purrfx\CFrameDataConsumer.h" />
+    <ClInclude Include="purrfx\CFrameDataFileReader.h" />
     <ClInclude Include="purrfx\CFrameDataFileWriter.h" />
+    <ClInclude Include="purrfx\CFrameDataProducer.h" />
+    <ClInclude Include="purrfx\CFrameDataProducerRandomAccess.h" />
     <ClInclude Include="purrfx\CNes.h" />
     <ClInclude Include="purrfx\CCpuInstructionInfo.h" />
     <ClInclude Include="purrfx\CNesGme.h" />
