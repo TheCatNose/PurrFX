@@ -216,4 +216,52 @@ namespace PurrFX
 		}
 	}
 
+	bool CNesGme::gmeGetFrameCode(std::vector<uint8_t>& o_rCode)
+	{
+		auto* pDataSource = frameDataProducer();
+		if (pDataSource == nullptr)
+			return false;
+		if (!pDataSource->available())
+			return false;
+
+		CFrameData oData = pDataSource->get();
+		
+		o_rCode.reserve(256);
+		for (int i = 0; i < RegisterCount; i++)
+		{
+			ERegister eRegister = ERegister(i);
+			if (!oData.isSet(eRegister))
+				continue;
+
+			uint16_t aRegisters[RegisterCount] =
+			{
+				/////////
+				// APU //
+				/////////
+				0x4000, 0x4001, 0x4002, 0x4003, // Pulse 1
+				0x4004, 0x4005, 0x4006, 0x4007, // Pulse 2
+				0x4008, 0x400A, 0x400B,         // Triangle
+				0x400C, 0x400E, 0x400F,         // Noise
+				0x4010, 0x4011, 0x4012, 0x4013, // DMC
+				0x4015,                         // Status
+			};
+			uint16_t nRegister  = aRegisters[i];
+			uint8_t  nRegisterL = uint8_t( nRegister &  0xFF );
+			uint8_t  nRegisterH = uint8_t( nRegister >> 8   );
+
+			const uint8_t nValue = oData.get(eRegister);
+
+			o_rCode.push_back( 0xA9 ); // (LDA) A = Value
+			o_rCode.push_back( nValue );
+			o_rCode.push_back( 0x8D ); // (STA) $X = A
+			o_rCode.push_back( nRegisterL );
+			o_rCode.push_back( nRegisterH );
+		}
+
+		o_rCode.push_back( 0x60 ); // (RTS) Return from the function
+
+		pDataSource->next();
+		return true;
+	}
+
 }
