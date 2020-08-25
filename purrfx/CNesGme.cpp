@@ -227,11 +227,18 @@ namespace PurrFX
 		CFrameData oData = pDataSource->get();
 		
 		o_rCode.reserve(256);
+		bool bPlayDMC = false;
 		for (int i = 0; i < RegisterCount; i++)
 		{
 			ERegister eRegister = ERegister(i);
 			if (!oData.isSet(eRegister))
 				continue;
+
+			if (eRegister == ERegister::Apu4010 ||
+				eRegister == ERegister::Apu4011 ||
+				eRegister == ERegister::Apu4012 ||
+				eRegister == ERegister::Apu4013 )
+				bPlayDMC = true;
 
 			uint16_t aRegisters[RegisterCount] =
 			{
@@ -250,12 +257,25 @@ namespace PurrFX
 			uint8_t  nRegisterH = uint8_t( nRegister >> 8   );
 
 			const uint8_t nValue = oData.get(eRegister);
+			if (eRegister == ERegister::Apu4015 && bPlayDMC)
+				continue;
 
 			o_rCode.push_back( 0xA9 ); // (LDA) A = Value
 			o_rCode.push_back( nValue );
 			o_rCode.push_back( 0x8D ); // (STA) $X = A
 			o_rCode.push_back( nRegisterL );
 			o_rCode.push_back( nRegisterH );
+		}
+
+		if (bPlayDMC)
+		{
+			// Special case for DMC:
+			// 4015 <- 0x0F
+			// 4015 <- 0x1F
+			const size_t nDmcCodeSize = 10;
+			uint8_t      aDmcCode[nDmcCodeSize] = {0xA9, 0x0F, 0x8D, 0x15, 0x40, 0xA9, 0x1F, 0x8D, 0x15, 0x40};
+			for (size_t i = 0; i < nDmcCodeSize; i++)
+				o_rCode.push_back(aDmcCode[i]);
 		}
 
 		o_rCode.push_back( 0x60 ); // (RTS) Return from the function
