@@ -162,6 +162,9 @@
     <ClCompile Include="purrfx\CFrameDataProcessor.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CNsfTemplate.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -339,6 +342,9 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CFrameDataProcessor.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CNsfTemplate.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
