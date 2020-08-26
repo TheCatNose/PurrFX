@@ -24,8 +24,9 @@ namespace PurrFX
 	public:
 		virtual ~CNes();
 
-		virtual bool open(const char* i_sName) = 0;
-		virtual bool open(const uint8_t* i_pData, size_t i_nSize) = 0;
+		bool         open();                                           // open template based in-memory stored NSF file
+		virtual bool open(const char* i_sName) = 0;                    // open NSF file
+		virtual bool open(const uint8_t* i_pData, size_t i_nSize) = 0; // open in-memory stored NSF file
 		virtual bool setTrack(int i_nTrack) = 0;
 		virtual bool render(char* o_pData, size_t i_nDataSize) = 0;
 

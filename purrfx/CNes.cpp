@@ -1,7 +1,15 @@
 #include "CNes.h"
+#include "CNsfTemplate.h"
 
 PurrFX::CNes::~CNes()
 {
+}
+
+bool PurrFX::CNes::open()
+{
+	std::vector<uint8_t> aNsf;
+	CNsfTemplate::create(aNsf);
+	return open(aNsf.data(), aNsf.size());
 }
 
 void PurrFX::CNes::setAudioFormat(const CAudioFormat& i_rFormat)
