@@ -36,11 +36,6 @@ int main()
 	// Sound quality
 	PurrFX::CAudioFormat oAudioFormat(44100);
 
-	// Additional settings
-#if DEMO_MODE == DEMO_MODE_FD_PLAY
-	std::string sInputFD = "in.fd";
-#endif
-
 	//////////////////
 	// Preparations //
 	//////////////////
@@ -52,7 +47,15 @@ int main()
 #elif DEMO_MODE == DEMO_MODE_FD_CAPTURE
 	sOutputFile += ".fd";
 #endif
+
+#if DEMO_MODE == DEMO_MODE_FD_PLAY
+	// You must use frame data file as input file
+	assert(sInputFile.substr(sInputFile.size()-3, 3) == ".fd");
+#endif
+
+
 	std::string sOutputPath = outputPath(sOutputFile);
+	std::string sInputPath  = inputPath(sInputFile);
 	
 	///////////
 	// Setup //
@@ -76,13 +79,16 @@ int main()
 	oNes->setFrameDataConsumer(&oFdWriter);
 #endif
 #if DEMO_MODE == DEMO_MODE_FD_PLAY
-	std::string sFdPath = inputPath(sInputFD);
-	PurrFX::CFrameDataFileReader oFdReader( sFdPath.data() );
+	PurrFX::CFrameDataFileReader oFdReader( sInputPath.data() );
 	oNes->setFrameDataProducer(&oFdReader);
 #endif
 	oNes->setAudioFormat( oAudioFormat );
-	std::string sInputPath = inputPath(sInputFile);
+#if DEMO_MODE == DEMO_MODE_FD_PLAY
+	if (!oNes->open())
+#else
+	
 	if (!oNes->open( sInputPath.data() ))
+#endif
 	{
 		showErrorMessage("Can't open file");
 		return 1;
