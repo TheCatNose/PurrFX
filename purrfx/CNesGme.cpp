@@ -66,7 +66,7 @@ namespace PurrFX
 		return bSuccess;
 	}
 
-	bool CNesGme::open(const char* i_pData, size_t i_nSize)
+	bool CNesGme::open(const uint8_t* i_pData, size_t i_nSize)
 	{
 		if (!prepareEmulator())
 			return false;

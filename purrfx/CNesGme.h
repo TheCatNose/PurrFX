@@ -28,7 +28,7 @@ namespace PurrFX
 
 		// CNes implementation
 		virtual bool open(const char* i_sFileName);
-		virtual bool open(const char* i_pData, size_t i_nSize);
+		virtual bool open(const uint8_t* i_pData, size_t i_nSize);
 		virtual bool setTrack(int i_nTrack);
 		virtual bool render(char* o_pData, size_t i_nDataSize);
 
