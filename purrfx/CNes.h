@@ -7,6 +7,7 @@
 // * It won't own CAudioDataConsumer instance.
 // * It won't own CFrameDataConsumer instance.
 // * It won't own CFrameDataProducer instance.
+// * It won't own CDpcmDataConsumer instance.
 
 #include <bitset>
 #include <cassert>
@@ -15,6 +16,7 @@
 #include "CAudioDataConsumer.h"
 #include "CFrameDataConsumer.h"
 #include "CFrameDataProducer.h"
+#include "CDpcmDataConsumer.h"
 
 namespace PurrFX
 {
@@ -87,6 +89,20 @@ namespace PurrFX
 	private:
 		CFrameDataConsumer* m_pFrameDataConsumer = nullptr;
 		CFrameDataProducer* m_pFrameDataProducer = nullptr;
+
+		////////////////////////////
+		// DPCM data input/output //
+		////////////////////////////
+
+	public:
+		void setDpcmDataConsumer(CDpcmDataConsumer* i_pConsumer);
+
+	protected:
+		CDpcmDataConsumer*     dpcmDataConsumer() const;
+		bool               usesDpcmDataConsumer() const;
+
+	private:
+		CDpcmDataConsumer* m_pDpcmDataConsumer;
 	};
 
 }

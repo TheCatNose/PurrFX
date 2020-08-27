@@ -119,3 +119,18 @@ bool PurrFX::CNes::usesFrameDataProducer() const
 {
 	return (m_pFrameDataProducer != nullptr);
 }
+
+void PurrFX::CNes::setDpcmDataConsumer(CDpcmDataConsumer* i_pConsumer)
+{
+	m_pDpcmDataConsumer = i_pConsumer;
+}
+
+PurrFX::CDpcmDataConsumer* PurrFX::CNes::dpcmDataConsumer() const
+{
+	return m_pDpcmDataConsumer;
+}
+
+bool PurrFX::CNes::usesDpcmDataConsumer() const
+{
+	return (m_pDpcmDataConsumer != nullptr);
+}
