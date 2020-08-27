@@ -42,6 +42,7 @@ namespace PurrFX
 		virtual void onGmeEventFrameStart(int i_nFrame);
 		virtual void onGmeEventFrameEnd();
 		virtual void onGmeEventApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue);
+		virtual void onGmeDpcmSampleStarted(uint8_t i_nAddress, uint8_t i_nLength);
 		virtual bool gmeGetFrameCode(std::vector<uint8_t>& o_rCode);
 
 		Music_Emu* m_pEmu = nullptr;

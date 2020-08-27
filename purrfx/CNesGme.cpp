@@ -1,5 +1,6 @@
 #include "CNesGme.h"
 #include "CNesGmeAudioDataProvider.h"
+#include "CNesCalculations.h"
 
 namespace PurrFX
 {
@@ -214,6 +215,23 @@ namespace PurrFX
 			if (eRegister != ERegister::Unknown)
 				frameDataConsumer()->setRegister(eRegister, i_nValue);
 		}
+	}
+
+	void CNesGme::onGmeDpcmSampleStarted(uint8_t i_nAddress, uint8_t i_nLength)
+	{
+		if (!usesDpcmDataConsumer())
+			return;
+
+		dpcmDataConsumer()->start(i_nAddress, i_nLength);
+
+		uint16_t nSampleBytes   = CNesCalculations::dpcmSampleLengthUnpack(i_nLength);
+		uint16_t nSampleAddress = CNesCalculations::dpcmSampleAddressUnpack(i_nAddress);
+
+		Nsf_Emu* pNsfEmu = static_cast<Nsf_Emu*>(m_pEmu);
+		for (uint16_t i = 0; i < nSampleBytes; i++)
+			dpcmDataConsumer()->addByte( pNsfEmu->cpu_read_(nSampleAddress+i) );
+		
+		dpcmDataConsumer()->end();
 	}
 
 	bool CNesGme::gmeGetFrameCode(std::vector<uint8_t>& o_rCode)
