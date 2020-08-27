@@ -54,6 +54,7 @@ public:
 	Nes_Apu* apu_() { return &apu; }
 	// <PurrFX>
 	Nes_Cpu* cpu_() { return static_cast<Nes_Cpu*>(this); }
+	int cpu_read_(nes_addr_t addr) { return cpu_read(addr); }
 	// </PurrFX>
 protected:
 	blargg_err_t track_info_( track_info_t*, int track ) const;
