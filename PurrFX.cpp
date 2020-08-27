@@ -5,6 +5,7 @@
 #include "purrfx/PurrFX.h"
 #include "purrfx/CFrameDataFileWriter.h"
 #include "purrfx/CFrameDataFileReader.h"
+#include "purrfx/CDpcmDataFileWriter.h"
 
 void showErrorMessage(const char* i_sMessage)
 {
@@ -18,6 +19,7 @@ std::string outputPath(const std::string& i_sFileName) { return std::string("dat
 #define	DEMO_MODE_LOG        1
 #define DEMO_MODE_FD_CAPTURE 2
 #define DEMO_MODE_FD_PLAY    3
+#define DEMO_MODE_DPCM_GRAB  4
 
 // Choose demo mode here:
 #define DEMO_MODE	DEMO_MODE_WAV
@@ -82,6 +84,12 @@ int main()
 	PurrFX::CFrameDataFileReader oFdReader( sInputPath.data() );
 	oNes->setFrameDataProducer(&oFdReader);
 #endif
+#if DEMO_MODE == DEMO_MODE_DPCM_GRAB
+	PurrFX::CDpcmDataFileWriter oDpcmWriter("./data/out/");
+	oNes->setDpcmDataConsumer(&oDpcmWriter);
+#endif
+
+
 	oNes->setAudioFormat( oAudioFormat );
 #if DEMO_MODE == DEMO_MODE_FD_PLAY
 	if (!oNes->open())
