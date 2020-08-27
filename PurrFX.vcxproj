@@ -173,6 +173,9 @@
     <ClCompile Include="purrfx\CAudioProxyBuffer.cpp" />
     <ClCompile Include="purrfx\CAudioProxyBufferDataProvider.cpp" />
     <ClCompile Include="purrfx\CBufferedFileWriter.cpp" />
+    <ClCompile Include="purrfx\CDpcmDataConsumer.cpp" />
+    <ClCompile Include="purrfx\CDpcmDataFileWriter.cpp" />
+    <ClCompile Include="purrfx\CDpcmSample.cpp" />
     <ClCompile Include="purrfx\CFrameData.cpp" />
     <ClCompile Include="purrfx\CFrameDataProcessor.cpp" />
     <ClCompile Include="purrfx\CFrameDataConsumer.cpp" />
@@ -181,6 +184,7 @@
     <ClCompile Include="purrfx\CFrameDataProducer.cpp" />
     <ClCompile Include="purrfx\CNes.cpp" />
     <ClCompile Include="purrfx\CCpuInstructionInfo.cpp" />
+    <ClCompile Include="purrfx\CNesCalculations.cpp" />
     <ClCompile Include="purrfx\CNesGme.cpp" />
     <ClCompile Include="purrfx\CLogDataConsumer.cpp" />
     <ClCompile Include="purrfx\CLogFileWriter.cpp" />
@@ -229,6 +233,9 @@
     <ClInclude Include="purrfx\CAudioProxyBuffer.h" />
     <ClInclude Include="purrfx\CAudioProxyBufferDataProvider.h" />
     <ClInclude Include="purrfx\CBufferedFileWriter.h" />
+    <ClInclude Include="purrfx\CDpcmDataConsumer.h" />
+    <ClInclude Include="purrfx\CDpcmDataFileWriter.h" />
+    <ClInclude Include="purrfx\CDpcmSample.h" />
     <ClInclude Include="purrfx\CFrameData.h" />
     <ClInclude Include="purrfx\CFrameDataProcessor.h" />
     <ClInclude Include="purrfx\CFrameDataConsumer.h" />
@@ -238,6 +245,7 @@
     <ClInclude Include="purrfx\CFrameDataProducerRandomAccess.h" />
     <ClInclude Include="purrfx\CNes.h" />
     <ClInclude Include="purrfx\CCpuInstructionInfo.h" />
+    <ClInclude Include="purrfx\CNesCalculations.h" />
     <ClInclude Include="purrfx\CNesGme.h" />
     <ClInclude Include="purrfx\CLogDataConsumer.h" />
     <ClInclude Include="purrfx\CLogFileWriter.h" />
@@ -252,6 +260,7 @@
     <ClInclude Include="purrfx\CNesPtr.h" />
     <ClInclude Include="purrfx\CNsfTemplate.h" />
     <ClInclude Include="purrfx\DClass.h" />
+    <ClInclude Include="purrfx\DNesConsts.h" />
     <ClInclude Include="purrfx\ECodeLabelType.h" />
     <ClInclude Include="purrfx\ELogItemType.h" />
     <ClInclude Include="purrfx\ENesType.h" />
