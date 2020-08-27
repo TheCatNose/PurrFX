@@ -291,7 +291,22 @@ void Nes_Apu::write_register( nes_time_t time, nes_addr_t addr, int data )
 
 	// <PurrFX>
 	if (gme_integrator != nullptr)
+	{
 		gme_integrator->onGmeEventApuRegisterWrite(addr, uint8_t(data));
+
+		// DPCM
+		if (addr      == 0x4012)
+			dpcm_address = data;
+		else if (addr == 0x4013)
+			dpcm_length  = data;
+		else if (addr == 0x4015 && data == 0x1F)
+		{
+			if (dpcm_address != -1 && dpcm_length > 0)
+				gme_integrator->onGmeDpcmSampleStarted(dpcm_address, dpcm_length);
+			dpcm_address = -1;
+			dpcm_length  = -1;
+		}
+	}
 	// </PurrFX>
 	
 	run_until_( time );

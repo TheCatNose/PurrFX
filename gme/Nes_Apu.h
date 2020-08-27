@@ -99,6 +99,9 @@ public:
 	
 	// <PurrFX>
 	CGmeIntegrator* gme_integrator = nullptr;
+private:
+	int dpcm_address = -1;
+	int dpcm_length  = -1;
 	// </PurrFX>
 public:
 	Nes_Apu();
