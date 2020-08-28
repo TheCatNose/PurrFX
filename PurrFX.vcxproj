@@ -262,6 +262,7 @@
     <ClInclude Include="purrfx\DClass.h" />
     <ClInclude Include="purrfx\DNesConsts.h" />
     <ClInclude Include="purrfx\ECodeLabelType.h" />
+    <ClInclude Include="purrfx\EDpcmFileType.h" />
     <ClInclude Include="purrfx\ELogItemType.h" />
     <ClInclude Include="purrfx\ENesType.h" />
     <ClInclude Include="purrfx\ERegister.h" />

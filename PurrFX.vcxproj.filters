@@ -374,5 +374,8 @@
     <ClInclude Include="purrfx\CDpcmDataFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
+    <ClInclude Include="purrfx\EDpcmFileType.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
