@@ -85,7 +85,7 @@ int main()
 	oNes->setFrameDataProducer(&oFdReader);
 #endif
 #if DEMO_MODE == DEMO_MODE_DPCM_GRAB
-	PurrFX::CDpcmDataFileWriter oDpcmWriter("./data/out/");
+	PurrFX::CDpcmDataFileWriter oDpcmWriter("./data/out/", PurrFX::EDpcmFileType::Dmc);
 	oNes->setDpcmDataConsumer(&oDpcmWriter);
 #endif
 
