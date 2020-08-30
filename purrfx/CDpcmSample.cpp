@@ -20,7 +20,7 @@ uint8_t PurrFX::CDpcmSample::dpcmLength() const
 	size_t nSize = m_aData.size();
 	assert(nSize >= NesConsts::dpcmSampleLengthMin &&
 		   nSize <= NesConsts::dpcmSampleLengthMax );
-	return CNesCalculations::dpcmSampleAddressPack( uint16_t(nSize) );
+	return CNesCalculations::dpcmSampleLengthPack( uint16_t(nSize) );
 }
 
 bool PurrFX::CDpcmSample::set(size_t i_nByteIndex, uint8_t i_nValue)
