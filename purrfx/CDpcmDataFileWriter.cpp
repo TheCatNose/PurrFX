@@ -34,7 +34,7 @@ const char* PurrFX::CDpcmDataFileWriter::fileExtension() const
 void PurrFX::CDpcmDataFileWriter::onSampleReady(const CDpcmSample& i_rSample)
 {
 	char sFileName[32];
-	sprintf_s<32>(sFileName, "%04X %04X.%s",
+	sprintf_s<32>(sFileName, "%02X%02X.%s",
 		i_rSample.dpcmAddress(),
 		i_rSample.dpcmLength(),
 		fileExtension() );
