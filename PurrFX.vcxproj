@@ -174,7 +174,10 @@
     <ClCompile Include="purrfx\CAudioProxyBufferDataProvider.cpp" />
     <ClCompile Include="purrfx\CBufferedFileWriter.cpp" />
     <ClCompile Include="purrfx\CDpcmDataConsumer.cpp" />
+    <ClCompile Include="purrfx\CDpcmFile.cpp" />
     <ClCompile Include="purrfx\CDpcmDataFileWriter.cpp" />
+    <ClCompile Include="purrfx\CDpcmDataProvider.cpp" />
+    <ClCompile Include="purrfx\CDpcmDataProviderStd.cpp" />
     <ClCompile Include="purrfx\CDpcmSample.cpp" />
     <ClCompile Include="purrfx\CFrameData.cpp" />
     <ClCompile Include="purrfx\CFrameDataProcessor.cpp" />
@@ -234,7 +237,10 @@
     <ClInclude Include="purrfx\CAudioProxyBufferDataProvider.h" />
     <ClInclude Include="purrfx\CBufferedFileWriter.h" />
     <ClInclude Include="purrfx\CDpcmDataConsumer.h" />
+    <ClInclude Include="purrfx\CDpcmFile.h" />
     <ClInclude Include="purrfx\CDpcmDataFileWriter.h" />
+    <ClInclude Include="purrfx\CDpcmDataProvider.h" />
+    <ClInclude Include="purrfx\CDpcmDataProviderStd.h" />
     <ClInclude Include="purrfx\CDpcmSample.h" />
     <ClInclude Include="purrfx\CFrameData.h" />
     <ClInclude Include="purrfx\CFrameDataProcessor.h" />

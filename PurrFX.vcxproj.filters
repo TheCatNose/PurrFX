@@ -177,6 +177,15 @@
     <ClCompile Include="purrfx\CDpcmDataFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CDpcmDataProvider.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="purrfx\CDpcmDataProviderStd.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="purrfx\CDpcmFile.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -375,6 +384,15 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\EDpcmFileType.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CDpcmDataProvider.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CDpcmDataProviderStd.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CDpcmFile.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
