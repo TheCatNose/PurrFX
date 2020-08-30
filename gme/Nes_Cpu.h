@@ -68,6 +68,15 @@ public:
 	CGmeIntegrator* gme_integrator = nullptr;
 	uint16_t init_addr;
 	uint16_t play_addr;
+	void memory_write(nes_addr_t a, uint8_t value) // Dirty hack
+	{
+	const uint8_t* pAddr = state->code_map[a >> page_bits] + a
+#if !BLARGG_NONPORTABLE
+		% (unsigned)page_size
+#endif
+		;
+	*((uint8_t*)pAddr) = value;
+	}
 private:
 	int frame = -1;
 	uint8_t prev_opcode = 0;
