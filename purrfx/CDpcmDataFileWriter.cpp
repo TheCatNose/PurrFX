@@ -27,6 +27,7 @@ const char* PurrFX::CDpcmDataFileWriter::fileExtension() const
 	case EDpcmFileType::Raw: return "raw";
 	default:
 		assert(false && "Unknown DPCM file type");
+		return "";
 		break;
 	}
 }
