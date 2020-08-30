@@ -1,7 +1,7 @@
 #include "CDpcmDataFileWriter.h"
 #include "CDpcmSample.h"
 #include "DNesConsts.h"
-#include "CBufferedFileWriter.h"
+#include "CDpcmFile.h"
 
 PurrFX::CDpcmDataFileWriter::CDpcmDataFileWriter(const char* i_sOutputFolder, EDpcmFileType i_eType):
 	m_sOutputFolder(i_sOutputFolder),
@@ -41,60 +41,6 @@ void PurrFX::CDpcmDataFileWriter::onSampleReady(const CDpcmSample& i_rSample)
 		fileExtension() );
 
 	std::string sPath = m_sOutputFolder + sFileName;
-	CBufferedFileWriter oFile( sPath.data() );
-	if (!oFile.isOpened())
-		return;
 
-	switch (m_eType)
-	{
-	case EDpcmFileType::Dmc:
-		saveAsDmc(oFile, i_rSample);
-		break;
-	case EDpcmFileType::Raw:
-		saveAsRaw(oFile, i_rSample);
-		break;
-	default:
-		assert(false && "Unknown DPCM file type");
-	}
-}
-
-void PurrFX::CDpcmDataFileWriter::saveAsDmc(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample)
-{
-	// Header format:
-	// "DMC"          - 3 bytes string
-	// Version        - 1 byte, unsigned
-	// Sample address - 1 byte, unsigned
-
-	i_rFile.write("DMC", 3);
-	uint8_t nVersion = 1;
-	uint8_t nAddress = i_rSample.dpcmAddress();
-	i_rFile.write(&nVersion, 1);
-	i_rFile.write(&nAddress, 1);
-
-	// Data
-
-	const size_t nDataSize = i_rSample.size();
-	assert(nDataSize >= NesConsts::dpcmSampleLengthMin &&
-		   nDataSize <= NesConsts::dpcmSampleLengthMax);
-	i_rFile.write( i_rSample.data(), i_rSample.size() );
-}
-
-void PurrFX::CDpcmDataFileWriter::saveAsRaw(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample)
-{
-	// No header, just array of 8bit signed audio samples
-
-	int8_t nSample = 0;
-	for (size_t i = 0; i < i_rSample.size(); i++)
-	{
-		uint8_t nSrcByte = i_rSample.data()[i];
-		for (int nBit = 0; nBit < 8; nBit++)
-		{
-			bool bBitSet = (nSrcByte & (1<<nBit)) != 0;
-			if (bBitSet)
-				nSample++;
-			else
-				nSample--;
-			i_rFile.write(&nSample, 1);
-		}
-	}
+	CDpcmFile::save(i_rSample, sPath.data(), m_eType);
 }

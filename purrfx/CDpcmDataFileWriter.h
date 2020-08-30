@@ -20,10 +20,7 @@ namespace PurrFX
 		// CDpcmDataConsumer implementation
 		virtual void onSampleReady(const CDpcmSample& i_rSample);
 
-
 		const char* fileExtension() const;
-		void saveAsDmc(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample);
-		void saveAsRaw(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample);
 
 		std::string m_sOutputFolder;
 		EDpcmFileType m_eType;

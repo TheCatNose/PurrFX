@@ -1,6 +1,7 @@
 #include "CDpcmFile.h"
 #include "CNesCalculations.h"
 #include "DNesConsts.h"
+#include "CBufferedFileWriter.h"
 
 PurrFX::CDpcmSample* PurrFX::CDpcmFile::load(const char* i_sFileName)
 {
@@ -26,6 +27,27 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::load(const char* i_sFileName)
 			return loadRaw(pFile, nFileSize);
 	}
 	return pSample;
+}
+
+bool PurrFX::CDpcmFile::save(const CDpcmSample& i_rSample, const char* i_sFileName, EDpcmFileType i_eType)
+{
+	
+	CBufferedFileWriter oFile(i_sFileName);
+	if (!oFile.isOpened())
+		return false;
+
+	switch (i_eType)
+	{
+	case EDpcmFileType::Dmc:
+		saveAsDmc(oFile, i_rSample);
+		break;
+	case EDpcmFileType::Raw:
+		saveAsRaw(oFile, i_rSample);
+		break;
+	default:
+		assert(false && "Unknown DPCM file type");
+	}
+	return true;
 }
 
 PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadDmc(FILE* i_pFile, size_t i_nFileSize)
@@ -121,4 +143,45 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadRaw(FILE* i_pFile, size_t i_nFileSiz
 	}
 
 	return pSample;
+}
+
+void PurrFX::CDpcmFile::saveAsDmc(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample)
+{
+	// Header format:
+	// "DMC"          - 3 bytes string
+	// Version        - 1 byte, unsigned
+	// Sample address - 1 byte, unsigned
+
+	i_rFile.write("DMC", 3);
+	uint8_t nVersion = 1;
+	uint8_t nAddress = i_rSample.dpcmAddress();
+	i_rFile.write(&nVersion, 1);
+	i_rFile.write(&nAddress, 1);
+
+	// Data
+
+	const size_t nDataSize = i_rSample.size();
+	assert(nDataSize >= NesConsts::dpcmSampleLengthMin &&
+		   nDataSize <= NesConsts::dpcmSampleLengthMax);
+	i_rFile.write( i_rSample.data(), i_rSample.size() );
+}
+
+void PurrFX::CDpcmFile::saveAsRaw(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample)
+{
+	// No header, just array of 8bit signed audio samples
+
+	int8_t nSample = 0;
+	for (size_t i = 0; i < i_rSample.size(); i++)
+	{
+		uint8_t nSrcByte = i_rSample.data()[i];
+		for (int nBit = 0; nBit < 8; nBit++)
+		{
+			bool bBitSet = (nSrcByte & (1<<nBit)) != 0;
+			if (bBitSet)
+				nSample++;
+			else
+				nSample--;
+			i_rFile.write(&nSample, 1);
+		}
+	}
 }
