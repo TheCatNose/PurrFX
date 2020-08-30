@@ -21,5 +21,5 @@ uint16_t PurrFX::CNesCalculations::dpcmSampleLengthUnpack(uint8_t i_nPackedLengt
 uint8_t PurrFX::CNesCalculations::dpcmSampleLengthPack(uint16_t i_nPackedLength)
 {
 	// LLLL.LLLL0001
-	return uint8_t( (i_nPackedLength & 0xb111111110000) >> 4 );
+	return uint8_t( (i_nPackedLength & 0b111111110000) >> 4 );
 }
