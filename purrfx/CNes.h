@@ -102,7 +102,7 @@ namespace PurrFX
 		bool               usesDpcmDataConsumer() const;
 
 	private:
-		CDpcmDataConsumer* m_pDpcmDataConsumer;
+		CDpcmDataConsumer* m_pDpcmDataConsumer = nullptr;
 	};
 
 }
