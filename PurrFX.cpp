@@ -2,10 +2,13 @@
 
 #include <iostream>
 #include <string>
+#include <filesystem>
 #include "purrfx/PurrFX.h"
 #include "purrfx/CFrameDataFileWriter.h"
 #include "purrfx/CFrameDataFileReader.h"
 #include "purrfx/CDpcmDataFileWriter.h"
+#include "purrfx/CDpcmDataProviderStd.h"
+#include "purrfx/CDpcmFile.h"
 
 void showErrorMessage(const char* i_sMessage)
 {
@@ -14,6 +17,21 @@ void showErrorMessage(const char* i_sMessage)
 }
 std::string inputPath (const std::string& i_sFileName) { return std::string("data/in/") + i_sFileName; }
 std::string outputPath(const std::string& i_sFileName) { return std::string("data/out/") + i_sFileName; }
+
+void loadDpcmSamples(PurrFX::CDpcmDataProviderStd& i_rProdiver)
+{
+    for (const auto& rEntry: std::filesystem::directory_iterator("./data/in/"))
+	{
+		std::string sExt = rEntry.path().extension().generic_string();
+		if (!(sExt == ".raw" || sExt == ".dmc" ))
+			continue;
+
+        std::string sPath = "./data/in/" + rEntry.path().filename().generic_string();
+		auto* pSample = PurrFX::CDpcmFile::load(sPath.data());
+		if (pSample != nullptr)
+			i_rProdiver.add(pSample);
+	}
+}
 
 #define	DEMO_MODE_WAV        0
 #define	DEMO_MODE_LOG        1
@@ -83,6 +101,10 @@ int main()
 #if DEMO_MODE == DEMO_MODE_FD_PLAY
 	PurrFX::CFrameDataFileReader oFdReader( sInputPath.data() );
 	oNes->setFrameDataProducer(&oFdReader);
+
+	PurrFX::CDpcmDataProviderStd oDpcmProvider(true);
+	loadDpcmSamples(oDpcmProvider);
+	oNes->setDpcmDataProvider(&oDpcmProvider);
 #endif
 #if DEMO_MODE == DEMO_MODE_DPCM_GRAB
 	PurrFX::CDpcmDataFileWriter oDpcmWriter("./data/out/", PurrFX::EDpcmFileType::Dmc);
