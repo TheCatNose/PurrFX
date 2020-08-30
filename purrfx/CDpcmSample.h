@@ -16,7 +16,7 @@ namespace PurrFX
 		uint8_t dpcmLength() const;
 
 		bool                 set(size_t i_nByteIndex, uint8_t i_nValue);
-		size_t               size() const;
+		uint16_t             size() const;
 		const uint8_t* const data() const;
 
 		CLASS_MAKE_NON_COPYABLE(CDpcmSample)

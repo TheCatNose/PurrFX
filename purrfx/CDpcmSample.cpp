@@ -31,9 +31,10 @@ bool PurrFX::CDpcmSample::set(size_t i_nByteIndex, uint8_t i_nValue)
 	return true;
 }
 
-size_t PurrFX::CDpcmSample::size() const
+uint16_t PurrFX::CDpcmSample::size() const
 {
-	return m_aData.size();
+	assert(m_aData.size() <= UINT16_MAX);
+	return uint16_t(m_aData.size());
 }
 
 const uint8_t* const PurrFX::CDpcmSample::data() const
