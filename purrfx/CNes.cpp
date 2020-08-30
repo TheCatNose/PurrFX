@@ -125,6 +125,11 @@ void PurrFX::CNes::setDpcmDataConsumer(CDpcmDataConsumer* i_pConsumer)
 	m_pDpcmDataConsumer = i_pConsumer;
 }
 
+void PurrFX::CNes::setDpcmDataProvider(CDpcmDataProvider* i_pProvider)
+{
+	m_pDpcmDataProvider = i_pProvider;
+}
+
 PurrFX::CDpcmDataConsumer* PurrFX::CNes::dpcmDataConsumer() const
 {
 	return m_pDpcmDataConsumer;
@@ -133,4 +138,14 @@ PurrFX::CDpcmDataConsumer* PurrFX::CNes::dpcmDataConsumer() const
 bool PurrFX::CNes::usesDpcmDataConsumer() const
 {
 	return (m_pDpcmDataConsumer != nullptr);
+}
+
+PurrFX::CDpcmDataProvider* PurrFX::CNes::dpcmDataProvider() const
+{
+	return m_pDpcmDataProvider;
+}
+
+bool PurrFX::CNes::usesDpcmDataProvider() const
+{
+	return (m_pDpcmDataProvider != nullptr);
 }
