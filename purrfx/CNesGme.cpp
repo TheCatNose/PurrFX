@@ -1,6 +1,7 @@
 #include "CNesGme.h"
 #include "CNesGmeAudioDataProvider.h"
 #include "CNesCalculations.h"
+#include "DNesConsts.h"
 
 namespace PurrFX
 {
@@ -247,6 +248,25 @@ namespace PurrFX
 		oDataProcessor.generateAssemblyCode(o_rCode);
 
 		pDataSource->next();
+		return true;
+	}
+
+	bool CNesGme::gmeActivateDpcmSample(uint8_t i_nAddress, uint8_t i_nLength)
+	{
+		if (!usesDpcmDataProvider())
+			return false;
+		
+		const CDpcmSample* pSample = dpcmDataProvider()->getSample();
+		if (pSample == nullptr)
+			pSample = dpcmDataProvider()->getSample(i_nAddress, i_nLength);
+
+		if (pSample == nullptr)
+			return false;
+
+		Nsf_Emu* pNsfEmu = static_cast<Nsf_Emu*>(m_pEmu);
+		Nes_Cpu* pNesCpu = pNsfEmu->cpu_();
+		for (uint16_t nByteIndex = 0; nByteIndex < pSample->size(); nByteIndex++)
+			pNesCpu->memory_write(NesConsts::dpcmSampleAddressMin+nByteIndex, pSample->get(nByteIndex));
 		return true;
 	}
 
