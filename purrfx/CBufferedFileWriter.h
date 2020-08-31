@@ -5,6 +5,7 @@
 #include <cassert>
 #include <cstring>
 #include "DClass.h"
+#include "CFile.h"
 
 namespace PurrFX
 {
@@ -13,7 +14,7 @@ namespace PurrFX
 	public:
 		enum { MIN_BUFFER_SIZE = 4096, MAX_BUFFER_SIZE = 1048576 };
 
-		CBufferedFileWriter(const char* i_sFileName, size_t i_nBufferSize = MIN_BUFFER_SIZE);
+		CBufferedFileWriter(const pathchar_t* i_sFileName, size_t i_nBufferSize = MIN_BUFFER_SIZE);
 		~CBufferedFileWriter();
 
 		bool isOpened() const;
@@ -22,7 +23,7 @@ namespace PurrFX
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CBufferedFileWriter)
 		CLASS_MAKE_NON_COPYABLE(CBufferedFileWriter)
 	private:
-		FILE* m_pFile = nullptr;
+		CFile m_oFile;
 		
 		size_t m_nBufferSize      = 0;
 		size_t m_nBufferBytesUsed = 0;

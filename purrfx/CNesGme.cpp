@@ -2,6 +2,7 @@
 #include "CNesGmeAudioDataProvider.h"
 #include "CNesCalculations.h"
 #include "DNesConsts.h"
+#include "CFile.h"
 
 namespace PurrFX
 {
@@ -51,20 +52,28 @@ namespace PurrFX
 		return true;
 	}
 
-	bool CNesGme::open(const char* i_sFileName)
+	bool CNesGme::open(const pathchar_t* i_sFileName)
 	{
 		if (!prepareEmulator())
 			return false;
 
-		gme_err_t sError = m_pEmu->load_file(i_sFileName);
-		bool bSuccess = (sError == NO_ERROR);
-		if (!bSuccess)
+		static const size_t nFileSizeLimit = 128*1024; // 128KB should be enough
+
+		bool bSuccess = false;
+		CFile oFile(i_sFileName, CFile::Read);
+		if (oFile.isOpened())
 		{
-			delete m_pEmu;
-			m_pEmu = nullptr;
+			size_t nFileSize = oFile.size();
+			if (nFileSize >  0 &&
+				nFileSize <= nFileSizeLimit)
+			{
+				uint8_t* pData = new uint8_t[nFileSize];
+				oFile.read(pData, nFileSize);
+				bSuccess = open(pData, nFileSize);
+				delete[] pData;
+			}
 		}
-		else
-			m_oAudioConverter.reset();
+
 		return bSuccess;
 	}
 
@@ -80,6 +89,8 @@ namespace PurrFX
 			delete m_pEmu;
 			m_pEmu = nullptr;
 		}
+		else
+			m_oAudioConverter.reset();
 		return bSuccess;
 	}
 

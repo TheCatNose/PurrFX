@@ -19,6 +19,7 @@
 #include "CFrameDataProducer.h"
 #include "CDpcmDataConsumer.h"
 #include "CDpcmDataProvider.h"
+#include "DPath.h"
 
 namespace PurrFX
 {
@@ -29,7 +30,7 @@ namespace PurrFX
 		virtual ~CNes();
 
 		bool         open();                                           // open template based in-memory stored NSF file
-		virtual bool open(const char* i_sName) = 0;                    // open NSF file
+		virtual bool open(const pathchar_t* i_sName) = 0;                    // open NSF file
 		virtual bool open(const uint8_t* i_pData, size_t i_nSize) = 0; // open in-memory stored NSF file
 		virtual bool setTrack(int i_nTrack) = 0;
 		virtual bool render(char* o_pData, size_t i_nDataSize) = 0;

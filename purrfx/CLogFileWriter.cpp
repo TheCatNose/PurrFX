@@ -2,7 +2,7 @@
 
 namespace PurrFX
 {
-	CLogFileWriter::CLogFileWriter(const char* i_sFileName):
+	CLogFileWriter::CLogFileWriter(const pathchar_t* i_sFileName):
 		m_oFile(i_sFileName, CBufferedFileWriter::MAX_BUFFER_SIZE)
 	{
 	}

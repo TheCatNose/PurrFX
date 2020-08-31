@@ -3,33 +3,32 @@
 #include "DNesConsts.h"
 #include "CBufferedFileWriter.h"
 
-PurrFX::CDpcmSample* PurrFX::CDpcmFile::load(const char* i_sFileName)
+PurrFX::CDpcmSample* PurrFX::CDpcmFile::load(const pathchar_t* i_sFileName)
 {
-	FILE* pFile = nullptr;
-	fopen_s(&pFile, i_sFileName, "rb");
-	if (pFile == nullptr)
+	CFile oFile(i_sFileName, CFile::Read);
+	if (!oFile.isOpened())
 		return nullptr;
 
-	fseek(pFile, 0, SEEK_END);
-	const size_t nFileSize = ftell(pFile);
-	fseek(pFile, 0, SEEK_SET);
+	fseek(oFile, 0, SEEK_END);
+	const size_t nFileSize = ftell(oFile);
+	fseek(oFile, 0, SEEK_SET);
 	
 	CDpcmSample* pSample = nullptr;
 	if (nFileSize > 0)
 	{
 		char sFmt[4] = {0,0,0,0};
-		fread_s(sFmt, 3, 1, 3, pFile);
-		fseek(pFile, 0, SEEK_SET);
+		oFile.read(sFmt, 3);
+		fseek(oFile, 0, SEEK_SET);
 		
 		if (strcmp(sFmt, "DMC") == 0)
-			return loadDmc(pFile, nFileSize);
+			return loadDmc(oFile, nFileSize);
 		else
-			return loadRaw(pFile, nFileSize);
+			return loadRaw(oFile, nFileSize);
 	}
 	return pSample;
 }
 
-bool PurrFX::CDpcmFile::save(const CDpcmSample& i_rSample, const char* i_sFileName, EDpcmFileType i_eType)
+bool PurrFX::CDpcmFile::save(const CDpcmSample& i_rSample, const pathchar_t* i_sFileName, EDpcmFileType i_eType)
 {
 	
 	CBufferedFileWriter oFile(i_sFileName);
@@ -50,24 +49,24 @@ bool PurrFX::CDpcmFile::save(const CDpcmSample& i_rSample, const char* i_sFileNa
 	return true;
 }
 
-PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadDmc(FILE* i_pFile, size_t i_nFileSize)
+PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadDmc(CFile& i_rFile, size_t i_nFileSize)
 {
 	const size_t nMinFileSize = 5; // For DMC, version and packed address
 	if (i_nFileSize < nMinFileSize)
 		return nullptr;
 
-	fseek(i_pFile, 3, SEEK_SET); // Skip 'DMC'
+	fseek(i_rFile, 3, SEEK_SET); // Skip 'DMC'
 	size_t nBytesRead = 0;
 
 	uint8_t nVersion = 0;
-	nBytesRead = fread_s(&nVersion, 1, 1, 1, i_pFile);
+	nBytesRead = i_rFile.read(&nVersion, 1);
 	if (nBytesRead != 1)
 		return nullptr;
 	if (nVersion != 1)
 		return nullptr;
 
 	uint8_t nAddress = 0;
-	nBytesRead = fread_s(&nAddress, 1, 1, 1, i_pFile);
+	nBytesRead = i_rFile.read(&nAddress, 1);
 	if (nBytesRead != 1)
 		return nullptr;
 
@@ -78,7 +77,7 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadDmc(FILE* i_pFile, size_t i_nFileSiz
 	uint16_t nDataSize = uint16_t(nDataSize_);
 
 	std::vector<uint8_t> aData(nDataSize);
-	nBytesRead = fread_s(aData.data(), nDataSize, 1, nDataSize, i_pFile);
+	nBytesRead = i_rFile.read(aData.data(), nDataSize);
 	if (nBytesRead != nDataSize)
 		return nullptr;
 
@@ -88,7 +87,7 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadDmc(FILE* i_pFile, size_t i_nFileSiz
 	return pSample;
 }
 
-PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadRaw(FILE* i_pFile, size_t i_nFileSize)
+PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadRaw(CFile& i_rFile, size_t i_nFileSize)
 {
 	const size_t nDpcmSize = i_nFileSize/8;
 	if (nDpcmSize < NesConsts::dpcmSampleLengthMin)
@@ -102,7 +101,7 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadRaw(FILE* i_pFile, size_t i_nFileSiz
 	assert(nPcmDataSize <= i_nFileSize);
 
 	std::vector<int8_t> aPcmData(nPcmDataSize);
-	size_t nBytesRead = fread_s(aPcmData.data(), nPcmDataSize, 1, nPcmDataSize, i_pFile);
+	size_t nBytesRead = i_rFile.read(aPcmData.data(), nPcmDataSize);
 	if (nBytesRead != nPcmDataSize)
 		return nullptr;
 

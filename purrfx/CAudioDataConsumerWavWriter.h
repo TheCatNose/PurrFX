@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include "DClass.h"
+#include "DPath.h"
 #include "CAudioDataConsumer.h"
 #include "CBufferedFileWriter.h"
 
@@ -11,7 +12,7 @@ namespace PurrFX
 	class CAudioDataConsumerWavWriter: public CAudioDataConsumer
 	{
 	public:
-		CAudioDataConsumerWavWriter(const char* i_sFileName, uint32_t i_nDuration);
+		CAudioDataConsumerWavWriter(const pathchar_t* i_sFileName, uint32_t i_nDuration);
 
 		// CAudioDataConsumer implementation
 		virtual void onStart(const CAudioFormat& i_rAudioFormat, uint32_t i_nBytesToProcess);

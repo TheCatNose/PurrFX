@@ -1,29 +1,25 @@
 #include "CFrameDataFileReader.h"
 
-PurrFX::CFrameDataFileReader::CFrameDataFileReader(const char* i_sFileName)
+PurrFX::CFrameDataFileReader::CFrameDataFileReader(const pathchar_t* i_sFileName)
 {
-	FILE* pFile = nullptr;
-	fopen_s(&pFile, i_sFileName, "rb");
+	CFile oFile(i_sFileName, CFile::Read);
 
-	if (pFile != nullptr) do
+	if (oFile.isOpened()) do
 	{
-		fseek(pFile, 0, SEEK_END);
-		const size_t nFileSize = ftell(pFile);
-		fseek(pFile, 0, SEEK_SET);
-
+		const size_t nFileSize = oFile.size();
 		size_t nBytesRead = 0;
 
 		// Header
 
 		char sFormat[2];
-		nBytesRead = fread_s(sFormat, 2, 1, 2, pFile);
+		nBytesRead = oFile.read(sFormat, 2);
 		if (nBytesRead != 2   ||
 			sFormat[0] != 'F' ||
 			sFormat[1] != 'D')
 			break;
 		
 		uint8_t aHdrData[2];
-		nBytesRead = fread_s(aHdrData, 2, 1, 2, pFile);
+		nBytesRead = oFile.read(aHdrData, 2);
 		if (nBytesRead  != 2  ||
 			aHdrData[0] != 1            || // Wrong version
 			aHdrData[1] == 0            || // Wrong register count
@@ -48,8 +44,8 @@ PurrFX::CFrameDataFileReader::CFrameDataFileReader(const char* i_sFileName)
 		for (size_t nItemIndex = 0; nItemIndex < nFrameDataItems; nItemIndex++)
 		{
 			nBytesRead = 
-				fread_s(pWriteMarks, nWriteMarksBytes, 1, nWriteMarksBytes, pFile) + 
-				fread_s(pValues    , nValuesBytes    , 1, nValuesBytes    , pFile);
+				oFile.read(pWriteMarks, nWriteMarksBytes) + 
+				oFile.read(pValues    , nValuesBytes    );
 			if (nBytesRead != nFrameDataItemBytes)
 				break;
 			m_nDataItems++;
@@ -72,9 +68,6 @@ PurrFX::CFrameDataFileReader::CFrameDataFileReader(const char* i_sFileName)
 		delete[] pValues;
 
 	} while(false);
-
-	if (pFile != nullptr)
-		fclose(pFile);
 }
 
 PurrFX::CFrameDataFileReader::~CFrameDataFileReader()

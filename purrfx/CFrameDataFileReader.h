@@ -5,6 +5,7 @@
 #include <cstdint>
 #include <cassert>
 #include "DClass.h"
+#include "CFile.h"
 #include "CFrameDataProducerRandomAccess.h"
 
 namespace PurrFX
@@ -12,7 +13,7 @@ namespace PurrFX
 	class CFrameDataFileReader: public CFrameDataProducerRandomAccess
 	{
 	public:
-		CFrameDataFileReader(const char* i_sFileName);
+		CFrameDataFileReader(const pathchar_t* i_sFileName);
 		~CFrameDataFileReader();
 
 		// CFrameDataProducer implementation
