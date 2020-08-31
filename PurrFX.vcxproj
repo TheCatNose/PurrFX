@@ -183,6 +183,7 @@
     <ClCompile Include="purrfx\CDpcmDataProvider.cpp" />
     <ClCompile Include="purrfx\CDpcmDataProviderStd.cpp" />
     <ClCompile Include="purrfx\CDpcmSample.cpp" />
+    <ClCompile Include="purrfx\CFile.cpp" />
     <ClCompile Include="purrfx\CFrameData.cpp" />
     <ClCompile Include="purrfx\CFrameDataProcessor.cpp" />
     <ClCompile Include="purrfx\CFrameDataConsumer.cpp" />
@@ -246,6 +247,7 @@
     <ClInclude Include="purrfx\CDpcmDataProvider.h" />
     <ClInclude Include="purrfx\CDpcmDataProviderStd.h" />
     <ClInclude Include="purrfx\CDpcmSample.h" />
+    <ClInclude Include="purrfx\CFile.h" />
     <ClInclude Include="purrfx\CFrameData.h" />
     <ClInclude Include="purrfx\CFrameDataProcessor.h" />
     <ClInclude Include="purrfx\CFrameDataConsumer.h" />
@@ -270,6 +272,7 @@
     <ClInclude Include="purrfx\CNesPtr.h" />
     <ClInclude Include="purrfx\CNsfTemplate.h" />
     <ClInclude Include="purrfx\DClass.h" />
+    <ClInclude Include="purrfx\DPath.h" />
     <ClInclude Include="purrfx\DNesConsts.h" />
     <ClInclude Include="purrfx\ECodeLabelType.h" />
     <ClInclude Include="purrfx\EDpcmFileType.h" />

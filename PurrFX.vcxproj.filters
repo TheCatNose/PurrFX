@@ -186,6 +186,9 @@
     <ClCompile Include="purrfx\CDpcmFile.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="purrfx\CFile.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gme\blargg_common.h">
@@ -393,6 +396,12 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="purrfx\CDpcmFile.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\CFile.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="purrfx\DPath.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
