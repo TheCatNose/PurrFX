@@ -9,24 +9,35 @@
 #include "purrfx/CDpcmDataFileWriter.h"
 #include "purrfx/CDpcmDataProviderStd.h"
 #include "purrfx/CDpcmFile.h"
+#include "purrfx/DPath.h"
 
 void showErrorMessage(const char* i_sMessage)
 {
 	if (i_sMessage != nullptr)
 		std::cout << "Error: " << i_sMessage << std::endl;
 }
-std::string inputPath (const std::string& i_sFileName) { return std::string("data/in/") + i_sFileName; }
-std::string outputPath(const std::string& i_sFileName) { return std::string("data/out/") + i_sFileName; }
+PurrFX::pathstring inputPath (const PurrFX::pathstring& i_sFileName) { return PurrFX::pathstring(PATHSTR("data/in/" )) + i_sFileName; }
+PurrFX::pathstring outputPath(const PurrFX::pathstring& i_sFileName) { return PurrFX::pathstring(PATHSTR("data/out/")) + i_sFileName; }
 
 void loadDpcmSamples(PurrFX::CDpcmDataProviderStd& i_rProdiver)
 {
     for (const auto& rEntry: std::filesystem::directory_iterator("./data/in/"))
 	{
-		std::string sExt = rEntry.path().extension().generic_string();
-		if (!(sExt == ".raw" || sExt == ".dmc" ))
+		PurrFX::pathstring sExt = 
+#ifdef _WIN32
+			rEntry.path().extension().generic_wstring();
+#else
+			rEntry.path().extension().generic_string();
+#endif
+		if (!(sExt == PATHSTR(".raw") || sExt == PATHSTR(".dmc") ))
 			continue;
 
-        std::string sPath = "./data/in/" + rEntry.path().filename().generic_string();
+        PurrFX::pathstring sPath = PATHSTR("./data/in/") + 
+#ifdef _WIN32
+			rEntry.path().filename().generic_wstring();
+#else
+			rEntry.path().filename().generic_string();
+#endif
 		auto* pSample = PurrFX::CDpcmFile::load(sPath.data());
 		if (pSample != nullptr)
 			i_rProdiver.add(pSample);
@@ -48,10 +59,10 @@ int main()
 	// Settings //
 	//////////////
 
-	std::string    sInputFile  = "Gimmick!.nsf";
-	std::string    sOutputFile = "out";
-	const int      nTrack      = 6;     // track index
-	const uint32_t nTime       = 60;    // time in seconds
+	PurrFX::pathstring sInputFile  = PATHSTR("Gimmick!.nsf");
+	PurrFX::pathstring sOutputFile = PATHSTR("out");
+	const int          nTrack      = 6;     // track index
+	const uint32_t     nTime       = 60;    // time in seconds
 
 	// Sound quality
 	PurrFX::CAudioFormat oAudioFormat(44100);
@@ -61,11 +72,11 @@ int main()
 	//////////////////
 
 #if   DEMO_MODE == DEMO_MODE_WAV | DEMO_MODE == DEMO_MODE_FD_PLAY
-	sOutputFile += ".wav";
+	sOutputFile += PATHSTR(".wav");
 #elif DEMO_MODE == DEMO_MODE_LOG
-	sOutputFile += ".log";
+	sOutputFile += PATHSTR(".log");
 #elif DEMO_MODE == DEMO_MODE_FD_CAPTURE
-	sOutputFile += ".fd";
+	sOutputFile += PATHSTR(".fd");
 #endif
 
 #if DEMO_MODE == DEMO_MODE_FD_PLAY
@@ -74,8 +85,8 @@ int main()
 #endif
 
 
-	std::string sOutputPath = outputPath(sOutputFile);
-	std::string sInputPath  = inputPath(sInputFile);
+	PurrFX::pathstring sOutputPath = outputPath(sOutputFile);
+	PurrFX::pathstring sInputPath  = inputPath(sInputFile);
 	
 	///////////
 	// Setup //
