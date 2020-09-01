@@ -16,11 +16,11 @@ namespace PurrFX
 		uint8_t dpcmAddress() const;
 		uint8_t dpcmLength() const;
 
-		bool                 set(size_t i_nByteIndex, uint8_t i_nValue);
-		void                 set(const uint8_t* i_pData);
-		uint8_t              get(size_t i_nByteIndex) const;
-		uint16_t             size() const;
-		const uint8_t* const data() const;
+		bool           set(size_t i_nByteIndex, uint8_t i_nValue);
+		void           set(const uint8_t* i_pData);
+		uint8_t        get(size_t i_nByteIndex) const;
+		uint16_t       size() const;
+		const uint8_t* data() const;
 
 		CLASS_MAKE_NON_COPYABLE(CDpcmSample)
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CDpcmSample)

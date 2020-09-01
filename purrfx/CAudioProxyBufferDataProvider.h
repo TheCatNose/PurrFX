@@ -1,6 +1,8 @@
 #pragma once
 // Data source for CAudioProxyBuffer
 
+#include <cstddef>
+
 namespace PurrFX
 {
 	class CAudioProxyBufferDataProvider

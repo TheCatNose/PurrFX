@@ -5,10 +5,10 @@ PurrFX::CAudioDataConsumerDummy::CAudioDataConsumerDummy(uint32_t i_nDuration):
 {
 }
 
-void PurrFX::CAudioDataConsumerDummy::onStart(const CAudioFormat& i_rAudioFormat, uint32_t i_nBytesToProcess)
+void PurrFX::CAudioDataConsumerDummy::onStart(const CAudioFormat&, uint32_t)
 {
 }
 
-void PurrFX::CAudioDataConsumerDummy::onData(const char* i_pData, uint32_t i_nSize)
+void PurrFX::CAudioDataConsumerDummy::onData(const char*, uint32_t)
 {
 }

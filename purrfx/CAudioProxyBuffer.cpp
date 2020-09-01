@@ -101,5 +101,5 @@ bool PurrFX::CAudioProxyBuffer::getData(char* o_pDstData, size_t i_nDstSize, int
 	return bSuccess;
 }
 
-int PurrFX::CAudioProxyBuffer::convert8to16(int v) { return v*256 - _I16_MAX; }
-int PurrFX::CAudioProxyBuffer::convert16to8(int v) { return v/256 + _I8_MAX; }
+int PurrFX::CAudioProxyBuffer::convert8to16(int v) { return v*256 - std::numeric_limits<int16_t>::max(); }
+int PurrFX::CAudioProxyBuffer::convert16to8(int v) { return v/256 + std::numeric_limits<int8_t>::max(); }

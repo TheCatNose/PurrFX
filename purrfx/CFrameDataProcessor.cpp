@@ -15,7 +15,7 @@ void PurrFX::CFrameDataProcessor::generateAssemblyCode(std::vector<uint8_t>& o_r
 		m_rData.isSet(ERegister::Apu4012) ||
 		m_rData.isSet(ERegister::Apu4013) ;
 
-	for (int i = 0; i < RegisterCount; i++)
+	for (size_t i = 0; i < RegisterCount; i++)
 	{
 		ERegister eRegister = ERegister(i);
 		if (!m_rData.isSet(eRegister))

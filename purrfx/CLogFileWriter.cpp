@@ -19,11 +19,11 @@ namespace PurrFX
 				auto* pLogItem = dynamic_cast<const CLogItemCpuInstruction*>(i_pLogItem);
 				CCpuInstructionInfo oInfo(pLogItem->opcode());
 
-				char sBuffer[32];
+				char sBuffer[33];
 				int nChars;
 
 				// Address, opcode, name
-				nChars = sprintf_s<32>(sBuffer,
+				nChars = snprintf(sBuffer, 32,
 					"$%04X: %02X (%s)",
 					pLogItem->address(),
 					pLogItem->opcode(),
@@ -37,13 +37,13 @@ namespace PurrFX
 				assert(nArgBytes >= 0 && nArgBytes <= 2);
 				if (nArgBytes >= 1)
 				{
-					nChars = sprintf_s<32>(sBuffer, " %02X", pLogItem->argByte1());
+					nChars = snprintf(sBuffer, 32, " %02X", pLogItem->argByte1());
 					if (nChars > 0)
 						m_oFile.write(sBuffer, nChars);
 				}
 				if (nArgBytes == 2)
 				{
-					nChars = sprintf_s<32>(sBuffer, " %02X", pLogItem->argByte2());
+					nChars = snprintf(sBuffer, 32, " %02X", pLogItem->argByte2());
 					if (nChars > 0)
 						m_oFile.write(sBuffer, nChars);
 				}
@@ -65,6 +65,8 @@ namespace PurrFX
 				case ECodeLabelType::PlayAddress:
 					sName = "play:";
 					break;
+				case ECodeLabelType::Undefined:
+					break;
 				}
 				assert(sName != std::string());
 
@@ -76,23 +78,22 @@ namespace PurrFX
 			{
 				auto* pLogItem = dynamic_cast<const CLogItemFrameStart*>(i_pLogItem);
 				
-				char sBuffer[32];
-				int nChars = sprintf_s<32>(sBuffer, "frame %d\n", pLogItem->newFrame());
+				char sBuffer[33];
+				int nChars = snprintf(sBuffer, 32, "frame %d\n", pLogItem->newFrame());
 				if (nChars > 0)
 					m_oFile.write(sBuffer, nChars);
 			}
 			break;
 		case ELogItemType::FrameEnd:
 			{
-				auto* pLogItem = dynamic_cast<const CLogItemFrameEnd*>(i_pLogItem);
 				m_oFile.write("frame end\n", 10);
 			}
 			break;
 		case ELogItemType::ApuRegisterWrite:
 			{
 				auto* pLogItem = dynamic_cast<const CLogItemApuRegisterWrite*>(i_pLogItem);
-				char sBuffer[32];
-				int nChars = sprintf_s<32>(sBuffer, "$%04X <- %02X\n",
+				char sBuffer[33];
+				int nChars = snprintf(sBuffer, 32, "$%04X <- %02X\n",
 					pLogItem->registerNumber(),
 					pLogItem->registerValue()
 					);

@@ -12,6 +12,7 @@
 #include <array>
 #include <cassert>
 #include <cstdint>
+#include <limits>
 #include "DClass.h"
 #include "CAudioProxyBufferDataProvider.h"
 

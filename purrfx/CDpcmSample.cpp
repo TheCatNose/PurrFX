@@ -48,7 +48,7 @@ uint16_t PurrFX::CDpcmSample::size() const
 	return uint16_t(m_aData.size());
 }
 
-const uint8_t* const PurrFX::CDpcmSample::data() const
+const uint8_t* PurrFX::CDpcmSample::data() const
 {
 	return m_aData.data();
 }
