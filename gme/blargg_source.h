@@ -34,12 +34,12 @@
 /* Like printf() except output goes to debug log file. Might be defined to do
  * nothing (not even evaluate its arguments).
  * void debug_printf( const char* format, ... ); */
+#define BLARGG_BUILD_DLL // PurrFX
 #if defined(__cplusplus) && defined(BLARGG_BUILD_DLL)
     static inline void blargg_dprintf_( const char* fmt_str, ... ) { (void) fmt_str; }
     #undef debug_printf
     #define debug_printf (1) ? (void) 0 : blargg_dprintf_
 #endif
-#define debug_printf(x) // PurrFX
 
 /* If enabled, evaluate expr and if false, make debug log entry with source file
  * and line. Meant for finding situations that should be examined further, but that

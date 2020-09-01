@@ -79,9 +79,12 @@ static void copy_str( const char* in, char* out, int out_max )
 {
 	out [out_max - 1] = 0;
 	// <PurrFX>
-	//strncpy( out, in, out_max - 1 );
+#ifdef _WIN32
 	int len = std::strlen(in);
 	strncpy_s( out, len, in, out_max - 1 );
+#else
+	strncpy( out, in, out_max - 1 );
+#endif
 	// </PurrFX>
 }
 

@@ -353,8 +353,11 @@ blargg_err_t Std_File_Reader::open( const char* path )
 	file_ = gzopen( path, "rb" );
 #else
 	// <PurrFX>
-	//file_ = fopen( path, "rb" );
+#ifdef _WIN32
 	fopen_s((FILE**)&file_, path, "rb");
+#else
+	file_ = fopen( path, "rb" );
+#endif
 	// </PurrFX>
 #endif
 
