@@ -30,6 +30,7 @@ namespace PurrFX
 		virtual bool open(const pathchar_t* i_sFileName);
 		virtual bool open(const uint8_t* i_pData, size_t i_nSize);
 		virtual bool setTrack(int i_nTrack);
+		virtual int  trackCount() const;
 		virtual bool render(char* o_pData, size_t i_nDataSize);
 
 		CLASS_MAKE_NON_COPYABLE(CNesGme)

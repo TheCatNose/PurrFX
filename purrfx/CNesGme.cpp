@@ -109,6 +109,13 @@ namespace PurrFX
 		return bSuccess;
 	}
 
+	int CNesGme::trackCount() const
+	{
+		if (m_pEmu == nullptr)
+			return 0;
+		return m_pEmu->track_count();
+	}
+
 	bool CNesGme::render(char* o_pData, size_t i_nDataSize)
 	{
 		if (m_pEmu == nullptr)
