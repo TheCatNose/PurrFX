@@ -26,7 +26,7 @@ namespace PurrFX
 		// Determine file type
 		gme_type_t pFileType;
 		sError = gme_identify_file("file.nsf", &pFileType);
-		if (sError != NO_ERROR || pFileType == nullptr || pFileType->system != "Nintendo NES")
+		if (sError != NO_ERROR || pFileType == nullptr || strcmp(pFileType->system, "Nintendo NES") != 0)
 			return false;
 
 		// Create emulator
