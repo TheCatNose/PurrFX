@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{09d19de2-6392-44ae-bbd6-e5fb810fa9ac}</ProjectGuid>
+    <RootNamespace>PurrFX</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\out\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\$(ProjectName)\$(Platform)\$(Configuration)\intermediate\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\out\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\$(ProjectName)\$(Platform)\$(Configuration)\intermediate\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\out\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\$(ProjectName)\$(Platform)\$(Configuration)\intermediate\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\out\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\out\$(ProjectName)\$(Platform)\$(Configuration)\intermediate\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\gme\Blip_Buffer.cpp" />
+    <ClCompile Include="..\gme\Classic_Emu.cpp" />
+    <ClCompile Include="..\gme\Data_Reader.cpp" />
+    <ClCompile Include="..\gme\Dual_Resampler.cpp" />
+    <ClCompile Include="..\gme\Effects_Buffer.cpp" />
+    <ClCompile Include="..\gme\Fir_Resampler.cpp" />
+    <ClCompile Include="..\gme\gme.cpp" />
+    <ClCompile Include="..\gme\Gme_File.cpp" />
+    <ClCompile Include="..\gme\M3u_Playlist.cpp" />
+    <ClCompile Include="..\gme\Multi_Buffer.cpp" />
+    <ClCompile Include="..\gme\Music_Emu.cpp" />
+    <ClCompile Include="..\gme\Nes_Apu.cpp" />
+    <ClCompile Include="..\gme\Nes_Cpu.cpp" />
+    <ClCompile Include="..\gme\Nes_Fme7_Apu.cpp" />
+    <ClCompile Include="..\gme\Nes_Namco_Apu.cpp" />
+    <ClCompile Include="..\gme\Nes_Oscs.cpp" />
+    <ClCompile Include="..\gme\Nes_Vrc6_Apu.cpp" />
+    <ClCompile Include="..\gme\Nsfe_Emu.cpp" />
+    <ClCompile Include="..\gme\Nsf_Emu.cpp" />
+    <ClCompile Include="..\gme\PurrFX_Stuff.cpp" />
+    <ClCompile Include="..\purrfx\CAudioDataConsumer.cpp" />
+    <ClCompile Include="..\purrfx\CAudioDataConsumerDummy.cpp" />
+    <ClCompile Include="..\purrfx\CAudioFormat.cpp" />
+    <ClCompile Include="..\purrfx\CAudioProxyBuffer.cpp" />
+    <ClCompile Include="..\purrfx\CAudioProxyBufferDataProvider.cpp" />
+    <ClCompile Include="..\purrfx\CBufferedFileWriter.cpp" />
+    <ClCompile Include="..\purrfx\CDpcmDataConsumer.cpp" />
+    <ClCompile Include="..\purrfx\CDpcmFile.cpp" />
+    <ClCompile Include="..\purrfx\CDpcmDataFileWriter.cpp" />
+    <ClCompile Include="..\purrfx\CDpcmDataProvider.cpp" />
+    <ClCompile Include="..\purrfx\CDpcmDataProviderStd.cpp" />
+    <ClCompile Include="..\purrfx\CDpcmSample.cpp" />
+    <ClCompile Include="..\purrfx\CFile.cpp" />
+    <ClCompile Include="..\purrfx\CFrameData.cpp" />
+    <ClCompile Include="..\purrfx\CFrameDataProcessor.cpp" />
+    <ClCompile Include="..\purrfx\CFrameDataConsumer.cpp" />
+    <ClCompile Include="..\purrfx\CFrameDataFileReader.cpp" />
+    <ClCompile Include="..\purrfx\CFrameDataFileWriter.cpp" />
+    <ClCompile Include="..\purrfx\CFrameDataProducer.cpp" />
+    <ClCompile Include="..\purrfx\CNes.cpp" />
+    <ClCompile Include="..\purrfx\CCpuInstructionInfo.cpp" />
+    <ClCompile Include="..\purrfx\CNesCalculations.cpp" />
+    <ClCompile Include="..\purrfx\CNesGme.cpp" />
+    <ClCompile Include="..\purrfx\CLogDataConsumer.cpp" />
+    <ClCompile Include="..\purrfx\CLogFileWriter.cpp" />
+    <ClCompile Include="..\purrfx\CLogItem.cpp" />
+    <ClCompile Include="..\purrfx\CLogItemApuRegisterWrite.cpp" />
+    <ClCompile Include="..\purrfx\CLogItemCodeLabel.cpp" />
+    <ClCompile Include="..\purrfx\CLogItemCpuInstruction.cpp" />
+    <ClCompile Include="PurrFX.cpp" />
+    <ClCompile Include="..\purrfx\CLogItemFrameEnd.cpp" />
+    <ClCompile Include="..\purrfx\CLogItemFrameStart.cpp" />
+    <ClCompile Include="..\purrfx\CAudioDataConsumerWavWriter.cpp" />
+    <ClCompile Include="..\purrfx\CNesGmeAudioDataProvider.cpp" />
+    <ClCompile Include="..\purrfx\CNesPtr.cpp" />
+    <ClCompile Include="..\purrfx\CNsfTemplate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\gme\blargg_common.h" />
+    <ClInclude Include="..\gme\blargg_config.h" />
+    <ClInclude Include="..\gme\blargg_endian.h" />
+    <ClInclude Include="..\gme\blargg_source.h" />
+    <ClInclude Include="..\gme\Blip_Buffer.h" />
+    <ClInclude Include="..\gme\Classic_Emu.h" />
+    <ClInclude Include="..\gme\Data_Reader.h" />
+    <ClInclude Include="..\gme\Dual_Resampler.h" />
+    <ClInclude Include="..\gme\Effects_Buffer.h" />
+    <ClInclude Include="..\gme\Fir_Resampler.h" />
+    <ClInclude Include="..\gme\gme.h" />
+    <ClInclude Include="..\gme\Gme_File.h" />
+    <ClInclude Include="..\gme\gme_types.h" />
+    <ClInclude Include="..\gme\M3u_Playlist.h" />
+    <ClInclude Include="..\gme\Multi_Buffer.h" />
+    <ClInclude Include="..\gme\Music_Emu.h" />
+    <ClInclude Include="..\gme\Nes_Apu.h" />
+    <ClInclude Include="..\gme\Nes_Cpu.h" />
+    <ClInclude Include="..\gme\nes_cpu_io.h" />
+    <ClInclude Include="..\gme\Nes_Fme7_Apu.h" />
+    <ClInclude Include="..\gme\Nes_Namco_Apu.h" />
+    <ClInclude Include="..\gme\Nes_Oscs.h" />
+    <ClInclude Include="..\gme\Nes_Vrc6_Apu.h" />
+    <ClInclude Include="..\gme\Nsfe_Emu.h" />
+    <ClInclude Include="..\gme\Nsf_Emu.h" />
+    <ClInclude Include="..\gme\PurrFX_Stuff.h" />
+    <ClInclude Include="..\purrfx\CAudioDataConsumer.h" />
+    <ClInclude Include="..\purrfx\CAudioDataConsumerDummy.h" />
+    <ClInclude Include="..\purrfx\CAudioFormat.h" />
+    <ClInclude Include="..\purrfx\CAudioProxyBuffer.h" />
+    <ClInclude Include="..\purrfx\CAudioProxyBufferDataProvider.h" />
+    <ClInclude Include="..\purrfx\CBufferedFileWriter.h" />
+    <ClInclude Include="..\purrfx\CDpcmDataConsumer.h" />
+    <ClInclude Include="..\purrfx\CDpcmFile.h" />
+    <ClInclude Include="..\purrfx\CDpcmDataFileWriter.h" />
+    <ClInclude Include="..\purrfx\CDpcmDataProvider.h" />
+    <ClInclude Include="..\purrfx\CDpcmDataProviderStd.h" />
+    <ClInclude Include="..\purrfx\CDpcmSample.h" />
+    <ClInclude Include="..\purrfx\CFile.h" />
+    <ClInclude Include="..\purrfx\CFrameData.h" />
+    <ClInclude Include="..\purrfx\CFrameDataProcessor.h" />
+    <ClInclude Include="..\purrfx\CFrameDataConsumer.h" />
+    <ClInclude Include="..\purrfx\CFrameDataFileReader.h" />
+    <ClInclude Include="..\purrfx\CFrameDataFileWriter.h" />
+    <ClInclude Include="..\purrfx\CFrameDataProducer.h" />
+    <ClInclude Include="..\purrfx\CFrameDataProducerRandomAccess.h" />
+    <ClInclude Include="..\purrfx\CNes.h" />
+    <ClInclude Include="..\purrfx\CCpuInstructionInfo.h" />
+    <ClInclude Include="..\purrfx\CNesCalculations.h" />
+    <ClInclude Include="..\purrfx\CNesGme.h" />
+    <ClInclude Include="..\purrfx\CLogDataConsumer.h" />
+    <ClInclude Include="..\purrfx\CLogFileWriter.h" />
+    <ClInclude Include="..\purrfx\CLogItem.h" />
+    <ClInclude Include="..\purrfx\CLogItemApuRegisterWrite.h" />
+    <ClInclude Include="..\purrfx\CLogItemCodeLabel.h" />
+    <ClInclude Include="..\purrfx\CLogItemCpuInstruction.h" />
+    <ClInclude Include="..\purrfx\CLogItemFrameEnd.h" />
+    <ClInclude Include="..\purrfx\CLogItemFrameStart.h" />
+    <ClInclude Include="..\purrfx\CAudioDataConsumerWavWriter.h" />
+    <ClInclude Include="..\purrfx\CNesGmeAudioDataProvider.h" />
+    <ClInclude Include="..\purrfx\CNesPtr.h" />
+    <ClInclude Include="..\purrfx\CNsfTemplate.h" />
+    <ClInclude Include="..\purrfx\DClass.h" />
+    <ClInclude Include="..\purrfx\DPath.h" />
+    <ClInclude Include="..\purrfx\DNesConsts.h" />
+    <ClInclude Include="..\purrfx\ECodeLabelType.h" />
+    <ClInclude Include="..\purrfx\EDpcmFileType.h" />
+    <ClInclude Include="..\purrfx\ELogItemType.h" />
+    <ClInclude Include="..\purrfx\ENesType.h" />
+    <ClInclude Include="..\purrfx\ERegister.h" />
+    <ClInclude Include="..\purrfx\PurrFX.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -3,25 +3,25 @@
 #include <iostream>
 #include <string>
 #include <filesystem>
-#include "purrfx/PurrFX.h"
-#include "purrfx/CFrameDataFileWriter.h"
-#include "purrfx/CFrameDataFileReader.h"
-#include "purrfx/CDpcmDataFileWriter.h"
-#include "purrfx/CDpcmDataProviderStd.h"
-#include "purrfx/CDpcmFile.h"
-#include "purrfx/DPath.h"
+#include "../purrfx/PurrFX.h"
+#include "../purrfx/CFrameDataFileWriter.h"
+#include "../purrfx/CFrameDataFileReader.h"
+#include "../purrfx/CDpcmDataFileWriter.h"
+#include "../purrfx/CDpcmDataProviderStd.h"
+#include "../purrfx/CDpcmFile.h"
+#include "../purrfx/DPath.h"
 
 void showErrorMessage(const char* i_sMessage)
 {
 	if (i_sMessage != nullptr)
 		std::cout << "Error: " << i_sMessage << std::endl;
 }
-PurrFX::pathstring inputPath (const PurrFX::pathstring& i_sFileName) { return PurrFX::pathstring(PATHSTR("data/in/" )) + i_sFileName; }
-PurrFX::pathstring outputPath(const PurrFX::pathstring& i_sFileName) { return PurrFX::pathstring(PATHSTR("data/out/")) + i_sFileName; }
+PurrFX::pathstring inputPath (const PurrFX::pathstring& i_sFileName) { return PurrFX::pathstring(PATHSTR("../data/in/" )) + i_sFileName; }
+PurrFX::pathstring outputPath(const PurrFX::pathstring& i_sFileName) { return PurrFX::pathstring(PATHSTR("../data/out/")) + i_sFileName; }
 
 void loadDpcmSamples(PurrFX::CDpcmDataProviderStd& i_rProdiver)
 {
-    for (const auto& rEntry: std::filesystem::directory_iterator("./data/in/"))
+    for (const auto& rEntry: std::filesystem::directory_iterator("../data/in/"))
 	{
 		PurrFX::pathstring sExt = 
 #ifdef _WIN32
@@ -32,7 +32,7 @@ void loadDpcmSamples(PurrFX::CDpcmDataProviderStd& i_rProdiver)
 		if (!(sExt == PATHSTR(".raw") || sExt == PATHSTR(".dmc") ))
 			continue;
 
-        PurrFX::pathstring sPath = PATHSTR("./data/in/") + 
+        PurrFX::pathstring sPath = PATHSTR("../data/in/") + 
 #ifdef _WIN32
 			rEntry.path().filename().generic_wstring();
 #else
@@ -118,7 +118,7 @@ int main()
 	oNes->setDpcmDataProvider(&oDpcmProvider);
 #endif
 #if DEMO_MODE == DEMO_MODE_DPCM_GRAB
-	PurrFX::CDpcmDataFileWriter oDpcmWriter("./data/out/", PurrFX::EDpcmFileType::Dmc);
+	PurrFX::CDpcmDataFileWriter oDpcmWriter("../data/out/", PurrFX::EDpcmFileType::Dmc);
 	oNes->setDpcmDataConsumer(&oDpcmWriter);
 #endif
 

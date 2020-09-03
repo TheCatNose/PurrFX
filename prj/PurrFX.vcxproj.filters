@@ -24,384 +24,384 @@
     <ClCompile Include="PurrFX.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Blip_Buffer.cpp">
+    <ClCompile Include="..\gme\Blip_Buffer.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Classic_Emu.cpp">
+    <ClCompile Include="..\gme\Classic_Emu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Data_Reader.cpp">
+    <ClCompile Include="..\gme\Data_Reader.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Dual_Resampler.cpp">
+    <ClCompile Include="..\gme\Dual_Resampler.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Effects_Buffer.cpp">
+    <ClCompile Include="..\gme\Effects_Buffer.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Fir_Resampler.cpp">
+    <ClCompile Include="..\gme\Fir_Resampler.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\gme.cpp">
+    <ClCompile Include="..\gme\gme.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Gme_File.cpp">
+    <ClCompile Include="..\gme\Gme_File.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\M3u_Playlist.cpp">
+    <ClCompile Include="..\gme\M3u_Playlist.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Multi_Buffer.cpp">
+    <ClCompile Include="..\gme\Multi_Buffer.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Music_Emu.cpp">
+    <ClCompile Include="..\gme\Music_Emu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Nes_Apu.cpp">
+    <ClCompile Include="..\gme\Nes_Apu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Nes_Cpu.cpp">
+    <ClCompile Include="..\gme\Nes_Cpu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Nes_Fme7_Apu.cpp">
+    <ClCompile Include="..\gme\Nes_Fme7_Apu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Nes_Namco_Apu.cpp">
+    <ClCompile Include="..\gme\Nes_Namco_Apu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Nes_Oscs.cpp">
+    <ClCompile Include="..\gme\Nes_Oscs.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Nes_Vrc6_Apu.cpp">
+    <ClCompile Include="..\gme\Nes_Vrc6_Apu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Nsf_Emu.cpp">
+    <ClCompile Include="..\gme\Nsf_Emu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="gme\Nsfe_Emu.cpp">
+    <ClCompile Include="..\gme\Nsfe_Emu.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNes.cpp">
+    <ClCompile Include="..\purrfx\CNes.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesGme.cpp">
+    <ClCompile Include="..\purrfx\CNesGme.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="gme\PurrFX_Stuff.cpp">
+    <ClCompile Include="..\gme\PurrFX_Stuff.cpp">
       <Filter>gme</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CLogDataConsumer.cpp">
+    <ClCompile Include="..\purrfx\CLogDataConsumer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CLogItem.cpp">
+    <ClCompile Include="..\purrfx\CLogItem.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CLogItemCpuInstruction.cpp">
+    <ClCompile Include="..\purrfx\CLogItemCpuInstruction.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CLogFileWriter.cpp">
+    <ClCompile Include="..\purrfx\CLogFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CCpuInstructionInfo.cpp">
+    <ClCompile Include="..\purrfx\CCpuInstructionInfo.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CBufferedFileWriter.cpp">
+    <ClCompile Include="..\purrfx\CBufferedFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CLogItemCodeLabel.cpp">
+    <ClCompile Include="..\purrfx\CLogItemCodeLabel.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CLogItemFrameStart.cpp">
+    <ClCompile Include="..\purrfx\CLogItemFrameStart.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CLogItemApuRegisterWrite.cpp">
+    <ClCompile Include="..\purrfx\CLogItemApuRegisterWrite.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CLogItemFrameEnd.cpp">
+    <ClCompile Include="..\purrfx\CLogItemFrameEnd.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CAudioDataConsumer.cpp">
+    <ClCompile Include="..\purrfx\CAudioDataConsumer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CAudioDataConsumerWavWriter.cpp">
+    <ClCompile Include="..\purrfx\CAudioDataConsumerWavWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CAudioDataConsumerDummy.cpp">
+    <ClCompile Include="..\purrfx\CAudioDataConsumerDummy.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CAudioFormat.cpp">
+    <ClCompile Include="..\purrfx\CAudioFormat.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CAudioProxyBuffer.cpp">
+    <ClCompile Include="..\purrfx\CAudioProxyBuffer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CAudioProxyBufferDataProvider.cpp">
+    <ClCompile Include="..\purrfx\CAudioProxyBufferDataProvider.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesGmeAudioDataProvider.cpp">
+    <ClCompile Include="..\purrfx\CNesGmeAudioDataProvider.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CFrameData.cpp">
+    <ClCompile Include="..\purrfx\CFrameData.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CFrameDataConsumer.cpp">
+    <ClCompile Include="..\purrfx\CFrameDataConsumer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CFrameDataFileWriter.cpp">
+    <ClCompile Include="..\purrfx\CFrameDataFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesPtr.cpp">
+    <ClCompile Include="..\purrfx\CNesPtr.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CFrameDataProducer.cpp">
+    <ClCompile Include="..\purrfx\CFrameDataProducer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CFrameDataFileReader.cpp">
+    <ClCompile Include="..\purrfx\CFrameDataFileReader.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CFrameDataProcessor.cpp">
+    <ClCompile Include="..\purrfx\CFrameDataProcessor.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNsfTemplate.cpp">
+    <ClCompile Include="..\purrfx\CNsfTemplate.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CDpcmDataConsumer.cpp">
+    <ClCompile Include="..\purrfx\CDpcmDataConsumer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CNesCalculations.cpp">
+    <ClCompile Include="..\purrfx\CNesCalculations.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CDpcmSample.cpp">
+    <ClCompile Include="..\purrfx\CDpcmSample.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CDpcmDataFileWriter.cpp">
+    <ClCompile Include="..\purrfx\CDpcmDataFileWriter.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CDpcmDataProvider.cpp">
+    <ClCompile Include="..\purrfx\CDpcmDataProvider.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CDpcmDataProviderStd.cpp">
+    <ClCompile Include="..\purrfx\CDpcmDataProviderStd.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CDpcmFile.cpp">
+    <ClCompile Include="..\purrfx\CDpcmFile.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="purrfx\CFile.cpp">
+    <ClCompile Include="..\purrfx\CFile.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="gme\blargg_common.h">
+    <ClInclude Include="..\gme\blargg_common.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\blargg_config.h">
+    <ClInclude Include="..\gme\blargg_config.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\blargg_endian.h">
+    <ClInclude Include="..\gme\blargg_endian.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\blargg_source.h">
+    <ClInclude Include="..\gme\blargg_source.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Blip_Buffer.h">
+    <ClInclude Include="..\gme\Blip_Buffer.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Classic_Emu.h">
+    <ClInclude Include="..\gme\Classic_Emu.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Data_Reader.h">
+    <ClInclude Include="..\gme\Data_Reader.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Dual_Resampler.h">
+    <ClInclude Include="..\gme\Dual_Resampler.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Effects_Buffer.h">
+    <ClInclude Include="..\gme\Effects_Buffer.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Fir_Resampler.h">
+    <ClInclude Include="..\gme\Fir_Resampler.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\gme.h">
+    <ClInclude Include="..\gme\gme.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Gme_File.h">
+    <ClInclude Include="..\gme\Gme_File.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\gme_types.h">
+    <ClInclude Include="..\gme\gme_types.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\M3u_Playlist.h">
+    <ClInclude Include="..\gme\M3u_Playlist.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Multi_Buffer.h">
+    <ClInclude Include="..\gme\Multi_Buffer.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Music_Emu.h">
+    <ClInclude Include="..\gme\Music_Emu.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Nes_Apu.h">
+    <ClInclude Include="..\gme\Nes_Apu.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Nes_Cpu.h">
+    <ClInclude Include="..\gme\Nes_Cpu.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\nes_cpu_io.h">
+    <ClInclude Include="..\gme\nes_cpu_io.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Nes_Fme7_Apu.h">
+    <ClInclude Include="..\gme\Nes_Fme7_Apu.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Nes_Namco_Apu.h">
+    <ClInclude Include="..\gme\Nes_Namco_Apu.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Nes_Oscs.h">
+    <ClInclude Include="..\gme\Nes_Oscs.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Nes_Vrc6_Apu.h">
+    <ClInclude Include="..\gme\Nes_Vrc6_Apu.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Nsf_Emu.h">
+    <ClInclude Include="..\gme\Nsf_Emu.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="gme\Nsfe_Emu.h">
+    <ClInclude Include="..\gme\Nsfe_Emu.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNes.h">
+    <ClInclude Include="..\purrfx\CNes.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesGme.h">
+    <ClInclude Include="..\purrfx\CNesGme.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\DClass.h">
+    <ClInclude Include="..\purrfx\DClass.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="gme\PurrFX_Stuff.h">
+    <ClInclude Include="..\gme\PurrFX_Stuff.h">
       <Filter>gme</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CLogItem.h">
+    <ClInclude Include="..\purrfx\CLogItem.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CLogDataConsumer.h">
+    <ClInclude Include="..\purrfx\CLogDataConsumer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CLogItemCpuInstruction.h">
+    <ClInclude Include="..\purrfx\CLogItemCpuInstruction.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CLogFileWriter.h">
+    <ClInclude Include="..\purrfx\CLogFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\ELogItemType.h">
+    <ClInclude Include="..\purrfx\ELogItemType.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CCpuInstructionInfo.h">
+    <ClInclude Include="..\purrfx\CCpuInstructionInfo.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CBufferedFileWriter.h">
+    <ClInclude Include="..\purrfx\CBufferedFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CLogItemCodeLabel.h">
+    <ClInclude Include="..\purrfx\CLogItemCodeLabel.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\ECodeLabelType.h">
+    <ClInclude Include="..\purrfx\ECodeLabelType.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CLogItemFrameStart.h">
+    <ClInclude Include="..\purrfx\CLogItemFrameStart.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CLogItemApuRegisterWrite.h">
+    <ClInclude Include="..\purrfx\CLogItemApuRegisterWrite.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CLogItemFrameEnd.h">
+    <ClInclude Include="..\purrfx\CLogItemFrameEnd.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CAudioDataConsumer.h">
+    <ClInclude Include="..\purrfx\CAudioDataConsumer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CAudioDataConsumerWavWriter.h">
+    <ClInclude Include="..\purrfx\CAudioDataConsumerWavWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CAudioDataConsumerDummy.h">
+    <ClInclude Include="..\purrfx\CAudioDataConsumerDummy.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\PurrFX.h">
+    <ClInclude Include="..\purrfx\PurrFX.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CAudioFormat.h">
+    <ClInclude Include="..\purrfx\CAudioFormat.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CAudioProxyBuffer.h">
+    <ClInclude Include="..\purrfx\CAudioProxyBuffer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CAudioProxyBufferDataProvider.h">
+    <ClInclude Include="..\purrfx\CAudioProxyBufferDataProvider.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesGmeAudioDataProvider.h">
+    <ClInclude Include="..\purrfx\CNesGmeAudioDataProvider.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CFrameData.h">
+    <ClInclude Include="..\purrfx\CFrameData.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CFrameDataConsumer.h">
+    <ClInclude Include="..\purrfx\CFrameDataConsumer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\ERegister.h">
+    <ClInclude Include="..\purrfx\ERegister.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CFrameDataFileWriter.h">
+    <ClInclude Include="..\purrfx\CFrameDataFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\ENesType.h">
+    <ClInclude Include="..\purrfx\ENesType.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesPtr.h">
+    <ClInclude Include="..\purrfx\CNesPtr.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CFrameDataProducer.h">
+    <ClInclude Include="..\purrfx\CFrameDataProducer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CFrameDataFileReader.h">
+    <ClInclude Include="..\purrfx\CFrameDataFileReader.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CFrameDataProducerRandomAccess.h">
+    <ClInclude Include="..\purrfx\CFrameDataProducerRandomAccess.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CFrameDataProcessor.h">
+    <ClInclude Include="..\purrfx\CFrameDataProcessor.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNsfTemplate.h">
+    <ClInclude Include="..\purrfx\CNsfTemplate.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CDpcmDataConsumer.h">
+    <ClInclude Include="..\purrfx\CDpcmDataConsumer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CNesCalculations.h">
+    <ClInclude Include="..\purrfx\CNesCalculations.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\DNesConsts.h">
+    <ClInclude Include="..\purrfx\DNesConsts.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CDpcmSample.h">
+    <ClInclude Include="..\purrfx\CDpcmSample.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CDpcmDataFileWriter.h">
+    <ClInclude Include="..\purrfx\CDpcmDataFileWriter.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\EDpcmFileType.h">
+    <ClInclude Include="..\purrfx\EDpcmFileType.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CDpcmDataProvider.h">
+    <ClInclude Include="..\purrfx\CDpcmDataProvider.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CDpcmDataProviderStd.h">
+    <ClInclude Include="..\purrfx\CDpcmDataProviderStd.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CDpcmFile.h">
+    <ClInclude Include="..\purrfx\CDpcmFile.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\CFile.h">
+    <ClInclude Include="..\purrfx\CFile.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="purrfx\DPath.h">
+    <ClInclude Include="..\purrfx\DPath.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
