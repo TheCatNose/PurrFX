@@ -5,7 +5,7 @@
 #include <cstddef>
 #include "CNes.h"
 #include "DClass.h"
-#include "../gme/Nsf_Emu.h"
+#include "gme/Nsf_Emu.h"
 #include "CLogItemCpuInstruction.h"
 #include "CLogItemCodeLabel.h"
 #include "CLogItemFrameStart.h"

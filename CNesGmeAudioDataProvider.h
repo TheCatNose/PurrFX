@@ -1,7 +1,7 @@
 #pragma once
 // GME version of CAudioProxyBufferDataProvider
 
-#include "../gme/Nsf_Emu.h"
+#include "gme/Nsf_Emu.h"
 #include "DClass.h"
 #include "CAudioProxyBufferDataProvider.h"
 
