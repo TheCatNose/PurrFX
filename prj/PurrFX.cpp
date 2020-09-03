@@ -38,7 +38,7 @@ void loadDpcmSamples(PurrFX::CDpcmDataProviderStd& i_rProdiver)
 #else
 			rEntry.path().filename().generic_string();
 #endif
-		auto* pSample = PurrFX::CDpcmFile::load(sPath.data());
+		auto* pSample = PurrFX::CDpcmFile::load(sPath);
 		if (pSample != nullptr)
 			i_rProdiver.add(pSample);
 	}
@@ -95,22 +95,22 @@ int main()
 	PurrFX::CNesPtr oNes(PurrFX::ENesType::GameMusicEmu);
 
 #if   DEMO_MODE == DEMO_MODE_WAV | DEMO_MODE == DEMO_MODE_FD_PLAY
-	PurrFX::CWavWriter oWavWriter( sOutputPath.data(), nTime );
+	PurrFX::CWavWriter oWavWriter( sOutputPath, nTime );
 	oNes->setAudioDataConsumer(&oWavWriter);
 #endif
 #if DEMO_MODE == DEMO_MODE_LOG
 	oNes->logItemTypeDisable(PurrFX::ELogItemType::CpuInstruction);
 	oNes->logItemTypeDisable(PurrFX::ELogItemType::CodeLabel);
 	oNes->logItemTypeDisable(PurrFX::ELogItemType::FrameEnd);
-	PurrFX::CLogFileWriter oLogWriter( sOutputPath.data() );
+	PurrFX::CLogFileWriter oLogWriter( sOutputPath );
 	oNes->setLogDataConsumer(&oLogWriter);
 #endif
 #if DEMO_MODE == DEMO_MODE_FD_CAPTURE
-	PurrFX::CFrameDataFileWriter oFdWriter( sOutputPath.data() );
+	PurrFX::CFrameDataFileWriter oFdWriter( sOutputPath );
 	oNes->setFrameDataConsumer(&oFdWriter);
 #endif
 #if DEMO_MODE == DEMO_MODE_FD_PLAY
-	PurrFX::CFrameDataFileReader oFdReader( sInputPath.data() );
+	PurrFX::CFrameDataFileReader oFdReader( sInputPath );
 	oNes->setFrameDataProducer(&oFdReader);
 
 	PurrFX::CDpcmDataProviderStd oDpcmProvider(true);
@@ -128,7 +128,7 @@ int main()
 	if (!oNes->open())
 #else
 	
-	if (!oNes->open( sInputPath.data() ))
+	if (!oNes->open(sInputPath))
 #endif
 	{
 		showErrorMessage("Can't open file");
