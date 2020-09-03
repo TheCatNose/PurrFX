@@ -1,7 +1,7 @@
 #pragma once
 // Main include file
 
-#include "purrfx/CNesPtr.h"
-#include "purrfx/CAudioDataConsumerWavWriter.h"
-#include "purrfx/CAudioDataConsumerDummy.h"
-#include "purrfx/CLogFileWriter.h"
+#include "CNesPtr.h"
+#include "CAudioDataConsumerWavWriter.h"
+#include "CAudioDataConsumerDummy.h"
+#include "CLogFileWriter.h"
