@@ -1,6 +1,6 @@
 #include "CAudioDataConsumerWavWriter.h"
 
-PurrFX::CAudioDataConsumerWavWriter::CAudioDataConsumerWavWriter(const pathchar_t* i_sFileName, uint32_t i_nDuration):
+PurrFX::CAudioDataConsumerWavWriter::CAudioDataConsumerWavWriter(const pathstring& i_sFileName, uint32_t i_nDuration):
 	CAudioDataConsumer(i_nDuration),
 	m_oFile(i_sFileName)
 {

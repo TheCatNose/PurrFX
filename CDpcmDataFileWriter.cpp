@@ -3,7 +3,7 @@
 #include "DNesConsts.h"
 #include "CDpcmFile.h"
 
-PurrFX::CDpcmDataFileWriter::CDpcmDataFileWriter(const pathchar_t* i_sOutputFolder, EDpcmFileType i_eType):
+PurrFX::CDpcmDataFileWriter::CDpcmDataFileWriter(const pathstring& i_sOutputFolder, EDpcmFileType i_eType):
 	m_sOutputFolder(i_sOutputFolder),
 	m_eType(i_eType)
 {

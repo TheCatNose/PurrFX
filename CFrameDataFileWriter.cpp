@@ -1,6 +1,6 @@
 #include "CFrameDataFileWriter.h"
 
-PurrFX::CFrameDataFileWriter::CFrameDataFileWriter(const pathchar_t* i_sFileName):
+PurrFX::CFrameDataFileWriter::CFrameDataFileWriter(const pathstring& i_sFileName):
 	m_oFile(i_sFileName)
 {
 	if (!m_oFile.isOpened())

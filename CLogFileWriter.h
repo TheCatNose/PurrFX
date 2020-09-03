@@ -19,7 +19,7 @@ namespace PurrFX
 	class CLogFileWriter: public CLogDataConsumer
 	{
 	public:
-		CLogFileWriter(const pathchar_t* i_sFileName);
+		CLogFileWriter(const pathstring& i_sFileName);
 
 		virtual void onNewItem(const CLogItem* i_pLogItem);
 

@@ -30,7 +30,7 @@ namespace PurrFX
 		virtual ~CNes();
 
 		bool         open();                                           // open template based in-memory stored NSF file
-		virtual bool open(const pathchar_t* i_sName) = 0;                    // open NSF file
+		virtual bool open(const pathstring& i_sName) = 0;                    // open NSF file
 		virtual bool open(const uint8_t* i_pData, size_t i_nSize) = 0; // open in-memory stored NSF file
 		virtual bool setTrack(int i_nTrack) = 0;
 		virtual int  trackCount() const = 0;

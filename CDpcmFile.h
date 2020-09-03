@@ -14,7 +14,7 @@ namespace PurrFX
 	class CDpcmFile
 	{
 	public:
-		static CDpcmSample* load(const pathchar_t* i_sFileName);
+		static CDpcmSample* load(const pathstring& i_sFileName);
 		static bool         save(const CDpcmSample& i_rSample, const pathchar_t* i_sFileName, EDpcmFileType i_eType);
 
 	private:

@@ -12,7 +12,7 @@ namespace PurrFX
 	class CAudioDataConsumerWavWriter: public CAudioDataConsumer
 	{
 	public:
-		CAudioDataConsumerWavWriter(const pathchar_t* i_sFileName, uint32_t i_nDuration);
+		CAudioDataConsumerWavWriter(const pathstring& i_sFileName, uint32_t i_nDuration);
 
 		// CAudioDataConsumer implementation
 		virtual void onStart(const CAudioFormat& i_rAudioFormat, uint32_t i_nBytesToProcess);

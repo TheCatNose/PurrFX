@@ -13,7 +13,7 @@ namespace PurrFX
 	class CFrameDataFileReader: public CFrameDataProducerRandomAccess
 	{
 	public:
-		CFrameDataFileReader(const pathchar_t* i_sFileName);
+		CFrameDataFileReader(const pathstring& i_sFileName);
 		~CFrameDataFileReader();
 
 		// CFrameDataProducer implementation

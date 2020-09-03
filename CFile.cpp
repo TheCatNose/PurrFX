@@ -1,13 +1,13 @@
 #include "CFile.h"
 
-PurrFX::CFile::CFile(const pathchar_t* i_sPath, EMode i_eMode)
+PurrFX::CFile::CFile(const pathstring& i_sPath, EMode i_eMode)
 {
 #ifdef _WIN32
 	const pathchar_t* sMode = (i_eMode == Read ? L"rb" : L"wb");
-	_wfopen_s(&m_pFile, i_sPath, sMode);
+	_wfopen_s(&m_pFile, i_sPath.data(), sMode);
 #else
 	const pathchar_t* sMode = (i_eMode == Read ?  "rb" :  "wb");
-	m_pFile = fopen(i_sPath, sMode);
+	m_pFile = fopen(i_sPath.data(), sMode);
 #endif
 }
 

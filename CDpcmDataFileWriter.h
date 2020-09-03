@@ -13,7 +13,7 @@ namespace PurrFX
 	class CDpcmDataFileWriter final: public CDpcmDataConsumer
 	{
 	public:
-		CDpcmDataFileWriter(const pathchar_t* i_sOutputFolder, EDpcmFileType i_eType);
+		CDpcmDataFileWriter(const pathstring& i_rsOutputFolder, EDpcmFileType i_eType);
 
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CDpcmDataFileWriter)
 		CLASS_MAKE_NON_COPYABLE(CDpcmDataFileWriter)

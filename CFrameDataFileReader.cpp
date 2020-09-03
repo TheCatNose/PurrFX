@@ -1,6 +1,6 @@
 #include "CFrameDataFileReader.h"
 
-PurrFX::CFrameDataFileReader::CFrameDataFileReader(const pathchar_t* i_sFileName)
+PurrFX::CFrameDataFileReader::CFrameDataFileReader(const pathstring& i_sFileName)
 {
 	CFile oFile(i_sFileName, CFile::Read);
 

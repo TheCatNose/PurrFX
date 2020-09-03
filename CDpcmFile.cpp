@@ -3,7 +3,7 @@
 #include "DNesConsts.h"
 #include "CBufferedFileWriter.h"
 
-PurrFX::CDpcmSample* PurrFX::CDpcmFile::load(const pathchar_t* i_sFileName)
+PurrFX::CDpcmSample* PurrFX::CDpcmFile::load(const pathstring& i_sFileName)
 {
 	CFile oFile(i_sFileName, CFile::Read);
 	if (!oFile.isOpened())

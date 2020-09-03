@@ -52,7 +52,7 @@ namespace PurrFX
 		return true;
 	}
 
-	bool CNesGme::open(const pathchar_t* i_sFileName)
+	bool CNesGme::open(const pathstring& i_sFileName)
 	{
 		if (!prepareEmulator())
 			return false;

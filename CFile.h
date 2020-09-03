@@ -16,7 +16,7 @@ namespace PurrFX
 			Write,
 		};
 
-		CFile(const pathchar_t* i_sPath, EMode i_eMode);
+		CFile(const pathstring& i_sPath, EMode i_eMode);
 		~CFile();
 
 		size_t read(void* o_pBuffer, size_t i_nBytes);

@@ -27,7 +27,7 @@ namespace PurrFX
 		~CNesGme();
 
 		// CNes implementation
-		virtual bool open(const pathchar_t* i_sFileName);
+		virtual bool open(const pathstring& i_sFileName);
 		virtual bool open(const uint8_t* i_pData, size_t i_nSize);
 		virtual bool setTrack(int i_nTrack);
 		virtual int  trackCount() const;

@@ -1,6 +1,6 @@
 #include "CBufferedFileWriter.h"
 
-PurrFX::CBufferedFileWriter::CBufferedFileWriter(const pathchar_t* i_sFileName, size_t i_nBufferSize):
+PurrFX::CBufferedFileWriter::CBufferedFileWriter(const pathstring& i_sFileName, size_t i_nBufferSize):
 	m_oFile(i_sFileName, CFile::Write),
 	m_nBufferSize(i_nBufferSize)
 {

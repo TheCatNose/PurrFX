@@ -14,7 +14,7 @@ namespace PurrFX
 	public:
 		enum { MIN_BUFFER_SIZE = 4096, MAX_BUFFER_SIZE = 1048576 };
 
-		CBufferedFileWriter(const pathchar_t* i_sFileName, size_t i_nBufferSize = MIN_BUFFER_SIZE);
+		CBufferedFileWriter(const pathstring& i_sFileName, size_t i_nBufferSize = MIN_BUFFER_SIZE);
 		~CBufferedFileWriter();
 
 		bool isOpened() const;
