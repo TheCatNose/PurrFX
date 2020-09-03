@@ -3,13 +3,13 @@
 #include <iostream>
 #include <string>
 #include <filesystem>
-#include "../purrfx/PurrFX.h"
-#include "../purrfx/CFrameDataFileWriter.h"
-#include "../purrfx/CFrameDataFileReader.h"
-#include "../purrfx/CDpcmDataFileWriter.h"
-#include "../purrfx/CDpcmDataProviderStd.h"
-#include "../purrfx/CDpcmFile.h"
-#include "../purrfx/DPath.h"
+#include "../PurrFX.h"
+#include "../CFrameDataFileWriter.h"
+#include "../CFrameDataFileReader.h"
+#include "../CDpcmDataFileWriter.h"
+#include "../CDpcmDataProviderStd.h"
+#include "../CDpcmFile.h"
+#include "../DPath.h"
 
 void showErrorMessage(const char* i_sMessage)
 {
