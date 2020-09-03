@@ -1,6 +1,2 @@
-out/*
-!out/readme.txt
-data/in/*
-!data/in/readme.txt
-data/out/*
-!data/out/readme.txt
+out
+data

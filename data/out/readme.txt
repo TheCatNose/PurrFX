@@ -1,1 +1,0 @@
-Output data folder. For example: WAV files.

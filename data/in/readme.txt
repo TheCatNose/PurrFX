@@ -1,1 +1,0 @@
-Input data folder. For example: NSF files.
