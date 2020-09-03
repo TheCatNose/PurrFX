@@ -81,7 +81,7 @@ int main()
 
 #if DEMO_MODE == DEMO_MODE_FD_PLAY
 	// You must use frame data file as input file
-	assert(sInputFile.substr(sInputFile.size()-3, 3) == ".fd");
+	assert(sInputFile.substr(sInputFile.size()-3, 3) == PATHSTR(".fd"));
 #endif
 
 
@@ -118,7 +118,7 @@ int main()
 	oNes->setDpcmDataProvider(&oDpcmProvider);
 #endif
 #if DEMO_MODE == DEMO_MODE_DPCM_GRAB
-	PurrFX::CDpcmDataFileWriter oDpcmWriter("../data/out/", PurrFX::EDpcmFileType::Dmc);
+	PurrFX::CDpcmDataFileWriter oDpcmWriter(PATHSTR("../data/out/"), PurrFX::EDpcmFileType::Dmc);
 	oNes->setDpcmDataConsumer(&oDpcmWriter);
 #endif
 
