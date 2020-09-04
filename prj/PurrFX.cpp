@@ -92,7 +92,7 @@ int main()
 	// Setup //
 	///////////
 
-	PurrFX::CNesPtr oNes(PurrFX::ENesType::GameMusicEmu);
+	PurrFX::CNesPtr oNes;
 
 #if   DEMO_MODE == DEMO_MODE_WAV | DEMO_MODE == DEMO_MODE_FD_PLAY
 	PurrFX::CWavWriter oWavWriter( sOutputPath, nTime );
