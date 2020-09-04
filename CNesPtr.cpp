@@ -1,6 +1,11 @@
 #include "CNesPtr.h"
 #include "CNesGme.h"
 
+PurrFX::CNesPtr::CNesPtr():
+	CNesPtr(ENesType::GameMusicEmu)
+{
+}
+
 PurrFX::CNesPtr::CNesPtr(ENesType i_eType)
 {
 	if (i_eType == ENesType::GameMusicEmu)

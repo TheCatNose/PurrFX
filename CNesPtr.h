@@ -11,12 +11,12 @@ namespace PurrFX
 	class CNesPtr final
 	{
 	public:
+		CNesPtr();
 		CNesPtr(ENesType i_eType);
 		~CNesPtr();
 
 		CNes* operator->() const;
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNesPtr)
 		CLASS_MAKE_NON_COPYABLE(CNesPtr)
 	private:
 		CNes* m_pNes = nullptr;
