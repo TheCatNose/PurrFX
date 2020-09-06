@@ -27,18 +27,25 @@ bool PurrFX::CNes::render()
 	const uint32_t nBufferSize = 1024;
 	char           aBuffer[nBufferSize];
 
-	assert(m_pAudioDataConsumer != nullptr);
-	m_pAudioDataConsumer->start( m_oAudioFormat );
+	assert(m_pAudioDataConsumer != nullptr ||
+		   m_pFrameDataConsumer != nullptr );
+
+	if (m_pAudioDataConsumer != nullptr)
+		m_pAudioDataConsumer->start( m_oAudioFormat );
 	
-	while(!m_pAudioDataConsumer->finished())
+	while( (m_pAudioDataConsumer == nullptr ? true : !m_pAudioDataConsumer->finished()) &&
+		   (m_pFrameDataConsumer == nullptr ? true : !m_pFrameDataConsumer->finished()) )
 	{
 		uint32_t nSize = nBufferSize;
-		if (nSize > m_pAudioDataConsumer->bytesToProcess())
-			nSize = m_pAudioDataConsumer->bytesToProcess();
+		if (m_pAudioDataConsumer != nullptr)
+			if (nSize > m_pAudioDataConsumer->bytesToProcess())
+				nSize = m_pAudioDataConsumer->bytesToProcess();
 
 		if (!render(aBuffer, nSize))
 			return false;
-		m_pAudioDataConsumer->processData(aBuffer, nBufferSize);
+
+		if (m_pAudioDataConsumer != nullptr)
+			m_pAudioDataConsumer->processData(aBuffer, nBufferSize);
 	}
 	return true;
 }
