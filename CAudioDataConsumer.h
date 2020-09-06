@@ -11,7 +11,9 @@ namespace PurrFX
 	class CAudioDataConsumer
 	{
 	public:
-		CAudioDataConsumer(uint32_t i_nDuration);
+		static const uint32_t InfiniteDuration = 0;
+
+		CAudioDataConsumer(uint32_t i_nDuration = InfiniteDuration);
 		virtual ~CAudioDataConsumer();
 
 		bool finished() const;
