@@ -180,7 +180,7 @@
     <ClCompile Include="..\CDpcmDataProvider.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="..\CDpcmDataProviderStd.cpp">
+    <ClCompile Include="..\CDpcmDataFileReader.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
     <ClCompile Include="..\CDpcmFile.cpp">
@@ -395,7 +395,7 @@
     <ClInclude Include="..\CDpcmDataProvider.h">
       <Filter>purrfx</Filter>
     </ClInclude>
-    <ClInclude Include="..\CDpcmDataProviderStd.h">
+    <ClInclude Include="..\CDpcmDataFileReader.h">
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="..\CDpcmFile.h">

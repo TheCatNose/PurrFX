@@ -7,8 +7,7 @@
 #include "../CFrameDataFileWriter.h"
 #include "../CFrameDataFileReader.h"
 #include "../CDpcmDataFileWriter.h"
-#include "../CDpcmDataProviderStd.h"
-#include "../CDpcmFile.h"
+#include "../CDpcmDataFileReader.h"
 #include "../DPath.h"
 
 void showErrorMessage(const char* i_sMessage)
@@ -19,7 +18,7 @@ void showErrorMessage(const char* i_sMessage)
 PurrFX::pathstring inputPath (const PurrFX::pathstring& i_sFileName) { return PurrFX::pathstring(PATHSTR("../data/in/" )) + i_sFileName; }
 PurrFX::pathstring outputPath(const PurrFX::pathstring& i_sFileName) { return PurrFX::pathstring(PATHSTR("../data/out/")) + i_sFileName; }
 
-void loadDpcmSamples(PurrFX::CDpcmDataProviderStd& i_rProdiver)
+void loadDpcmSamples(PurrFX::CDpcmDataFileReader& i_rProdiver)
 {
     for (const auto& rEntry: std::filesystem::directory_iterator("../data/in/"))
 	{
@@ -38,9 +37,7 @@ void loadDpcmSamples(PurrFX::CDpcmDataProviderStd& i_rProdiver)
 #else
 			rEntry.path().filename().generic_string();
 #endif
-		auto* pSample = PurrFX::CDpcmFile::load(sPath);
-		if (pSample != nullptr)
-			i_rProdiver.add(pSample);
+		i_rProdiver.load(sPath);
 	}
 }
 
@@ -114,9 +111,9 @@ int main()
 	PurrFX::CFrameDataFileReader oFdReader( sInputPath );
 	oNes->setFrameDataProducer(&oFdReader);
 
-	PurrFX::CDpcmDataProviderStd oDpcmProvider(true);
-	loadDpcmSamples(oDpcmProvider);
-	oNes->setDpcmDataProvider(&oDpcmProvider);
+	PurrFX::CDpcmDataFileReader oDpcmReader(true);
+	loadDpcmSamples(oDpcmReader);
+	oNes->setDpcmDataProvider(&oDpcmReader);
 #endif
 #if DEMO_MODE == DEMO_MODE_DPCM_GRAB
 	PurrFX::CDpcmDataFileWriter oDpcmWriter(PATHSTR("../data/out/"), PurrFX::EDpcmFileType::Dmc);

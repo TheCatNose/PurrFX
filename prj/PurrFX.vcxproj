@@ -182,7 +182,7 @@
     <ClCompile Include="..\CDpcmFile.cpp" />
     <ClCompile Include="..\CDpcmDataFileWriter.cpp" />
     <ClCompile Include="..\CDpcmDataProvider.cpp" />
-    <ClCompile Include="..\CDpcmDataProviderStd.cpp" />
+    <ClCompile Include="..\CDpcmDataFileReader.cpp" />
     <ClCompile Include="..\CDpcmSample.cpp" />
     <ClCompile Include="..\CFile.cpp" />
     <ClCompile Include="..\CFrameData.cpp" />
@@ -247,7 +247,7 @@
     <ClInclude Include="..\CDpcmFile.h" />
     <ClInclude Include="..\CDpcmDataFileWriter.h" />
     <ClInclude Include="..\CDpcmDataProvider.h" />
-    <ClInclude Include="..\CDpcmDataProviderStd.h" />
+    <ClInclude Include="..\CDpcmDataFileReader.h" />
     <ClInclude Include="..\CDpcmSample.h" />
     <ClInclude Include="..\CFile.h" />
     <ClInclude Include="..\CFrameData.h" />
