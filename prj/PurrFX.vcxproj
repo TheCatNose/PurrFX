@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\CFrameDataBuffer.cpp" />
     <ClCompile Include="..\gme\Blip_Buffer.cpp" />
     <ClCompile Include="..\gme\Classic_Emu.cpp" />
     <ClCompile Include="..\gme\Data_Reader.cpp" />
@@ -209,6 +210,7 @@
     <ClCompile Include="..\CNsfTemplate.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\CFrameDataBuffer.h" />
     <ClInclude Include="..\gme\blargg_common.h" />
     <ClInclude Include="..\gme\blargg_config.h" />
     <ClInclude Include="..\gme\blargg_endian.h" />

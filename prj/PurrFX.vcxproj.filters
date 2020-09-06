@@ -189,6 +189,9 @@
     <ClCompile Include="..\CFile.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="..\CFrameDataBuffer.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gme\blargg_common.h">
@@ -402,6 +405,9 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="..\DPath.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CFrameDataBuffer.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
