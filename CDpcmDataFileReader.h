@@ -4,16 +4,14 @@
 #include "DPath.h"
 #include "CDpcmDataProvider.h"
 #include "CDpcmFile.h"
-#include <vector>
-#include <map>
+#include "CDpcmStorage.h"
 
 namespace PurrFX
 {
 	class CDpcmDataFileReader: public CDpcmDataProvider
 	{
 	public:
-		CDpcmDataFileReader(bool i_bEnableClassicAccessMode);
-		virtual ~CDpcmDataFileReader();
+		CDpcmDataFileReader(bool i_bUseClassicAccessMode);
 
 		// CDpcmDataProvider implementation
 		virtual const CDpcmSample* getSample(uint8_t i_nAddress, uint8_t i_nLength) const;
@@ -26,15 +24,6 @@ namespace PurrFX
 		CLASS_MAKE_NON_COPYABLE(CDpcmDataFileReader)
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CDpcmDataFileReader)
 	private:
-		uint16_t key(uint8_t i_nAddress, uint8_t i_nLength) const;
-
-		bool m_bClassicAccessModeEnabled = false;
-		
-		// Modern access
-		std::vector<CDpcmSample*> m_aSamples;
-		bool   m_bIsCurrentIndexSet = false;
-		size_t m_nCurrentIndex = 0;
-		// Classic access
-		std::map<uint16_t, CDpcmSample*> m_mSamples;
+		CDpcmStorage m_oStorage;
 	};
 }
