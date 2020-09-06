@@ -192,6 +192,9 @@
     <ClCompile Include="..\CFrameDataBuffer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="..\CDpcmStorage.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gme\blargg_common.h">
@@ -408,6 +411,9 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="..\CFrameDataBuffer.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CDpcmStorage.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
