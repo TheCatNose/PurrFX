@@ -4,6 +4,8 @@ PurrFX::CAudioDataConsumerWavWriter::CAudioDataConsumerWavWriter(const pathstrin
 	CAudioDataConsumer(i_nDuration),
 	m_oFile(i_sFileName)
 {
+	assert(i_nDuration != CAudioDataConsumer::InfiniteDuration);
+
 	if (!m_oFile.isOpened())
 		return;
 }
