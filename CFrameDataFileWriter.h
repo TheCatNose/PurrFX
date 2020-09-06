@@ -13,7 +13,7 @@ namespace PurrFX
 	class CFrameDataFileWriter: public CFrameDataConsumer
 	{
 	public:
-		CFrameDataFileWriter(const pathstring& i_sFileName);
+		CFrameDataFileWriter(const pathstring& i_sFileName, size_t i_nSize = UnlimitedSize);
 
 		CLASS_MAKE_NON_COPYABLE(CFrameDataFileWriter);
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CFrameDataFileWriter);
