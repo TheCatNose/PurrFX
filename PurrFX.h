@@ -6,3 +6,4 @@
 #include "CAudioDataConsumerDummy.h"
 #include "CLogFileWriter.h"
 #include "CFrameDataBuffer.h"
+#include "CDpcmDataBuffer.h"
