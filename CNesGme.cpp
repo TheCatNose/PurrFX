@@ -49,6 +49,9 @@ namespace PurrFX
 		pNesCpu->gme_integrator = this;
 		pNsfEmu->apu_()->gme_integrator = this;
 
+		// Other
+		pEmu->ignore_silence(true);
+
 		return true;
 	}
 
