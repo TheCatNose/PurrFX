@@ -49,6 +49,7 @@ void loadDpcmSamples(PurrFX::CDpcmDataProviderStd& i_rProdiver)
 #define DEMO_MODE_FD_CAPTURE 2
 #define DEMO_MODE_FD_PLAY    3
 #define DEMO_MODE_DPCM_GRAB  4
+#define DEMO_MODE_MEM_PLAY   5
 
 // Choose demo mode here:
 #define DEMO_MODE	DEMO_MODE_WAV
@@ -71,7 +72,7 @@ int main()
 	// Preparations //
 	//////////////////
 
-#if   DEMO_MODE == DEMO_MODE_WAV | DEMO_MODE == DEMO_MODE_FD_PLAY
+#if   DEMO_MODE == DEMO_MODE_WAV | DEMO_MODE == DEMO_MODE_FD_PLAY | DEMO_MODE == DEMO_MODE_MEM_PLAY
 	sOutputFile += PATHSTR(".wav");
 #elif DEMO_MODE == DEMO_MODE_LOG
 	sOutputFile += PATHSTR(".log");
@@ -121,6 +122,10 @@ int main()
 	PurrFX::CDpcmDataFileWriter oDpcmWriter(PATHSTR("../data/out/"), PurrFX::EDpcmFileType::Dmc);
 	oNes->setDpcmDataConsumer(&oDpcmWriter);
 #endif
+#if DEMO_MODE == DEMO_MODE_MEM_PLAY
+	PurrFX::CFrameDataBuffer oFdBuffer(nTime*60);
+	oNes->setFrameDataConsumer(&oFdBuffer);
+#endif
 
 
 	oNes->setAudioFormat( oAudioFormat );
@@ -140,9 +145,29 @@ int main()
 		return 1;
 	}
 
+#if DEMO_MODE != DEMO_MODE_MEM_PLAY
 	PurrFX::CAudioDataConsumerDummy oDummy(nTime);
 	if (!oNes->usesAudioDataConsumer())
 		 oNes->setAudioDataConsumer(&oDummy);
+#endif
+
+	//////////////////////////
+	// Filling data buffers //
+	//////////////////////////
+
+#if DEMO_MODE == DEMO_MODE_MEM_PLAY
+	// Collect frame data
+	oNes->render();
+
+	// Prepare for WAV output
+	oNes->setFrameDataConsumer(nullptr);
+	oNes->setFrameDataProducer(&oFdBuffer);
+	oNes->open();
+	oNes->setTrack(0);
+
+	PurrFX::CWavWriter oWavWriter(sOutputPath, nTime);
+	oNes->setAudioDataConsumer(&oWavWriter);
+#endif
 
 	////////////
 	// Render //
