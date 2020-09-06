@@ -10,6 +10,13 @@ PurrFX::CDpcmSample::CDpcmSample(uint8_t i_nAddress, uint8_t i_nLength):
 		   m_aData.size() <= NesConsts::dpcmSampleLengthMax );
 }
 
+PurrFX::CDpcmSample* PurrFX::CDpcmSample::makeCopy(const CDpcmSample& i_rSample)
+{
+	CDpcmSample* pSample = new CDpcmSample(i_rSample.dpcmAddress(), i_rSample.dpcmLength());
+	pSample->set(i_rSample.data() );
+	return pSample;
+}
+
 uint8_t PurrFX::CDpcmSample::dpcmAddress() const
 {
 	return m_nDpcmAddress;

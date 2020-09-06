@@ -12,6 +12,7 @@ namespace PurrFX
 	{
 	public:
 		CDpcmSample(uint8_t i_nAddress, uint8_t i_nLength);
+		static CDpcmSample* makeCopy(const CDpcmSample& i_rSample);
 
 		uint8_t dpcmAddress() const;
 		uint8_t dpcmLength() const;
