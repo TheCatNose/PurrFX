@@ -1,17 +1,19 @@
 #pragma once
-// Canonical implementation of CDpcmDataProvider
+// File loading implementation of DPCM data source
 
+#include "DPath.h"
 #include "CDpcmDataProvider.h"
+#include "CDpcmFile.h"
 #include <vector>
 #include <map>
 
 namespace PurrFX
 {
-	class CDpcmDataProviderStd: public CDpcmDataProvider
+	class CDpcmDataFileReader: public CDpcmDataProvider
 	{
 	public:
-		CDpcmDataProviderStd(bool i_bEnableClassicAccessMode);
-		virtual ~CDpcmDataProviderStd();
+		CDpcmDataFileReader(bool i_bEnableClassicAccessMode);
+		virtual ~CDpcmDataFileReader();
 
 		// CDpcmDataProvider implementation
 		virtual const CDpcmSample* getSample(uint8_t i_nAddress, uint8_t i_nLength) const;
@@ -19,11 +21,10 @@ namespace PurrFX
 
 		bool   setCurrentIndex(size_t i_nCurrentIndex);
 		size_t size() const;
-		void   add(CDpcmSample* i_pSample);
-		bool   del(size_t i_nCurrentIndex);
+		void   load(const pathstring& i_sFileName);
 
-		CLASS_MAKE_NON_COPYABLE(CDpcmDataProviderStd)
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CDpcmDataProviderStd)
+		CLASS_MAKE_NON_COPYABLE(CDpcmDataFileReader)
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CDpcmDataFileReader)
 	private:
 		uint16_t key(uint8_t i_nAddress, uint8_t i_nLength) const;
 
