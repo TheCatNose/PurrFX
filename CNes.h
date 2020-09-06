@@ -36,6 +36,8 @@ namespace PurrFX
 		virtual int  trackCount() const = 0;
 		virtual bool render(char* o_pData, size_t i_nDataSize) = 0;
 
+		void detachAll(); // Detach all producers/providers/consumers etc
+
 		///////////////////
 		// Audio options //
 		///////////////////

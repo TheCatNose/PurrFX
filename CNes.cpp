@@ -12,6 +12,16 @@ bool PurrFX::CNes::open()
 	return open(aNsf.data(), aNsf.size());
 }
 
+void PurrFX::CNes::detachAll()
+{
+	setAudioDataConsumer(nullptr);
+	setLogDataConsumer(nullptr);
+	setFrameDataConsumer(nullptr);
+	setFrameDataProducer(nullptr);
+	setDpcmDataConsumer(nullptr);
+	setDpcmDataProvider(nullptr);
+}
+
 void PurrFX::CNes::setAudioFormat(const CAudioFormat& i_rFormat)
 {
 	m_oAudioFormat = i_rFormat;
