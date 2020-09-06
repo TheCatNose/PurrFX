@@ -122,6 +122,8 @@ int main()
 #if DEMO_MODE == DEMO_MODE_MEM_PLAY
 	PurrFX::CFrameDataBuffer oFdBuffer(nTime*60);
 	oNes->setFrameDataConsumer(&oFdBuffer);
+	PurrFX::CDpcmDataBuffer oDpcmBuffer(true);
+	oNes->setDpcmDataConsumer(&oDpcmBuffer);
 #endif
 
 
@@ -153,12 +155,13 @@ int main()
 	//////////////////////////
 
 #if DEMO_MODE == DEMO_MODE_MEM_PLAY
-	// Collect frame data
+	// Collect frame data and DPCM samples
 	oNes->render();
 
 	// Prepare for WAV output
 	oNes->detachAll();
 	oNes->setFrameDataProducer(&oFdBuffer);
+	oNes->setDpcmDataProvider(&oDpcmBuffer);
 	oNes->open();
 	oNes->setTrack(0);
 
