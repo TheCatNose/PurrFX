@@ -160,7 +160,7 @@ int main()
 	oNes->render();
 
 	// Prepare for WAV output
-	oNes->setFrameDataConsumer(nullptr);
+	oNes->detachAll();
 	oNes->setFrameDataProducer(&oFdBuffer);
 	oNes->open();
 	oNes->setTrack(0);
