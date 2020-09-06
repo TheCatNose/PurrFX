@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\CDpcmDataBuffer.cpp" />
     <ClCompile Include="..\CDpcmStorage.cpp" />
     <ClCompile Include="..\CFrameDataBuffer.cpp" />
     <ClCompile Include="..\gme\Blip_Buffer.cpp" />
@@ -211,6 +212,7 @@
     <ClCompile Include="..\CNsfTemplate.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\CDpcmDataBuffer.h" />
     <ClInclude Include="..\CDpcmStorage.h" />
     <ClInclude Include="..\CFrameDataBuffer.h" />
     <ClInclude Include="..\gme\blargg_common.h" />
