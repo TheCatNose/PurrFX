@@ -198,6 +198,12 @@
     <ClCompile Include="..\CDpcmDataBuffer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="..\CPcm2Dpcm.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CPcm2DpcmNaive.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gme\blargg_common.h">
@@ -420,6 +426,12 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="..\CDpcmDataBuffer.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CPcm2Dpcm.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CPcm2DpcmNaive.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>

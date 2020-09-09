@@ -154,6 +154,8 @@
     <ClCompile Include="..\CDpcmDataBuffer.cpp" />
     <ClCompile Include="..\CDpcmStorage.cpp" />
     <ClCompile Include="..\CFrameDataBuffer.cpp" />
+    <ClCompile Include="..\CPcm2Dpcm.cpp" />
+    <ClCompile Include="..\CPcm2DpcmNaive.cpp" />
     <ClCompile Include="..\gme\Blip_Buffer.cpp" />
     <ClCompile Include="..\gme\Classic_Emu.cpp" />
     <ClCompile Include="..\gme\Data_Reader.cpp" />
@@ -215,6 +217,8 @@
     <ClInclude Include="..\CDpcmDataBuffer.h" />
     <ClInclude Include="..\CDpcmStorage.h" />
     <ClInclude Include="..\CFrameDataBuffer.h" />
+    <ClInclude Include="..\CPcm2Dpcm.h" />
+    <ClInclude Include="..\CPcm2DpcmNaive.h" />
     <ClInclude Include="..\gme\blargg_common.h" />
     <ClInclude Include="..\gme\blargg_config.h" />
     <ClInclude Include="..\gme\blargg_endian.h" />
