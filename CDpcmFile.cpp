@@ -2,6 +2,7 @@
 #include "CNesCalculations.h"
 #include "DNesConsts.h"
 #include "CBufferedFileWriter.h"
+#include "CPcm2DpcmNaive.h"
 
 PurrFX::CDpcmSample* PurrFX::CDpcmFile::load(const pathstring& i_sFileName)
 {
@@ -105,43 +106,9 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadRaw(CFile& i_rFile, size_t i_nFileSi
 	if (nBytesRead != nPcmDataSize)
 		return nullptr;
 
-	std::vector<bool> aDpcmBits;
-	aDpcmBits.reserve(nPcmDataSize);
-
-	// This is very naive approach.
-	// Proper implementation should take into account nonstandard signal level changes.
-	// (possible signal level changes for 1bit DPCM are +1 and -1)
-	bool bIncreaseIfNotChanged = false;
-	int8_t nSignal = 0;
-	for (size_t i = 0; i < aPcmData.size(); i++)
-	{
-		if (aPcmData[i] == nSignal)
-		{
-			aDpcmBits.push_back(bIncreaseIfNotChanged);
-			bIncreaseIfNotChanged = !bIncreaseIfNotChanged;
-		}
-		else
-			aDpcmBits.push_back( aPcmData[i] > nSignal );
-		nSignal = aPcmData[i];
-	}
-
-	CDpcmSample* pSample = new CDpcmSample(0, CNesCalculations::dpcmSampleLengthPack(nDpcmDataSize));
-	assert(pSample->size() == nDpcmDataSize);
-
-	uint8_t nDpcmByte = 0;
-	for (size_t i = 0; i < aDpcmBits.size(); i++)
-	{
-		size_t nBit = i%8;
-		if (aDpcmBits[i])
-			nDpcmByte |= (uint8_t(1) << nBit);
-		if (nBit == 7)
-		{
-			pSample->set(i/8, nDpcmByte);
-			nDpcmByte = 0;
-		}
-	}
-
-	return pSample;
+	CPcm2DpcmNaive oConv(aPcmData);
+	CPcm2Dpcm* pConv = &oConv;
+	return pConv->convert();
 }
 
 void PurrFX::CDpcmFile::saveAsDmc(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample)
