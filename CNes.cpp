@@ -22,9 +22,12 @@ void PurrFX::CNes::detachAll()
 	setDpcmDataProvider(nullptr);
 }
 
-void PurrFX::CNes::setAudioFormat(const CAudioFormat& i_rFormat)
+bool PurrFX::CNes::setAudioFormat(const CAudioFormat& i_rFormat)
 {
+	if (!i_rFormat.isValid())
+		return false;
 	m_oAudioFormat = i_rFormat;
+	return true;
 }
 
 const PurrFX::CAudioFormat& PurrFX::CNes::audioFormat()

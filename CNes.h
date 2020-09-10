@@ -43,11 +43,11 @@ namespace PurrFX
 		///////////////////
 
 	public:
-		void                setAudioFormat(const CAudioFormat& i_rFormat);
+		bool                setAudioFormat(const CAudioFormat& i_rFormat);
 		const CAudioFormat&    audioFormat();
 
 	private:
-		CAudioFormat m_oAudioFormat;
+		CAudioFormat m_oAudioFormat = CAudioFormat::defaultFormat();
 
 		//////////////////////////
 		// Audio data consuming //
