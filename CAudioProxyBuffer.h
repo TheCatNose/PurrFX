@@ -3,7 +3,7 @@
 //
 // Notes:
 // * It won't own data provider
-// * Supports 8bit & 16bit bit depth
+// * Supports 8bit & 16bit bit depth (with CPcmSample class)
 // * Supports mono & stereo
 //
 //                    getData()                         getData()                                                    get data
@@ -29,9 +29,6 @@ namespace PurrFX
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CAudioProxyBuffer)
 		CLASS_MAKE_NON_COPYABLE(CAudioProxyBuffer)
 	private:
-		int convert8to16(int v);
-		int convert16to8(int v);
-
 		const int    m_nSrcBitDepth;
 		const int    m_nSrcChannels;
 		const size_t m_nSrcSampleBytes; // For all channels
