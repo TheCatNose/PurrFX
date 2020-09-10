@@ -127,7 +127,11 @@ int main()
 #endif
 
 
-	oNes->setAudioFormat( oAudioFormat );
+	if (!oNes->setAudioFormat( oAudioFormat ))
+	{
+		showErrorMessage("Can't set audio format");
+		return 1;
+	}
 #if DEMO_MODE == DEMO_MODE_FD_PLAY
 	if (!oNes->open())
 #else
