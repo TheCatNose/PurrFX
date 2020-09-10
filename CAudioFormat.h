@@ -10,6 +10,10 @@ namespace PurrFX
 	public:
 		CAudioFormat();
 		CAudioFormat(int i_nSampleRate, bool i_bStereo = true, int i_nBitDepth = 16);
+		
+		static CAudioFormat defaultFormat();
+
+		bool isValid() const;
 
 		int  sampleRate() const;
 		int  channels() const;
