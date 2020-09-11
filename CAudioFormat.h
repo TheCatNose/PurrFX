@@ -20,6 +20,7 @@ namespace PurrFX
 		int  bitDepth() const;
 		
 		int  bytesPerSample() const;
+		int  bytesPerSampleAllChannels() const;
 
 	private:
 		int  m_nSampleRate;

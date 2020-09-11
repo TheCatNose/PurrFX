@@ -44,3 +44,8 @@ int PurrFX::CAudioFormat::bytesPerSample() const
 {
 	return bitDepth()/8;
 }
+
+int PurrFX::CAudioFormat::bytesPerSampleAllChannels() const
+{
+	return bytesPerSample()*channels();
+}
