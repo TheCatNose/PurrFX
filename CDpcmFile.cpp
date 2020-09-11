@@ -101,7 +101,7 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadRaw(CFile& i_rFile, size_t i_nFileSi
 	const uint16_t nPcmDataSize = nDpcmDataSize*8;
 	assert(nPcmDataSize <= i_nFileSize);
 
-	std::vector<int8_t> aPcmData(nPcmDataSize);
+	std::vector<uint8_t> aPcmData(nPcmDataSize);
 	size_t nBytesRead = i_rFile.read(aPcmData.data(), nPcmDataSize);
 	if (nBytesRead != nPcmDataSize)
 		return nullptr;
@@ -134,9 +134,9 @@ void PurrFX::CDpcmFile::saveAsDmc(CBufferedFileWriter& i_rFile, const CDpcmSampl
 
 void PurrFX::CDpcmFile::saveAsRaw(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample)
 {
-	// No header, just array of 8bit signed audio samples
+	// No header, just array of 8bit unsigned audio samples
 
-	int8_t nSample = 0;
+	int nSample = std::numeric_limits<uint8_t>::max()/2;
 	for (size_t i = 0; i < i_rSample.size(); i++)
 	{
 		uint8_t nSrcByte = i_rSample.data()[i];
@@ -147,6 +147,14 @@ void PurrFX::CDpcmFile::saveAsRaw(CBufferedFileWriter& i_rFile, const CDpcmSampl
 				nSample++;
 			else
 				nSample--;
+
+			int nLimited = nSample;
+			if (nLimited < std::numeric_limits<uint8_t>::min())
+				nLimited = std::numeric_limits<uint8_t>::min();
+			if (nLimited > std::numeric_limits<uint8_t>::max())
+				nLimited = std::numeric_limits<uint8_t>::max();
+			
+			uint8_t nSample = uint8_t(nLimited);
 			i_rFile.write(&nSample, 1);
 		}
 	}

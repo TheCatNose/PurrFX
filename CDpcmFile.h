@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <cassert>
 #include <vector>
+#include <limits>
 #include "CDpcmSample.h"
 #include "EDpcmFileType.h"
 #include "CFile.h"

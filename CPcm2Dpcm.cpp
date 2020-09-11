@@ -2,7 +2,7 @@
 #include "CNesCalculations.h"
 #include "DNesConsts.h"
 
-PurrFX::CPcm2Dpcm::CPcm2Dpcm(const std::vector<int8_t>& i_rPcmData):
+PurrFX::CPcm2Dpcm::CPcm2Dpcm(const std::vector<uint8_t>& i_rPcmData):
 	m_rPcmData(i_rPcmData)
 {
 	assert(m_rPcmData.size() > 0);
@@ -22,7 +22,7 @@ uint16_t PurrFX::CPcm2Dpcm::dpcmSize() const
 	return uint16_t(m_nDpcmSize);
 }
 
-int8_t PurrFX::CPcm2Dpcm::pcmByte(size_t i_nIndex) const
+uint8_t PurrFX::CPcm2Dpcm::pcmByte(size_t i_nIndex) const
 {
 	assert(i_nIndex < pcmSize());
 	return m_rPcmData[i_nIndex];

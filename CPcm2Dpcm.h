@@ -14,17 +14,17 @@ namespace PurrFX
 		CLASS_MAKE_NON_COPYABLE(CPcm2Dpcm)
 
 	public:
-		CPcm2Dpcm(const std::vector<int8_t>& i_rPcmData);
+		CPcm2Dpcm(const std::vector<uint8_t>& i_rPcmData);
 
 		virtual CDpcmSample* convert() const = 0;
 
 	protected:
 		size_t   pcmSize() const;
 		uint16_t dpcmSize() const;
-		int8_t   pcmByte(size_t i_nIndex) const;
+		uint8_t  pcmByte(size_t i_nIndex) const;
 
 	private:
-		size_t                     m_nDpcmSize;
-		const std::vector<int8_t>& m_rPcmData;
+		size_t                      m_nDpcmSize;
+		const std::vector<uint8_t>& m_rPcmData;
 	};
 }

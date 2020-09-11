@@ -1,7 +1,7 @@
 #include "CPcm2DpcmNaive.h"
 #include "CNesCalculations.h"
 
-PurrFX::CPcm2DpcmNaive::CPcm2DpcmNaive(const std::vector<int8_t>& i_rPcmData):
+PurrFX::CPcm2DpcmNaive::CPcm2DpcmNaive(const std::vector<uint8_t>& i_rPcmData):
 	CPcm2Dpcm(i_rPcmData)
 {}
 
@@ -11,10 +11,10 @@ PurrFX::CDpcmSample* PurrFX::CPcm2DpcmNaive::convert() const
 	aDpcmBits.reserve( pcmSize() );
 
 	bool bIncreaseIfNotChanged = false;
-	int8_t nSignal = 0;
+	uint8_t nSignal = std::numeric_limits<uint8_t>::max()/2;
 	for (size_t i = 0; i < pcmSize(); i++)
 	{
-		const int8_t nPcmByte = pcmByte(i);
+		const uint8_t nPcmByte = pcmByte(i);
 		if (nPcmByte == nSignal)
 		{
 			aDpcmBits.push_back(bIncreaseIfNotChanged);
