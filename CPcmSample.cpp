@@ -68,7 +68,7 @@ int8_t PurrFX::CPcmSample::toS8() const
 		);
 	assert(nResult >= std::numeric_limits<int8_t>::min() &&
 		   nResult <= std::numeric_limits<int8_t>::max() );
-	return int16_t(nResult);
+	return int8_t(nResult);
 }
 
 uint16_t PurrFX::CPcmSample::toU16() const
