@@ -25,6 +25,7 @@ const PurrFX::pathchar_t* PurrFX::CDpcmDataFileWriter::fileExtension() const
 	{
 	case EDpcmFileType::Dmc: return PATHSTR("dmc");
 	case EDpcmFileType::Raw: return PATHSTR("raw");
+	case EDpcmFileType::Wav: return PATHSTR("wav");
 	default:
 		assert(false && "Unknown DPCM file type");
 		return PATHSTR("");
