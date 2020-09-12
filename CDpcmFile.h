@@ -21,8 +21,10 @@ namespace PurrFX
 	private:
 		static CDpcmSample* loadDmc(CFile& i_rFile, size_t i_nFileSize);
 		static CDpcmSample* loadRaw(CFile& i_rFile, size_t i_nFileSize);
+		static CDpcmSample* loadWav(CFile& i_rFile, size_t i_nFileSize);
 
 		static void saveAsDmc(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample);
 		static void saveAsRaw(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample);
+		static void saveAsWav(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample);
 	};
 }
