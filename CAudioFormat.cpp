@@ -1,4 +1,5 @@
 #include "CAudioFormat.h"
+#include "DNesConsts.h"
 
 PurrFX::CAudioFormat::CAudioFormat():
 	m_nSampleRate(0),
@@ -26,7 +27,8 @@ bool PurrFX::CAudioFormat::isValid() const
 		m_nSampleRate != 22050 &&
 		m_nSampleRate != 32000 &&
 		m_nSampleRate != 44100 &&
-		m_nSampleRate != 48000 )
+		m_nSampleRate != 48000 &&
+		m_nSampleRate != NesConsts::dpcmSampleRate)
 		return false;
 
 	if (m_nBitDepth != 8 &&
