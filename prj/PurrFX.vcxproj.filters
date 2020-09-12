@@ -207,6 +207,9 @@
     <ClCompile Include="..\CPcmSample.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="..\CWavHeader.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gme\blargg_common.h">
@@ -438,6 +441,9 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="..\CPcmSample.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CWavHeader.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
