@@ -6,5 +6,6 @@ namespace PurrFX
 	{
 		Dmc,
 		Raw,
+		Wav,
 	};
 }
