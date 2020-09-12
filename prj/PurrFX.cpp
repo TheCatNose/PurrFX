@@ -28,7 +28,7 @@ void loadDpcmSamples(PurrFX::CDpcmDataFileReader& i_rProdiver)
 #else
 			rEntry.path().extension().generic_string();
 #endif
-		if (!(sExt == PATHSTR(".raw") || sExt == PATHSTR(".dmc") ))
+		if (!(sExt == PATHSTR(".raw") || sExt == PATHSTR(".dmc") || sExt == PATHSTR(".wav") ))
 			continue;
 
         PurrFX::pathstring sPath = PATHSTR("../data/in/") + 
