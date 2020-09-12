@@ -20,5 +20,7 @@ namespace PurrFX
 		//                                             LLLLLLLL0001
 		static const uint16_t dpcmSampleLengthMin  = 0b000000000001;
 		static const uint16_t dpcmSampleLengthMax  = 0b111111110001;
+
+		static const int dpcmSampleRate = 33000; // approximate value
 	}
 }
