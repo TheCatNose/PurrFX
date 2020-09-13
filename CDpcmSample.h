@@ -10,6 +10,8 @@ namespace PurrFX
 {
 	class CDpcmSample
 	{
+		CLASS_MAKE_NON_COPYABLE(CDpcmSample)
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CDpcmSample)
 	public:
 		CDpcmSample(uint8_t i_nAddress, uint8_t i_nLength);
 		static CDpcmSample* makeCopy(const CDpcmSample& i_rSample);
@@ -23,8 +25,6 @@ namespace PurrFX
 		uint16_t       size() const;
 		const uint8_t* data() const;
 
-		CLASS_MAKE_NON_COPYABLE(CDpcmSample)
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CDpcmSample)
 	private:
 		uint8_t m_nDpcmAddress;
 		std::vector<uint8_t> m_aData;

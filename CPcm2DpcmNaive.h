@@ -13,7 +13,6 @@ namespace PurrFX
 	{
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CPcm2DpcmNaive)
 		CLASS_MAKE_NON_COPYABLE(CPcm2DpcmNaive)
-
 	public:
 		CPcm2DpcmNaive(const std::vector<uint8_t>& i_rPcmData);
 		virtual CDpcmSample* convert() const;

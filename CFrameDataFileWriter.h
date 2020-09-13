@@ -12,11 +12,11 @@ namespace PurrFX
 {
 	class CFrameDataFileWriter: public CFrameDataConsumer
 	{
+		CLASS_MAKE_NON_COPYABLE(CFrameDataFileWriter)
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CFrameDataFileWriter)
 	public:
 		CFrameDataFileWriter(const pathstring& i_sFileName, size_t i_nSize = UnlimitedSize);
 
-		CLASS_MAKE_NON_COPYABLE(CFrameDataFileWriter);
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CFrameDataFileWriter);
 	private:
 		// CFrameDataConsumer implementation
 		virtual void onFrameDataReady(const CFrameData& i_rFrameData);

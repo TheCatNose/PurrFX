@@ -9,6 +9,7 @@ namespace PurrFX
 {
 	class CLogItemCpuInstruction: public CLogItem
 	{
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemCpuInstruction)
 	public:
 		CLogItemCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2);
 
@@ -20,7 +21,6 @@ namespace PurrFX
 		// CLogItem implementation
 		virtual ELogItemType type() const;
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemCpuInstruction);
 	private:
 		uint16_t m_nAddress;
 		uint8_t  m_nOpcode;

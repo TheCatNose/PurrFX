@@ -9,6 +9,7 @@ namespace PurrFX
 {
 	class CLogItemFrameStart: public CLogItem
 	{
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemFrameStart)
 	public:
 		CLogItemFrameStart(int i_nFrame);
 
@@ -17,7 +18,6 @@ namespace PurrFX
 		// CLogItem implementation
 		virtual ELogItemType type() const;
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemFrameStart);
 	private:
 		int m_nFrame;
 	};

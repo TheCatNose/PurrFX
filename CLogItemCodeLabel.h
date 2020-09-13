@@ -10,6 +10,7 @@ namespace PurrFX
 {
 	class CLogItemCodeLabel: public CLogItem
 	{
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemCodeLabel)
 	public:
 		CLogItemCodeLabel(ECodeLabelType i_eType);
 
@@ -18,7 +19,6 @@ namespace PurrFX
 		// CLogItem implementation
 		virtual ELogItemType type() const;
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemCodeLabel);
 	private:
 		ECodeLabelType m_eType;
 	};

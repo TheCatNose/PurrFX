@@ -13,6 +13,8 @@ namespace PurrFX
 
 	class CDpcmDataConsumer
 	{
+		CLASS_MAKE_NON_COPYABLE(CDpcmDataConsumer)
+		CLASS_USE_DEFAULT_CONSTRUCTOR(CDpcmDataConsumer)
 	public:
 		virtual ~CDpcmDataConsumer();
 
@@ -21,8 +23,6 @@ namespace PurrFX
 		void addByte(uint8_t i_nValue);
 		void end();
 
-		CLASS_USE_DEFAULT_CONSTRUCTOR(CDpcmDataConsumer)
-		CLASS_MAKE_NON_COPYABLE(CDpcmDataConsumer)
 	protected:
 		virtual void onSampleReady(const CDpcmSample& i_rSample) = 0;
 

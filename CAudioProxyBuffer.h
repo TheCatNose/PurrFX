@@ -20,14 +20,14 @@ namespace PurrFX
 {
 	class CAudioProxyBuffer
 	{
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CAudioProxyBuffer)
+		CLASS_MAKE_NON_COPYABLE(CAudioProxyBuffer)
 	public:
 		CAudioProxyBuffer(int i_nSrcBitDepth, int i_nSrcChannels);
 
 		void reset();
 		bool getData(char* o_pDstData, size_t i_nDstSize, int i_nBitDepth, int i_nChannels, CAudioProxyBufferDataProvider* i_pDataProvider);
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CAudioProxyBuffer)
-		CLASS_MAKE_NON_COPYABLE(CAudioProxyBuffer)
 	private:
 		const int    m_nSrcBitDepth;
 		const int    m_nSrcChannels;

@@ -18,13 +18,13 @@ namespace PurrFX
 {
 	class CLogFileWriter: public CLogDataConsumer
 	{
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogFileWriter)
+		CLASS_MAKE_NON_COPYABLE(CLogFileWriter)
 	public:
 		CLogFileWriter(const pathstring& i_sFileName);
 
 		virtual void onNewItem(const CLogItem* i_pLogItem);
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogFileWriter)
-		CLASS_MAKE_NON_COPYABLE(CLogFileWriter)
 	private:
 		CBufferedFileWriter m_oFile;
 	};

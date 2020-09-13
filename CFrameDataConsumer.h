@@ -12,7 +12,6 @@ namespace PurrFX
 	class CFrameDataConsumer
 	{
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CFrameDataConsumer)
-
 	public:
 		static const size_t UnlimitedSize = 0;
 

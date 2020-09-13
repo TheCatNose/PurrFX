@@ -22,6 +22,7 @@ namespace PurrFX
 
 	class CNesGme : public CNes, private CGmeIntegrator
 	{
+		CLASS_MAKE_NON_COPYABLE(CNesGme)
 	public:
 		CNesGme();
 		~CNesGme();
@@ -33,7 +34,6 @@ namespace PurrFX
 		virtual int  trackCount() const;
 		virtual bool render(char* o_pData, size_t i_nDataSize);
 
-		CLASS_MAKE_NON_COPYABLE(CNesGme)
 	private:
 		virtual bool prepareEmulator();
 

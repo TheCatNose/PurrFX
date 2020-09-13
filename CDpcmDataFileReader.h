@@ -10,6 +10,8 @@ namespace PurrFX
 {
 	class CDpcmDataFileReader: public CDpcmDataProvider
 	{
+		CLASS_MAKE_NON_COPYABLE(CDpcmDataFileReader)
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CDpcmDataFileReader)
 	public:
 		CDpcmDataFileReader(bool i_bUseClassicAccessMode);
 
@@ -21,8 +23,6 @@ namespace PurrFX
 		size_t size() const;
 		void   load(const pathstring& i_sFileName);
 
-		CLASS_MAKE_NON_COPYABLE(CDpcmDataFileReader)
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CDpcmDataFileReader)
 	private:
 		CDpcmStorage m_oStorage;
 	};

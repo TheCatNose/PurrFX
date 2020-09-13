@@ -14,8 +14,8 @@ namespace PurrFX
 {
 	class CFrameDataBuffer: public CFrameDataConsumer, public CFrameDataProducerRandomAccess
 	{
-		CLASS_MAKE_NON_COPYABLE(CFrameDataBuffer);
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CFrameDataBuffer);
+		CLASS_MAKE_NON_COPYABLE(CFrameDataBuffer)
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CFrameDataBuffer)
 	public:
 		CFrameDataBuffer(size_t i_nSize);
 

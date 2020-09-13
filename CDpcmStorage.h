@@ -15,7 +15,6 @@ namespace PurrFX
 	{
 		CLASS_MAKE_NON_COPYABLE(CDpcmStorage)
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CDpcmStorage)
-	
 	public:
 		CDpcmStorage(bool i_bUseClassicAccessMode);
 		~CDpcmStorage();

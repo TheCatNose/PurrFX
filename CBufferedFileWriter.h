@@ -11,6 +11,8 @@ namespace PurrFX
 {
 	class CBufferedFileWriter
 	{
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CBufferedFileWriter)
+		CLASS_MAKE_NON_COPYABLE(CBufferedFileWriter)
 	public:
 		enum { MIN_BUFFER_SIZE = 4096, MAX_BUFFER_SIZE = 1048576 };
 
@@ -20,8 +22,6 @@ namespace PurrFX
 		bool isOpened() const;
 		void write(const void* i_pData, size_t i_nSize);
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CBufferedFileWriter)
-		CLASS_MAKE_NON_COPYABLE(CBufferedFileWriter)
 	private:
 		CFile m_oFile;
 		

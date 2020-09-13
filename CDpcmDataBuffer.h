@@ -11,6 +11,8 @@ namespace PurrFX
 {
 	class CDpcmDataBuffer: public CDpcmDataConsumer, public CDpcmDataProvider
 	{
+		CLASS_MAKE_NON_COPYABLE(CDpcmDataBuffer)
+		CLASS_USE_DEFAULT_CONSTRUCTOR(CDpcmDataBuffer)
 	public:
 		CDpcmDataBuffer(bool i_bUseClassicAccessMode);
 
@@ -21,8 +23,6 @@ namespace PurrFX
 		virtual const CDpcmSample* getSample(uint8_t i_nAddress, uint8_t i_nLength) const;
 		virtual const CDpcmSample* getSample() const;
 
-		CLASS_MAKE_NON_COPYABLE(CDpcmDataBuffer)
-		CLASS_USE_DEFAULT_CONSTRUCTOR(CDpcmDataBuffer)
 	private:
 		// CDpcmDataConsumer implementation
 		virtual void onSampleReady(const CDpcmSample& i_rSample);

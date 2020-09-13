@@ -10,6 +10,7 @@ namespace PurrFX
 {
 	class CLogItemApuRegisterWrite : public CLogItem
 	{
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemApuRegisterWrite)
 	public:
 		CLogItemApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue);
 
@@ -19,7 +20,6 @@ namespace PurrFX
 		// CLogItem implementation
 		virtual ELogItemType type() const;
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemApuRegisterWrite);
 	private:
 		uint16_t m_nRegister;
 		uint8_t  m_nValue;

@@ -10,6 +10,7 @@ namespace PurrFX
 {
 	class CAudioDataConsumer
 	{
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CAudioDataConsumer)
 	public:
 		static const uint32_t InfiniteDuration = 0;
 
@@ -21,8 +22,6 @@ namespace PurrFX
 
 		void start(const CAudioFormat& i_rAudioFormat);
 		void processData(const char* i_pData, uint32_t i_nSize);
-
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CAudioDataConsumer);
 	private:
 		virtual void onStart(const CAudioFormat& i_rAudioFormat, uint32_t i_nBytesToProcess) = 0;
 		virtual void onData(const char* i_pData, uint32_t i_nSize) = 0;

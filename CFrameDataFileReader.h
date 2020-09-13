@@ -12,6 +12,8 @@ namespace PurrFX
 {
 	class CFrameDataFileReader: public CFrameDataProducerRandomAccess
 	{
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CFrameDataFileReader)
+		CLASS_MAKE_NON_COPYABLE(CFrameDataFileReader)
 	public:
 		CFrameDataFileReader(const pathstring& i_sFileName);
 		~CFrameDataFileReader();
@@ -25,8 +27,6 @@ namespace PurrFX
 		virtual size_t     size() const;
 		virtual CFrameData getAt(size_t i_nIndex) const;
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CFrameDataFileReader)
-		CLASS_MAKE_NON_COPYABLE(CFrameDataFileReader)
 	private:
 		CFrameData* m_pData = nullptr;
 		size_t      m_nDataItems = 0;

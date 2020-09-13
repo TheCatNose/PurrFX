@@ -10,6 +10,7 @@ namespace PurrFX
 {
 	class CNesPtr final
 	{
+		CLASS_MAKE_NON_COPYABLE(CNesPtr)
 	public:
 		CNesPtr();
 		CNesPtr(ENesType i_eType);
@@ -17,7 +18,6 @@ namespace PurrFX
 
 		CNes* operator->() const;
 
-		CLASS_MAKE_NON_COPYABLE(CNesPtr)
 	private:
 		CNes* m_pNes = nullptr;
 	};

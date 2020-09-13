@@ -9,6 +9,8 @@ namespace PurrFX
 {
 	class CFile
 	{
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CFile)
+		CLASS_MAKE_NON_COPYABLE(CFile)
 	public:
 		enum EMode
 		{
@@ -25,8 +27,6 @@ namespace PurrFX
 		size_t size() const;
 		operator FILE*() const;
 
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CFile)
-		CLASS_MAKE_NON_COPYABLE(CFile)
 	private:
 		FILE* m_pFile = nullptr;
 	};
