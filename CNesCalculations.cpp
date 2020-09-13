@@ -46,3 +46,13 @@ uint16_t PurrFX::CNesCalculations::closestDpcmDataLength(size_t i_nSize)
 
 	return (i_nSize & 0xFF0) + 1;
 }
+
+size_t PurrFX::CNesCalculations::dpcm2pcmDataLength(size_t i_nDpcmDataLength)
+{
+	return i_nDpcmDataLength*8;
+}
+
+size_t PurrFX::CNesCalculations::pcm2dpcmDataLength(size_t i_nPcmDataLength)
+{
+	return i_nPcmDataLength/8;
+}
