@@ -97,7 +97,7 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadDmc(CFile& i_rFile, size_t i_nFileSi
 
 PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadRaw(CFile& i_rFile, size_t i_nFileSize)
 {
-	const size_t nDpcmSize = i_nFileSize/8;
+	const size_t nDpcmSize = CNesCalculations::pcm2dpcmDataLength(i_nFileSize);
 	if (nDpcmSize < NesConsts::dpcmSampleLengthMin)
 		return nullptr;
 	
@@ -105,7 +105,7 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadRaw(CFile& i_rFile, size_t i_nFileSi
 	assert(nDpcmDataSize >= NesConsts::dpcmSampleLengthMin);
 	assert(nDpcmDataSize <= NesConsts::dpcmSampleLengthMax);
 
-	const uint16_t nPcmDataSize = nDpcmDataSize*8;
+	const uint16_t nPcmDataSize = uint16_t( CNesCalculations::dpcm2pcmDataLength(nDpcmDataSize) );
 	assert(nPcmDataSize <= i_nFileSize);
 
 	std::vector<uint8_t> aPcmData(nPcmDataSize);
@@ -144,8 +144,8 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadWav(CFile& i_rFile, size_t i_nFileSi
 	size_t   nSourceSamples  = nSourceDataSize / oFormat.bytesPerSampleAllChannels();
 	double   nScale          = double(NesConsts::dpcmSampleRate) / oFormat.sampleRate();
 	size_t   nPcmSamples     = size_t(nSourceSamples*nScale);
-	uint16_t nDpcmSamples    = CNesCalculations::closestDpcmDataLength(nPcmSamples/8);
-	nPcmSamples     = nDpcmSamples*8;
+	uint16_t nDpcmSamples    = CNesCalculations::closestDpcmDataLength( CNesCalculations::pcm2dpcmDataLength(nPcmSamples) );
+	nPcmSamples     = CNesCalculations::dpcm2pcmDataLength(nDpcmSamples);
 	nSourceSamples  = size_t(nPcmSamples/nScale);
 	nSourceDataSize = nSourceSamples * oFormat.bytesPerSampleAllChannels();
 	
@@ -251,7 +251,7 @@ void PurrFX::CDpcmFile::saveAsRaw(CBufferedFileWriter& i_rFile, const CDpcmSampl
 
 void PurrFX::CDpcmFile::saveAsWav(CBufferedFileWriter& i_rFile, const CDpcmSample& i_rSample)
 {
-	CWavHeader oHeader(i_rSample.size()*8, CAudioFormat(NesConsts::dpcmSampleRate, false, 8));
+	CWavHeader oHeader( CNesCalculations::dpcm2pcmDataLength(i_rSample.size()), CAudioFormat(NesConsts::dpcmSampleRate, false, 8));
 	assert(oHeader.isValid());
 	CWavHeader::DataArray aData;
 	oHeader.get(aData);
