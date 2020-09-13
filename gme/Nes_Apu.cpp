@@ -292,7 +292,17 @@ void Nes_Apu::write_register( nes_time_t time, nes_addr_t addr, int data )
 	// <PurrFX>
 	if (gme_integrator != nullptr)
 	{
-		gme_integrator->onGmeEventApuRegisterWrite(addr, uint8_t(data));
+		switch(addr)
+		{
+		case 0x4000: case 0x4001: case 0x4002: case 0x4003: // Pulse 1
+		case 0x4004: case 0x4005: case 0x4006: case 0x4007: // Pulse 2
+		case 0x4008: case 0x400A: case 0x400B:              // Triangle
+		case 0x400C: case 0x400E: case 0x400F:              // Noise
+		case 0x4010: case 0x4011: case 0x4012: case 0x4013: // DMC
+		case 0x4015:                                        // Status
+			gme_integrator->onGmeEventApuRegisterWrite(addr, uint8_t(data));
+			break;
+		}
 
 		// DPCM
 		if (addr      == 0x4012)
