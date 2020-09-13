@@ -101,7 +101,7 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadRaw(CFile& i_rFile, size_t i_nFileSi
 	if (nDpcmSize < NesConsts::dpcmSampleLengthMin)
 		return nullptr;
 	
-	const uint16_t nDpcmDataSize = CNesCalculations::closestSmallerDpcmDataLength(nDpcmSize);
+	const uint16_t nDpcmDataSize = CNesCalculations::closestDpcmDataLength(nDpcmSize);
 	assert(nDpcmDataSize >= NesConsts::dpcmSampleLengthMin);
 	assert(nDpcmDataSize <= NesConsts::dpcmSampleLengthMax);
 
@@ -144,7 +144,7 @@ PurrFX::CDpcmSample* PurrFX::CDpcmFile::loadWav(CFile& i_rFile, size_t i_nFileSi
 	size_t   nSourceSamples  = nSourceDataSize / oFormat.bytesPerSampleAllChannels();
 	double   nScale          = double(NesConsts::dpcmSampleRate) / oFormat.sampleRate();
 	size_t   nPcmSamples     = size_t(nSourceSamples*nScale);
-	uint16_t nDpcmSamples    = CNesCalculations::closestSmallerDpcmDataLength(nPcmSamples/8);
+	uint16_t nDpcmSamples    = CNesCalculations::closestDpcmDataLength(nPcmSamples/8);
 	nPcmSamples     = nDpcmSamples*8;
 	nSourceSamples  = size_t(nPcmSamples/nScale);
 	nSourceDataSize = nSourceSamples * oFormat.bytesPerSampleAllChannels();

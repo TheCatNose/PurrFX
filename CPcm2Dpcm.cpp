@@ -8,7 +8,7 @@ PurrFX::CPcm2Dpcm::CPcm2Dpcm(const std::vector<uint8_t>& i_rPcmData):
 	assert(m_rPcmData.size() > 0);
 	assert(i_rPcmData.size()%8 == 0);
 	size_t nDpcmSize = i_rPcmData.size()/8;
-	m_nDpcmSize = CNesCalculations::closestSmallerDpcmDataLength(nDpcmSize);
+	m_nDpcmSize = CNesCalculations::closestDpcmDataLength(nDpcmSize);
 	assert(m_nDpcmSize <= NesConsts::dpcmSampleLengthMax);
 }
 

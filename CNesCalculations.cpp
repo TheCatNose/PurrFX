@@ -37,7 +37,7 @@ bool PurrFX::CNesCalculations::isDpcmSampleLengthCorrect(size_t i_nSize)
 	return true;
 }
 
-uint16_t PurrFX::CNesCalculations::closestSmallerDpcmDataLength(size_t i_nSize)
+uint16_t PurrFX::CNesCalculations::closestDpcmDataLength(size_t i_nSize)
 {
 	assert(i_nSize > 0);
 

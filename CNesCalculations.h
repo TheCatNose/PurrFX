@@ -21,6 +21,6 @@ namespace PurrFX
 
 		// For unpacked length (real size in bytes)
 		static bool isDpcmSampleLengthCorrect(size_t i_nSize);
-		static uint16_t closestSmallerDpcmDataLength(size_t i_nSize);
+		static uint16_t closestDpcmDataLength(size_t i_nSize);
 	};
 }
