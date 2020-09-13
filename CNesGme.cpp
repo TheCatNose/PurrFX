@@ -226,11 +226,6 @@ namespace PurrFX
 				// Status
 			case 0x4015: eRegister = ERegister::Apu4015; break;
 
-				// Not interesting and wrong cases
-			case 0x4009:
-			case 0x400D:
-			case 0x4017: break;
-
 			default:
 				assert(false && "Unknown register");
 			}
