@@ -37,7 +37,18 @@ void loadDpcmSamples(PurrFX::CDpcmDataFileReader& i_rProdiver)
 #else
 			rEntry.path().filename().generic_string();
 #endif
-		i_rProdiver.load(sPath);
+		bool bSuccess = i_rProdiver.load(sPath);
+		const char* sMessage = bSuccess
+			? "Audio sample loaded: "
+			: "Can't load audio sample: ";
+		{
+#ifdef _WIN32
+			std::wcout
+#else
+			std::cout
+#endif
+				 << sMessage << sPath << std::endl;
+		}
 	}
 }
 
