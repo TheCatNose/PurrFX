@@ -15,7 +15,7 @@ bool PurrFX::CNes::open()
 void PurrFX::CNes::detachAll()
 {
 	setAudioDataConsumer(nullptr);
-	setLogDataConsumer(nullptr);
+	setNesEventConsumer(nullptr);
 	setFrameDataConsumer(nullptr);
 	setFrameDataProducer(nullptr);
 	setDpcmDataConsumer(nullptr);
@@ -73,41 +73,41 @@ bool PurrFX::CNes::usesAudioDataConsumer() const
 	return (m_pAudioDataConsumer != nullptr);
 }
 
-void PurrFX::CNes::setLogDataConsumer(CLogDataConsumer* i_pConsumer)
+void PurrFX::CNes::setNesEventConsumer(CNesEventConsumer* i_pConsumer)
 {
-	m_pLogDataConsumer = i_pConsumer;
+	m_pNesEventConsumer = i_pConsumer;
 }
 
-void PurrFX::CNes::logItemTypeEnable(ELogItemType i_eType)
+void PurrFX::CNes::nesEventTypeEnable(ENesEventType i_eType)
 {
 	size_t nBit = size_t(i_eType);
-	assert(nBit < m_aLogItemTypesDisabled.size());
-	m_aLogItemTypesDisabled.reset(nBit);
+	assert(nBit < m_aNesEventTypesDisabled.size());
+	m_aNesEventTypesDisabled.reset(nBit);
 }
 
-void PurrFX::CNes::logItemTypeDisable(ELogItemType i_eType)
+void PurrFX::CNes::nesEventTypeDisable(ENesEventType i_eType)
 {
 	size_t nBit = size_t(i_eType);
-	assert(nBit < m_aLogItemTypesDisabled.size());
-	m_aLogItemTypesDisabled.set(nBit);
+	assert(nBit < m_aNesEventTypesDisabled.size());
+	m_aNesEventTypesDisabled.set(nBit);
 }
 
-bool PurrFX::CNes::logEnabled() const
+bool PurrFX::CNes::nesEventHandlingEnabled() const
 {
-	return (m_pLogDataConsumer != nullptr);
+	return (m_pNesEventConsumer != nullptr);
 }
 
-void PurrFX::CNes::logAddItem(const CLogItem& i_rItem)
+void PurrFX::CNes::handleNesEvent(const CNesEvent& i_rItem)
 {
-	if (m_pLogDataConsumer == nullptr)
+	if (m_pNesEventConsumer == nullptr)
 		return;
 
 	size_t nBit = size_t( i_rItem.type() );
-	assert(nBit < m_aLogItemTypesDisabled.size());
-	if (m_aLogItemTypesDisabled.test(nBit))
+	assert(nBit < m_aNesEventTypesDisabled.size());
+	if (m_aNesEventTypesDisabled.test(nBit))
 		return;
 
-	m_pLogDataConsumer->onNewItem(&i_rItem);
+	m_pNesEventConsumer->onEvent(&i_rItem);
 }
 
 void PurrFX::CNes::setFrameDataConsumer(CFrameDataConsumer* i_pConsumer)

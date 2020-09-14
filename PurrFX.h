@@ -4,6 +4,6 @@
 #include "CNesPtr.h"
 #include "CAudioDataConsumerWavWriter.h"
 #include "CAudioDataConsumerDummy.h"
-#include "CLogFileWriter.h"
+#include "CNesEventConsumerFileWriter.h"
 #include "CFrameDataBuffer.h"
 #include "CDpcmDataBuffer.h"

@@ -134,16 +134,16 @@ namespace PurrFX
 
 	void CNesGme::onGmeEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2)
 	{
-		if (!logEnabled())
+		if (!nesEventHandlingEnabled())
 			return;
 
-		CLogItemCpuInstruction oLogItem(i_nAddress, i_nOpcode, i_nArgByte1, i_nArgByte2);
-		logAddItem(oLogItem);
+		CNesEventCpuInstruction oEvent(i_nAddress, i_nOpcode, i_nArgByte1, i_nArgByte2);
+		handleNesEvent(oEvent);
 	}
 
 	void CNesGme::onGmeEventCodeLabel(char i_cLabelName)
 	{
-		if (!logEnabled())
+		if (!nesEventHandlingEnabled())
 			return;
 
 		ECodeLabelType eType = ECodeLabelType::Undefined;
@@ -158,16 +158,16 @@ namespace PurrFX
 		}
 		assert(eType != ECodeLabelType::Undefined);
 
-		CLogItemCodeLabel oLogItem(eType);
-		logAddItem(oLogItem);
+		CNesEventCodeLabel oEvent(eType);
+		handleNesEvent(oEvent);
 	}
 
 	void CNesGme::onGmeEventFrameStart(int i_nFrame)
 	{
-		if (logEnabled())
+		if (nesEventHandlingEnabled())
 		{
-			CLogItemFrameStart oLogItem(i_nFrame);
-			logAddItem(oLogItem);
+			CNesEventFrameStart oEvent(i_nFrame);
+			handleNesEvent(oEvent);
 		}
 		if (usesFrameDataConsumer())
 			frameDataConsumer()->startFrame();
@@ -175,10 +175,10 @@ namespace PurrFX
 
 	void CNesGme::onGmeEventFrameEnd()
 	{
-		if (logEnabled())
+		if (nesEventHandlingEnabled())
 		{
-			CLogItemFrameEnd oLogItem;
-			logAddItem(oLogItem);
+			CNesEventFrameEnd oEvent;
+			handleNesEvent(oEvent);
 		}
 		if (usesFrameDataConsumer())
 			frameDataConsumer()->endFrame();
@@ -186,10 +186,10 @@ namespace PurrFX
 
 	void CNesGme::onGmeEventApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue)
 	{
-		if (logEnabled())
+		if (nesEventHandlingEnabled())
 		{
-			CLogItemApuRegisterWrite oLogItem(i_nRegister, i_nValue);
-			logAddItem(oLogItem);
+			CNesEventApuRegisterWrite oEvent(i_nRegister, i_nValue);
+			handleNesEvent(oEvent);
 		}
 		if (usesFrameDataConsumer())
 		{

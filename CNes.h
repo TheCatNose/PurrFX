@@ -3,7 +3,7 @@
 // Base class for all NES emulation code wrappers
 //
 // Notes:
-// * It won't own CLogDataConsumer instance.
+// * It won't own CNesEventConsumer instance.
 // * It won't own CAudioDataConsumer instance.
 // * It won't own CFrameDataConsumer instance.
 // * It won't own CFrameDataProducer instance.
@@ -13,7 +13,7 @@
 #include <bitset>
 #include <cassert>
 #include "CAudioFormat.h"
-#include "CLogDataConsumer.h"
+#include "CNesEventConsumer.h"
 #include "CAudioDataConsumer.h"
 #include "CFrameDataConsumer.h"
 #include "CFrameDataProducer.h"
@@ -61,22 +61,22 @@ namespace PurrFX
 	private:
 		CAudioDataConsumer* m_pAudioDataConsumer = nullptr;
 
-		/////////////
-		// Logging //
-		/////////////
+		////////////////
+		// NES events //
+		////////////////
 
 	public:
-		void setLogDataConsumer(CLogDataConsumer* i_pConsumer);
-		void logItemTypeEnable(ELogItemType i_eType);
-		void logItemTypeDisable(ELogItemType i_eType);
+		void setNesEventConsumer(CNesEventConsumer* i_pConsumer);
+		void nesEventTypeEnable(ENesEventType i_eType);
+		void nesEventTypeDisable(ENesEventType i_eType);
 
 	protected:
-		bool logEnabled() const;
-		void logAddItem(const CLogItem& i_rItem);
+		bool nesEventHandlingEnabled() const;
+		void handleNesEvent(const CNesEvent& i_rItem);
 
 	private:
-		CLogDataConsumer* m_pLogDataConsumer = nullptr;
-		std::bitset<32> m_aLogItemTypesDisabled;
+		CNesEventConsumer* m_pNesEventConsumer = nullptr;
+		std::bitset<32> m_aNesEventTypesDisabled;
 
 		/////////////////////////////
 		// Frame data input/output //
