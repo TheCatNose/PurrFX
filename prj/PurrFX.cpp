@@ -97,11 +97,11 @@ int main()
 	oNes->setAudioDataConsumer(&oWavWriter);
 #endif
 #if DEMO_MODE == DEMO_MODE_LOG
-	oNes->logItemTypeDisable(PurrFX::ELogItemType::CpuInstruction);
-	oNes->logItemTypeDisable(PurrFX::ELogItemType::CodeLabel);
-	oNes->logItemTypeDisable(PurrFX::ELogItemType::FrameEnd);
-	PurrFX::CLogFileWriter oLogWriter( sOutputPath );
-	oNes->setLogDataConsumer(&oLogWriter);
+	oNes->nesEventTypeDisable(PurrFX::ENesEventType::CpuInstruction);
+	oNes->nesEventTypeDisable(PurrFX::ENesEventType::CodeLabel);
+	oNes->nesEventTypeDisable(PurrFX::ENesEventType::FrameEnd);
+	PurrFX::CNesEventConsumerFileWriter oLogWriter( sOutputPath );
+	oNes->setNesEventConsumer(&oLogWriter);
 #endif
 #if DEMO_MODE == DEMO_MODE_FD_CAPTURE
 	PurrFX::CFrameDataFileWriter oFdWriter( sOutputPath );
