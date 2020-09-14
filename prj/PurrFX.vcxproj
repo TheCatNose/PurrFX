@@ -182,7 +182,6 @@
     <ClCompile Include="..\CAudioDataConsumerDummy.cpp" />
     <ClCompile Include="..\CAudioFormat.cpp" />
     <ClCompile Include="..\CAudioProxyBuffer.cpp" />
-    <ClCompile Include="..\CAudioProxyBufferDataProvider.cpp" />
     <ClCompile Include="..\CBufferedFileWriter.cpp" />
     <ClCompile Include="..\CDpcmDataConsumer.cpp" />
     <ClCompile Include="..\CDpcmFile.cpp" />

@@ -135,9 +135,6 @@
     <ClCompile Include="..\CAudioProxyBuffer.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
-    <ClCompile Include="..\CAudioProxyBufferDataProvider.cpp">
-      <Filter>purrfx</Filter>
-    </ClCompile>
     <ClCompile Include="..\CNesGmeAudioDataProvider.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
