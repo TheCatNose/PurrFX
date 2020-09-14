@@ -25,9 +25,11 @@ size_t PurrFX::CDpcmDataFileReader::size() const
 	return m_oStorage.size();
 }
 
-void PurrFX::CDpcmDataFileReader::load(const pathstring& i_sFileName)
+bool PurrFX::CDpcmDataFileReader::load(const pathstring& i_sFileName)
 {
 	CDpcmSample* pSample = CDpcmFile::load(i_sFileName);
-	if (pSample != nullptr)
+	bool bSuccess = (pSample != nullptr);
+	if (bSuccess)
 		m_oStorage.add(pSample);
+	return bSuccess;
 }

@@ -21,7 +21,7 @@ namespace PurrFX
 
 		bool   setCurrentIndex(size_t i_nCurrentIndex);
 		size_t size() const;
-		void   load(const pathstring& i_sFileName);
+		bool   load(const pathstring& i_sFileName);
 
 	private:
 		CDpcmStorage m_oStorage;
