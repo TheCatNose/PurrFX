@@ -1,15 +1,15 @@
 #pragma once
-// Base class for all log data receivers
+// Base class for all NES events receivers
 
-#include "CLogItem.h"
+#include "CNesEvent.h"
 
 namespace PurrFX
 {
-	class CLogDataConsumer
+	class CNesEventConsumer
 	{
 	public:
-		virtual ~CLogDataConsumer();
+		virtual ~CNesEventConsumer();
 		
-		virtual void onNewItem(const CLogItem* i_pLogItem) = 0;
+		virtual void onEvent(const CNesEvent* i_pEvent) = 0;
 	};
 }

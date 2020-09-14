@@ -1,23 +1,23 @@
-#include "CLogFileWriter.h"
+#include "CNesEventConsumerFileWriter.h"
 
 namespace PurrFX
 {
-	CLogFileWriter::CLogFileWriter(const pathstring& i_sFileName):
+	CNesEventConsumerFileWriter::CNesEventConsumerFileWriter(const pathstring& i_sFileName):
 		m_oFile(i_sFileName, CBufferedFileWriter::MAX_BUFFER_SIZE)
 	{
 	}
 
-	void CLogFileWriter::onNewItem(const CLogItem* i_pLogItem)
+	void CNesEventConsumerFileWriter::onEvent(const CNesEvent* i_pEvent)
 	{
 		if (!m_oFile.isOpened())
 			return;
 
-		switch(i_pLogItem->type())
+		switch(i_pEvent->type())
  		{
-		case ELogItemType::CpuInstruction:
+		case ENesEventType::CpuInstruction:
 			{
-				auto* pLogItem = dynamic_cast<const CLogItemCpuInstruction*>(i_pLogItem);
-				CCpuInstructionInfo oInfo(pLogItem->opcode());
+				auto* pEvent = dynamic_cast<const CNesEventCpuInstruction*>(i_pEvent);
+				CCpuInstructionInfo oInfo(pEvent->opcode());
 
 				char sBuffer[33];
 				int nChars;
@@ -25,8 +25,8 @@ namespace PurrFX
 				// Address, opcode, name
 				nChars = snprintf(sBuffer, 32,
 					"$%04X: %02X (%s)",
-					pLogItem->address(),
-					pLogItem->opcode(),
+					pEvent->address(),
+					pEvent->opcode(),
 					oInfo.name()
 				);
 				if (nChars > 0)
@@ -37,13 +37,13 @@ namespace PurrFX
 				assert(nArgBytes >= 0 && nArgBytes <= 2);
 				if (nArgBytes >= 1)
 				{
-					nChars = snprintf(sBuffer, 32, " %02X", pLogItem->argByte1());
+					nChars = snprintf(sBuffer, 32, " %02X", pEvent->argByte1());
 					if (nChars > 0)
 						m_oFile.write(sBuffer, nChars);
 				}
 				if (nArgBytes == 2)
 				{
-					nChars = snprintf(sBuffer, 32, " %02X", pLogItem->argByte2());
+					nChars = snprintf(sBuffer, 32, " %02X", pEvent->argByte2());
 					if (nChars > 0)
 						m_oFile.write(sBuffer, nChars);
 				}
@@ -52,12 +52,12 @@ namespace PurrFX
 				m_oFile.write("\n", 1);
 			}
 			break;
-		case ELogItemType::CodeLabel:
+		case ENesEventType::CodeLabel:
 			{
-				auto* pLogItem = dynamic_cast<const CLogItemCodeLabel*>(i_pLogItem);
+				auto* pEvent = dynamic_cast<const CNesEventCodeLabel*>(i_pEvent);
 
 				std::string sName;
-				switch (pLogItem->labelType())
+				switch (pEvent->labelType())
 				{
 				case ECodeLabelType::InitAddress:
 					sName = "init:";
@@ -74,28 +74,28 @@ namespace PurrFX
 				m_oFile.write("\n", 1);
 			}
 			break;
-		case ELogItemType::FrameStart:
+		case ENesEventType::FrameStart:
 			{
-				auto* pLogItem = dynamic_cast<const CLogItemFrameStart*>(i_pLogItem);
+				auto* pEvent = dynamic_cast<const CNesEventFrameStart*>(i_pEvent);
 				
 				char sBuffer[33];
-				int nChars = snprintf(sBuffer, 32, "frame %d\n", pLogItem->newFrame());
+				int nChars = snprintf(sBuffer, 32, "frame %d\n", pEvent->newFrame());
 				if (nChars > 0)
 					m_oFile.write(sBuffer, nChars);
 			}
 			break;
-		case ELogItemType::FrameEnd:
+		case ENesEventType::FrameEnd:
 			{
 				m_oFile.write("frame end\n", 10);
 			}
 			break;
-		case ELogItemType::ApuRegisterWrite:
+		case ENesEventType::ApuRegisterWrite:
 			{
-				auto* pLogItem = dynamic_cast<const CLogItemApuRegisterWrite*>(i_pLogItem);
+				auto* pEvent = dynamic_cast<const CNesEventApuRegisterWrite*>(i_pEvent);
 				char sBuffer[33];
 				int nChars = snprintf(sBuffer, 32, "$%04X <- %02X\n",
-					pLogItem->registerNumber(),
-					pLogItem->registerValue()
+					pEvent->registerNumber(),
+					pEvent->registerValue()
 					);
 				if (nChars > 0)
 					m_oFile.write(sBuffer, nChars);

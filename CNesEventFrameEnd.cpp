@@ -1,9 +1,9 @@
-#include "CLogItemFrameEnd.h"
+#include "CNesEventFrameEnd.h"
 
 namespace PurrFX
 {
-	ELogItemType CLogItemFrameEnd::type() const
+	ENesEventType CNesEventFrameEnd::type() const
 	{
-		return ELogItemType::FrameEnd;
+		return ENesEventType::FrameEnd;
 	}
 }

@@ -1,24 +1,24 @@
 #pragma once
-// Log item for APU register write
+// NES event: APU register write
 
 #include <cstdint>
 #include "DClass.h"
-#include "CLogItem.h"
+#include "CNesEvent.h"
 #include "ECodeLabelType.h"
 
 namespace PurrFX
 {
-	class CLogItemApuRegisterWrite : public CLogItem
+	class CNesEventApuRegisterWrite : public CNesEvent
 	{
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemApuRegisterWrite)
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNesEventApuRegisterWrite)
 	public:
-		CLogItemApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue);
+		CNesEventApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue);
 
 		uint16_t registerNumber() const;
 		uint8_t  registerValue() const;
 
-		// CLogItem implementation
-		virtual ELogItemType type() const;
+		// CNesEvent implementation
+		virtual ENesEventType type() const;
 
 	private:
 		uint16_t m_nRegister;

@@ -1,25 +1,25 @@
 #pragma once
-// Log item for CPU instruction
+// NES event: CPU instruction
 
 #include <cstdint>
 #include "DClass.h"
-#include "CLogItem.h"
+#include "CNesEvent.h"
 
 namespace PurrFX
 {
-	class CLogItemCpuInstruction: public CLogItem
+	class CNesEventCpuInstruction: public CNesEvent
 	{
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemCpuInstruction)
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNesEventCpuInstruction)
 	public:
-		CLogItemCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2);
+		CNesEventCpuInstruction(uint16_t i_nAddress, uint8_t i_nOpcode, uint8_t i_nArgByte1, uint8_t i_nArgByte2);
 
 		uint16_t address() const;
 		uint8_t  opcode() const;
 		uint8_t  argByte1() const;
 		uint8_t  argByte2() const;
 
-		// CLogItem implementation
-		virtual ELogItemType type() const;
+		// CNesEvent implementation
+		virtual ENesEventType type() const;
 
 	private:
 		uint16_t m_nAddress;

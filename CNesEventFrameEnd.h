@@ -1,16 +1,16 @@
 #pragma once
-// Log item for frame end
+// NES event: frame end
 
 #include "DClass.h"
-#include "CLogItem.h"
+#include "CNesEvent.h"
 
 namespace PurrFX
 {
-	class CLogItemFrameEnd: public CLogItem
+	class CNesEventFrameEnd: public CNesEvent
 	{
 	public:
-		// CLogItem implementation
-		virtual ELogItemType type() const;
+		// CNesEvent implementation
+		virtual ENesEventType type() const;
 	private:
 		int m_nFrame;
 	};

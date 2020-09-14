@@ -1,14 +1,14 @@
 #pragma once
-// Base class for every type of log item/event
+// Base class for every type of NES event
 
-#include "ELogItemType.h"
+#include "ENesEventType.h"
 
 namespace PurrFX
 {
-	class CLogItem
+	class CNesEvent
 	{
 	public:
-		virtual ~CLogItem();
-		virtual ELogItemType type() const = 0;
+		virtual ~CNesEvent();
+		virtual ENesEventType type() const = 0;
 	};
 }

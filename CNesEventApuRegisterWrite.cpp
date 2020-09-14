@@ -1,18 +1,18 @@
-#include "CLogItemApuRegisterWrite.h"
+#include "CNesEventApuRegisterWrite.h"
 
 namespace PurrFX
 {
-	CLogItemApuRegisterWrite::CLogItemApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue):
+	CNesEventApuRegisterWrite::CNesEventApuRegisterWrite(uint16_t i_nRegister, uint8_t i_nValue):
 		m_nRegister(i_nRegister),
 		m_nValue(i_nValue)
 	{
 	}
 
-	uint16_t CLogItemApuRegisterWrite::registerNumber() const { return m_nRegister; }
-	uint8_t  CLogItemApuRegisterWrite::registerValue()  const { return m_nValue; }
+	uint16_t CNesEventApuRegisterWrite::registerNumber() const { return m_nRegister; }
+	uint8_t  CNesEventApuRegisterWrite::registerValue()  const { return m_nValue; }
 
-	ELogItemType CLogItemApuRegisterWrite::type() const
+	ENesEventType CNesEventApuRegisterWrite::type() const
 	{
-		return ELogItemType::ApuRegisterWrite;
+		return ENesEventType::ApuRegisterWrite;
 	}
 }

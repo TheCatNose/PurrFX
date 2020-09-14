@@ -1,22 +1,22 @@
 #pragma once
-// Log item for frame start
+// NES event: frame start
 
 #include <cassert>
 #include "DClass.h"
-#include "CLogItem.h"
+#include "CNesEvent.h"
 
 namespace PurrFX
 {
-	class CLogItemFrameStart: public CLogItem
+	class CNesEventFrameStart: public CNesEvent
 	{
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemFrameStart)
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNesEventFrameStart)
 	public:
-		CLogItemFrameStart(int i_nFrame);
+		CNesEventFrameStart(int i_nFrame);
 
 		int newFrame() const;
 
-		// CLogItem implementation
-		virtual ELogItemType type() const;
+		// CNesEvent implementation
+		virtual ENesEventType type() const;
 
 	private:
 		int m_nFrame;

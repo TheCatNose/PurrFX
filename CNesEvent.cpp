@@ -1,8 +1,8 @@
-#include "CLogItem.h"
+#include "CNesEvent.h"
 
 namespace PurrFX
 {
-	CLogItem::~CLogItem()
+	CNesEvent::~CNesEvent()
 	{
 	}
 }

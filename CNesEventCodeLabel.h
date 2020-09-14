@@ -1,23 +1,23 @@
 #pragma once
-// Log item for code label
+// NES event: code label
 
 #include <cassert>
 #include "DClass.h"
-#include "CLogItem.h"
+#include "CNesEvent.h"
 #include "ECodeLabelType.h"
 
 namespace PurrFX
 {
-	class CLogItemCodeLabel: public CLogItem
+	class CNesEventCodeLabel: public CNesEvent
 	{
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CLogItemCodeLabel)
+		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNesEventCodeLabel)
 	public:
-		CLogItemCodeLabel(ECodeLabelType i_eType);
+		CNesEventCodeLabel(ECodeLabelType i_eType);
 
 		ECodeLabelType labelType() const;
 
-		// CLogItem implementation
-		virtual ELogItemType type() const;
+		// CNesEvent implementation
+		virtual ENesEventType type() const;
 
 	private:
 		ECodeLabelType m_eType;

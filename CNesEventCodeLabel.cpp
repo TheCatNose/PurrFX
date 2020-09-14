@@ -1,20 +1,20 @@
-#include "CLogItemCodeLabel.h"
+#include "CNesEventCodeLabel.h"
 
 namespace PurrFX
 {
-	CLogItemCodeLabel::CLogItemCodeLabel(ECodeLabelType i_eType):
+	CNesEventCodeLabel::CNesEventCodeLabel(ECodeLabelType i_eType):
 		m_eType(i_eType)
 	{
 		assert(m_eType != ECodeLabelType::Undefined);
 	}
 
-	ECodeLabelType CLogItemCodeLabel::labelType() const
+	ECodeLabelType CNesEventCodeLabel::labelType() const
 	{
 		return m_eType;
 	}
 
-	ELogItemType CLogItemCodeLabel::type() const
+	ENesEventType CNesEventCodeLabel::type() const
 	{
-		return ELogItemType::CodeLabel;
+		return ENesEventType::CodeLabel;
 	}
 }

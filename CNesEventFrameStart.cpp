@@ -1,20 +1,20 @@
-#include "CLogItemFrameStart.h"
+#include "CNesEventFrameStart.h"
 
 namespace PurrFX
 {
-	CLogItemFrameStart::CLogItemFrameStart(int i_nFrame):
+	CNesEventFrameStart::CNesEventFrameStart(int i_nFrame):
 		m_nFrame(i_nFrame)
 	{
 		assert(m_nFrame >= 0);
 	}
 
-	int CLogItemFrameStart::newFrame() const
+	int CNesEventFrameStart::newFrame() const
 	{
 		return m_nFrame;
 	}
 
-	ELogItemType CLogItemFrameStart::type() const
+	ENesEventType CNesEventFrameStart::type() const
 	{
-		return ELogItemType::FrameStart;
+		return ENesEventType::FrameStart;
 	}
 }

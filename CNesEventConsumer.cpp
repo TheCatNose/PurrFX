@@ -1,8 +1,8 @@
-#include "CLogDataConsumer.h"
+#include "CNesEventConsumer.h"
 
 namespace PurrFX
 {
-	CLogDataConsumer::~CLogDataConsumer()
+	CNesEventConsumer::~CNesEventConsumer()
 	{
 	}
 }
