@@ -256,13 +256,11 @@ namespace PurrFX
 		auto* pDataSource = frameDataProducer();
 		if (pDataSource == nullptr)
 			return false;
-		if (!pDataSource->available())
-			return false;
-
-		CFrameData oData = pDataSource->get();
+		CFrameData oData;
+		if (pDataSource->available())
+			oData = pDataSource->get();
 		CFrameDataProcessor oDataProcessor(oData);
 		oDataProcessor.generateAssemblyCode(o_rCode);
-
 		pDataSource->next();
 		return true;
 	}
