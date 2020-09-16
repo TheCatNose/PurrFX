@@ -28,6 +28,16 @@ uint8_t PurrFX::CFrameData::get(ERegister i_eRegister) const
 	return m_aValues[ index(i_eRegister) ];
 }
 
+PurrFX::CRegister PurrFX::CFrameData::getRegister(PurrFX::ERegister i_eRegister) const
+{
+	return CRegister(i_eRegister, get(i_eRegister));
+}
+
+void PurrFX::CFrameData::set(const PurrFX::CRegister& i_rRegister)
+{
+	set(i_rRegister.type(), i_rRegister.value());
+}
+
 inline size_t PurrFX::CFrameData::index(ERegister i_eRegister) const
 {
 	return size_t(i_eRegister);
