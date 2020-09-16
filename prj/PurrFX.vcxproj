@@ -157,6 +157,8 @@
     <ClCompile Include="..\CPcm2Dpcm.cpp" />
     <ClCompile Include="..\CPcm2DpcmNaive.cpp" />
     <ClCompile Include="..\CPcmSample.cpp" />
+    <ClCompile Include="..\CRegister.cpp" />
+    <ClCompile Include="..\CRegisterStructure.cpp" />
     <ClCompile Include="..\CWavHeader.cpp" />
     <ClCompile Include="..\gme\Blip_Buffer.cpp" />
     <ClCompile Include="..\gme\Classic_Emu.cpp" />
@@ -221,6 +223,8 @@
     <ClInclude Include="..\CPcm2Dpcm.h" />
     <ClInclude Include="..\CPcm2DpcmNaive.h" />
     <ClInclude Include="..\CPcmSample.h" />
+    <ClInclude Include="..\CRegister.h" />
+    <ClInclude Include="..\CRegisterStructure.h" />
     <ClInclude Include="..\CWavHeader.h" />
     <ClInclude Include="..\gme\blargg_common.h" />
     <ClInclude Include="..\gme\blargg_config.h" />

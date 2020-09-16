@@ -207,6 +207,12 @@
     <ClCompile Include="..\CWavHeader.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="..\CRegister.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CRegisterStructure.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gme\blargg_common.h">
@@ -441,6 +447,12 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="..\CWavHeader.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CRegister.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CRegisterStructure.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
