@@ -7,3 +7,4 @@
 #include "CNesEventConsumerFileWriter.h"
 #include "CFrameDataBuffer.h"
 #include "CDpcmDataBuffer.h"
+#include "CRegister.h"
