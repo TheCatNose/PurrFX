@@ -29,7 +29,7 @@ bool PurrFX::CBufferedFileWriter::isOpened() const
 	return (m_oFile.isOpened());
 }
 
-void PurrFX::CBufferedFileWriter::write(const void* i_pData, size_t i_nSize)
+void PurrFX::CBufferedFileWriter::write(const void* i_pData, size_t i_nSize, EByteOrder i_eByteOrder)
 {
 	if (!m_oFile.isOpened())
 		return;
@@ -45,7 +45,16 @@ void PurrFX::CBufferedFileWriter::write(const void* i_pData, size_t i_nSize)
 		size_t nBufferBytesFree = m_nBufferSize - m_nBufferBytesUsed;
 		size_t nBytesToAdd = (i_nSize <= nBufferBytesFree ? i_nSize : nBufferBytesFree);
 
-		memcpy(m_pBuffer + m_nBufferBytesUsed, pData + nDataOffset, nBytesToAdd);
+		      char* pDst = m_pBuffer + m_nBufferBytesUsed;
+		const char* pSrc = pData + nDataOffset;
+
+		if (i_eByteOrder == CByteOrder::get())
+			memcpy(pDst, pSrc, nBytesToAdd);
+		else
+		{
+			for (size_t i = 0; i < nBytesToAdd; i++)
+				pDst[i] = pSrc[ nBytesToAdd-i-1 ];
+		}
 		nDataOffset += nBytesToAdd;
 		i_nSize     -= nBytesToAdd;
 

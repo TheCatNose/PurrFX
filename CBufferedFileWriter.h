@@ -5,6 +5,7 @@
 #include <cassert>
 #include <cstring>
 #include "DClass.h"
+#include "CByteOrder.h"
 #include "CFile.h"
 
 namespace PurrFX
@@ -20,7 +21,7 @@ namespace PurrFX
 		~CBufferedFileWriter();
 
 		bool isOpened() const;
-		void write(const void* i_pData, size_t i_nSize);
+		void write(const void* i_pData, size_t i_nSize, EByteOrder i_eByteOrder = EByteOrder::LittleEndian);
 
 	private:
 		CFile m_oFile;
