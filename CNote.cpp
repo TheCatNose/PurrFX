@@ -1,0 +1,47 @@
+#include "CNote.h"
+
+PurrFX::CNote::CNote(double i_nFrequence)
+{
+	assert(i_nFrequence > 0);
+	double nPianoKeyNumber = 12.0*log2(i_nFrequence/440.0) + 49.0;
+	double nNoteIndex = nPianoKeyNumber + 8;
+
+	if (nNoteIndex < 0) // can't be less than C0
+		nNoteIndex = 0; 
+
+	m_nOctave = int(nNoteIndex / KeysInOctave);
+	m_nNote   = int(nNoteIndex - m_nOctave*KeysInOctave);
+	m_nOffset = nNoteIndex - int(nNoteIndex);
+
+	if (m_nOffset > 0.5)
+	{
+		m_nOffset-=1;
+		m_nNote++;
+		if (m_nNote == KeysInOctave)
+		{
+			m_nNote = 0;
+			m_nOctave++;
+		}
+	}
+}
+
+int PurrFX::CNote::octave() const
+{
+	return m_nOctave;
+}
+
+int PurrFX::CNote::note() const
+{
+	return m_nNote;
+}
+
+double PurrFX::CNote::offset() const
+{
+	return m_nOffset;
+}
+
+double PurrFX::CNote::frequence() const
+{
+	double nKeyNumber = double(m_nOctave)*KeysInOctave + m_nNote + m_nOffset;
+	return pow(2.0, (nKeyNumber-49.0)/12.0)*440.0;
+}
