@@ -151,9 +151,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\CByteOrder.cpp" />
     <ClCompile Include="..\CDpcmDataBuffer.cpp" />
     <ClCompile Include="..\CDpcmStorage.cpp" />
     <ClCompile Include="..\CFrameDataBuffer.cpp" />
+    <ClCompile Include="..\CNesState.cpp" />
+    <ClCompile Include="..\CNote.cpp" />
     <ClCompile Include="..\CPcm2Dpcm.cpp" />
     <ClCompile Include="..\CPcm2DpcmNaive.cpp" />
     <ClCompile Include="..\CPcmSample.cpp" />
@@ -217,15 +220,19 @@
     <ClCompile Include="..\CNsfTemplate.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\CByteOrder.h" />
     <ClInclude Include="..\CDpcmDataBuffer.h" />
     <ClInclude Include="..\CDpcmStorage.h" />
     <ClInclude Include="..\CFrameDataBuffer.h" />
+    <ClInclude Include="..\CNesState.h" />
+    <ClInclude Include="..\CNote.h" />
     <ClInclude Include="..\CPcm2Dpcm.h" />
     <ClInclude Include="..\CPcm2DpcmNaive.h" />
     <ClInclude Include="..\CPcmSample.h" />
     <ClInclude Include="..\CRegister.h" />
     <ClInclude Include="..\CRegisterStructure.h" />
     <ClInclude Include="..\CWavHeader.h" />
+    <ClInclude Include="..\EByteOrder.h" />
     <ClInclude Include="..\gme\blargg_common.h" />
     <ClInclude Include="..\gme\blargg_config.h" />
     <ClInclude Include="..\gme\blargg_endian.h" />

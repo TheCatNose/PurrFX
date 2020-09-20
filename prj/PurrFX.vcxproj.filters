@@ -213,6 +213,15 @@
     <ClCompile Include="..\CRegisterStructure.cpp">
       <Filter>purrfx</Filter>
     </ClCompile>
+    <ClCompile Include="..\CByteOrder.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CNote.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\CNesState.cpp">
+      <Filter>purrfx</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\gme\blargg_common.h">
@@ -453,6 +462,18 @@
       <Filter>purrfx</Filter>
     </ClInclude>
     <ClInclude Include="..\CRegisterStructure.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CNote.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CByteOrder.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EByteOrder.h">
+      <Filter>purrfx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\CNesState.h">
       <Filter>purrfx</Filter>
     </ClInclude>
   </ItemGroup>
