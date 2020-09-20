@@ -20,6 +20,8 @@ namespace PurrFX
 
 		uint8_t get(char i_cName) const;
 		bool    set(char i_cName, uint8_t i_nValue);
+		
+		uint8_t max(char i_cName) const;
 
 	private:
 		uint8_t mask(const CRegisterStructure& i_rStructure, size_t i_nFieldIndex) const;

@@ -49,6 +49,16 @@ bool PurrFX::CRegister::set(char i_cName, uint8_t i_nValue)
 	return false;
 }
 
+uint8_t PurrFX::CRegister::max(char i_cName) const
+{
+	const CRegisterStructure& rStructure = CRegisterStructure::get(m_eRegister);
+	for (size_t i = 0; i < rStructure.fieldCount(); i++)
+		if (rStructure.name(i) == i_cName)
+			return mask(rStructure,i);
+	assert(false && "Unknown NES register field name");
+	return 0;
+}
+
 uint8_t PurrFX::CRegister::mask(const PurrFX::CRegisterStructure& i_rStructure, size_t i_nFieldIndex) const
 {
 	static const uint8_t aMasks[] = {
