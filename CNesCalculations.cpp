@@ -56,3 +56,43 @@ size_t PurrFX::CNesCalculations::pcm2dpcmDataLength(size_t i_nPcmDataLength)
 {
 	return i_nPcmDataLength/8;
 }
+
+double PurrFX::CNesCalculations::apuPulseFrequency(uint16_t i_nTimer, double i_nCpuClockSpeed)
+{
+	if (i_nTimer > NesConsts::apuPulseTimerMax)
+		i_nTimer = NesConsts::apuPulseTimerMax;
+	return i_nCpuClockSpeed/(16.0*(i_nTimer + 1));
+}
+
+double PurrFX::CNesCalculations::apuTriangleFrequency(uint16_t i_nTimer, double i_nCpuClockSpeed)
+{
+	if (i_nTimer > NesConsts::apuTriangleTimerMax)
+		i_nTimer = NesConsts::apuTriangleTimerMax;
+	return i_nCpuClockSpeed/(32.0*(i_nTimer + 1));
+}
+
+uint16_t PurrFX::CNesCalculations::apuPulseTimer(double i_nFrequency, double i_nCpuClockSpeed)
+{
+	double nTimer = i_nCpuClockSpeed/(16.0*i_nFrequency) - 1;
+	if (nTimer > NesConsts::apuPulseTimerMax)
+		return   NesConsts::apuPulseTimerMax;
+	return uint16_t(nTimer);
+}
+
+uint16_t PurrFX::CNesCalculations::apuTriangleTimer(double i_nFrequency, double i_nCpuClockSpeed)
+{
+	double nTimer = i_nCpuClockSpeed/(32.0*i_nFrequency) - 1;
+	if (nTimer > NesConsts::apuTriangleTimerMax)
+		return   NesConsts::apuTriangleTimerMax;
+	return uint16_t(nTimer);
+}
+
+uint16_t PurrFX::CNesCalculations::makeApuPulseTimer(uint8_t i_nRegisterTimerLow, uint8_t i_nRegisterTimerHigh)
+{
+	return uint16_t(i_nRegisterTimerLow) + ( uint16_t(i_nRegisterTimerHigh & 0b111) << 8 );
+}
+
+uint16_t PurrFX::CNesCalculations::makeApuTriangleTimer(uint8_t i_nRegisterTimerLow, uint8_t i_nRegisterTimerHigh)
+{
+	return uint16_t(i_nRegisterTimerLow) + ( uint16_t(i_nRegisterTimerHigh & 0b111) << 8 );
+}

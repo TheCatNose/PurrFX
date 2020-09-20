@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <cassert>
 #include <cstddef>
+#include "DNesConsts.h"
 
 namespace PurrFX
 {
@@ -25,5 +26,19 @@ namespace PurrFX
 
 		static size_t dpcm2pcmDataLength(size_t i_nDpcmDataLength);
 		static size_t pcm2dpcmDataLength(size_t i_nPcmDataLength);
+
+		///////////
+		// Pitch //
+		///////////
+
+		// APU
+
+		static double   apuPulseFrequency   (uint16_t i_nTimer  , double i_nCpuClockSpeed = NesConsts::cpuClockSpeedNTSC);
+		static double   apuTriangleFrequency(uint16_t i_nTimer  , double i_nCpuClockSpeed = NesConsts::cpuClockSpeedNTSC);
+		static uint16_t apuPulseTimer       (double i_nFrequency, double i_nCpuClockSpeed = NesConsts::cpuClockSpeedNTSC);
+		static uint16_t apuTriangleTimer    (double i_nFrequency, double i_nCpuClockSpeed = NesConsts::cpuClockSpeedNTSC);
+
+		static uint16_t makeApuPulseTimer   (uint8_t i_nRegisterTimerLow, uint8_t i_nRegisterTimerHigh);
+		static uint16_t makeApuTriangleTimer(uint8_t i_nRegisterTimerLow, uint8_t i_nRegisterTimerHigh);
 	};
 }
