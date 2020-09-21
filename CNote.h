@@ -11,13 +11,13 @@ namespace PurrFX
 	{
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNote)
 	public:
-		CNote(double i_nFrequence);
+		CNote(double i_nFrequency);
 
 		int    octave() const;
 		int    note() const;
 		double offset() const;
 
-		double frequence() const;
+		double frequency() const;
 
 	private:
 		int     m_nOctave;
