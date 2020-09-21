@@ -1,5 +1,9 @@
 #include "CNote.h"
 
+PurrFX::CNote::CNote()
+{
+}
+
 PurrFX::CNote::CNote(double i_nFrequency)
 {
 	assert(i_nFrequency > 0);

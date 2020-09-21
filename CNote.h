@@ -9,8 +9,8 @@ namespace PurrFX
 {
 	class CNote
 	{
-		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CNote)
 	public:
+		CNote();
 		CNote(double i_nFrequency);
 
 		int    octave() const;
@@ -20,9 +20,9 @@ namespace PurrFX
 		double frequency() const;
 
 	private:
-		int     m_nOctave;
-		int     m_nNote;
-		double  m_nOffset;
+		int     m_nOctave = 0;
+		int     m_nNote   = 0;
+		double  m_nOffset = 0.0;
 
 		static const int KeysInOctave = 12;
 	};
