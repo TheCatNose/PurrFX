@@ -40,5 +40,8 @@ namespace PurrFX
 
 		static uint16_t makeApuPulseTimer   (uint8_t i_nRegisterTimerLow, uint8_t i_nRegisterTimerHigh);
 		static uint16_t makeApuTriangleTimer(uint8_t i_nRegisterTimerLow, uint8_t i_nRegisterTimerHigh);
+
+		static void decomposeApuPulseTimer   (uint8_t& o_rLowPart, uint8_t& o_rHighPart, uint16_t i_nTimer, uint8_t i_nL = 0x00);
+		static void decomposeApuTriangleTimer(uint8_t& o_rLowPart, uint8_t& o_rHighPart, uint16_t i_nTimer, uint8_t i_nL = 0x00);
 	};
 }

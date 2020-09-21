@@ -96,3 +96,15 @@ uint16_t PurrFX::CNesCalculations::makeApuTriangleTimer(uint8_t i_nRegisterTimer
 {
 	return uint16_t(i_nRegisterTimerLow) + ( uint16_t(i_nRegisterTimerHigh & 0b111) << 8 );
 }
+
+void PurrFX::CNesCalculations::decomposeApuPulseTimer(uint8_t& o_rLowPart, uint8_t& o_rHighPart, uint16_t i_nTimer, uint8_t i_nL)
+{
+	o_rLowPart  = uint8_t( i_nTimer & 0xFF );
+	o_rHighPart = ( (i_nL & 0b11111) << 3) + uint8_t( (i_nTimer >> 8) & 0b111);
+}
+
+void PurrFX::CNesCalculations::decomposeApuTriangleTimer(uint8_t& o_rLowPart, uint8_t& o_rHighPart, uint16_t i_nTimer, uint8_t i_nL)
+{
+	// Same thing
+	return decomposeApuPulseTimer(o_rLowPart, o_rHighPart, i_nTimer, i_nL);
+}
