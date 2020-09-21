@@ -29,6 +29,17 @@ PurrFX::CNote::CNote(double i_nFrequency)
 	}
 }
 
+PurrFX::CNote::CNote(int i_nOctave, int i_nNote, double i_nOffset)
+{
+	assert(i_nOctave >= -1);
+	assert(i_nNote >= 0 && i_nNote < KeysInOctave);
+	assert(abs(i_nOffset) <= 0.5);
+
+	m_nOctave = i_nOctave;
+	m_nNote   = i_nNote;
+	m_nOffset = i_nOffset;
+}
+
 int PurrFX::CNote::octave() const
 {
 	return m_nOctave;

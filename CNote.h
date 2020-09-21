@@ -12,6 +12,7 @@ namespace PurrFX
 	public:
 		CNote();
 		CNote(double i_nFrequency);
+		CNote(int i_nOctave, int i_nNote, double i_nOffset = 0);
 
 		int    octave() const;
 		int    note() const;
