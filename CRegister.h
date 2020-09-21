@@ -13,7 +13,7 @@ namespace PurrFX
 	{
 		CLASS_DISABLE_DEFAULT_CONSTRUCTOR(CRegister)
 	public:
-		CRegister(ERegister i_eRegister, uint8_t i_nValue);
+		CRegister(ERegister i_eRegister, uint8_t i_nValue = 0);
 
 		ERegister type() const;
 		uint8_t   value() const;
