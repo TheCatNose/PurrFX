@@ -13,7 +13,7 @@ namespace PurrFX
 	public:
 		/////////
 		// DMC //
-		////////
+		/////////
 
 		static uint16_t dpcmSampleAddressUnpack(uint8_t i_nPackedAddress);
 		static uint8_t  dpcmSampleAddressPack(uint16_t i_nPackedAddress);
@@ -37,6 +37,12 @@ namespace PurrFX
 		static double   apuTriangleFrequency(uint16_t i_nTimer  , double i_nCpuClockSpeed = NesConsts::cpuClockSpeedNTSC);
 		static uint16_t apuPulseTimer       (double i_nFrequency, double i_nCpuClockSpeed = NesConsts::cpuClockSpeedNTSC);
 		static uint16_t apuTriangleTimer    (double i_nFrequency, double i_nCpuClockSpeed = NesConsts::cpuClockSpeedNTSC);
+
+		///////////
+		// Timer //
+		///////////
+
+		// APU
 
 		static uint16_t makeApuPulseTimer   (uint8_t i_nRegisterTimerLow, uint8_t i_nRegisterTimerHigh);
 		static uint16_t makeApuTriangleTimer(uint8_t i_nRegisterTimerLow, uint8_t i_nRegisterTimerHigh);
